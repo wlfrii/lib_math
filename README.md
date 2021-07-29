@@ -33,6 +33,7 @@ After comment the command lines, do the <make&install> as follows.
 cd lib_math
 mkdir build
 cd build
+cmake ..
 make -j
 sudo make install
 ```
