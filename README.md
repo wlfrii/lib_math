@@ -22,8 +22,9 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     )
 endif()
 ```
-
-Since this library is primarily designed for myself, the library will be installed in a relative path as set in above lines to easy the management.  
+<font color=bluegrey>
+The command line above is used to install the library in a relative path, so that the library can be easy to manage in my program.  
+</font>
 
 After comment the command lines, do the <make&install> as follows.
 ```bash
