@@ -1,0 +1,22 @@
+set(BINARY lib_math)
+
+get_filename_component(${BINARY}_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+include(CMakeFindDependencyMacro)
+
+# Capturing values from configure (optional)
+
+
+# Same syntax ad find_package
+find_dependency(Eigen3 REQUIRED)
+
+# Any extra setup
+
+
+# Add the targets file
+if(NOT TARGET ${BINARY})
+    include("${${BINARY}_CMAKE_DIR}/${BINARY}Targets.cmake")
+endif()
+
+
+set(${BINARY}_LIBRARIES ${BINARY})
