@@ -2,6 +2,8 @@
 
 This library is a mathematics extension library primarily designed for robot kinematics. And this library is based on Eigen.
 
+The library will be updated continuously.
+
 ## Requirement
 
   - <b>Linux / Mac OS</b> system platform.
