@@ -1,0 +1,17 @@
+# === .gitignore files ===
+
+# Ignore the zip files
+*.zip
+
+# Ignore the qt.pro.user file
+*.pro.user
+
+# Ignore the vs.pdb
+*.pdb
+
+# Ignore the vs.filters and .user file
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ignore the build file/folder
+build*
