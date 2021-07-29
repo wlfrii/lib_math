@@ -46,3 +46,9 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 )
 ```
 
+The library could then be used by only including the following header file in your source file.
+```c++
+#include <lib_math/lib_math>
+```
+
+Note, all the interfaces are defined in `mmath{}` namespace.
