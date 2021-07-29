@@ -15,3 +15,6 @@
 
 # Ignore the build file/folder
 build*
+
+# Ignore the temp doxygen file
+.DS_Store
