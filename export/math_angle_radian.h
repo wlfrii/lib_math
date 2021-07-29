@@ -1,4 +1,4 @@
-/**=====================================================================
+/**--------------------------------------------------------------------
  *																		
  *   				   Mathematics extension library 					
  *																		
@@ -9,24 +9,24 @@
  * 
  * @file 		math_angle_radian.h 
  * 
- * @biref 		Design some interfaces for angle and radian conversion.
+ * @brief 		Design some interfaces for angle and radian conversion.
  * 
  * @author		Longfei Wang
  * 
  * @version		1.0.0
  * 
- * @data		2019/12/14
+ * @date		2019/12/14
  * 
  * @license		
  * 
  * Copyright (C) 2019 Longfei Wang.
  * 
  * --------------------------------------------------------------------
- *  Change History :                                  
- *  <Date>     | <Version> |   <Author>    | <Description>       
- * --------------------------------------------------------------------
- *  2019/12/14 | 1.0.0     | Longfei Wang  | Create the file          
- *====================================================================*/
+ * Change History:                        
+ * 
+ * 2021.7.29 Complete the doxygen comments.
+ * 
+ * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_ANGLE_RADIAN_H_LF
 #define LIB_MATH_ANGLE_RADIAN_H_LF
 #include <type_traits>
@@ -36,7 +36,13 @@ namespace mmath{
 
 const double PI = 3.14159265358979323846;
 
-/** @brief Convert the angle with unit of degree to angle with unit of radian.
+/**
+ * @brief Convert the angle with unit of degree to angle with unit of radian.
+ * 
+ * @tparam T1 
+ * @tparam T2 
+ * @param degree The angle value described by degree.
+ * @return T1 
  */
 template<typename T1 = double, typename T2 = double>
 inline T1 deg2rad(const T2 degree)
@@ -47,7 +53,14 @@ inline T1 deg2rad(const T2 degree)
 	return static_cast<T1>(degree / 180.0 * PI);
 }
 
-/** @brief Convert the angle with unit of radian to angle with unit of degree.
+
+/**
+ * @brief Convert the angle with unit of radian to angle with unit of degree.
+ * 
+ * @tparam T1 
+ * @tparam T2 
+ * @param radian The angle value described by radian.
+ * @return T1 
  */
 template<typename T1 = double, typename T2 = double>
 inline T1 rad2deg(const T2 radian)

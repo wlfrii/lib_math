@@ -1,4 +1,4 @@
-/**=====================================================================
+/**--------------------------------------------------------------------
  *																		
  *   				   Mathematics extension library 					
  *																		
@@ -9,30 +9,29 @@
  * 
  * @file 		math_configspc.h 
  * 
- * @biref 		Define a cofiguration space for single continuum segment.
+ * @brief 		Define a cofiguration space for single continuum segment.
  * 
  * @author		Longfei Wang
  * 
  * @version		1.0.0
  * 
- * @data		2020/03/38
+ * @date		2020/03/38
  * 
  * @license		
  * 
  * Copyright (C) 2019 Longfei Wang.
  * 
  * --------------------------------------------------------------------
- *  Change History :                                  
- *  <Date>     | <Version> |   <Author>    | <Description>       
- * --------------------------------------------------------------------
- *  2020/03/28 | 1.0.0     | Longfei Wang  | Create the file           
- *====================================================================*/
+ * Change History:                        
+ * 
+ * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_CONFIGSPC_H_LF
 #define LIB_MATH_CONFIGSPC_H_LF
 
 namespace mmath{
 
-/** @brief A class that store the configuration of each continuum segment.
+/** 
+ * @brief A class that store the configuration of each continuum segment.
  * 
  * There are four member included in this class.
  * theta    --  the bending angle

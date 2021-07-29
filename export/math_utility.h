@@ -1,4 +1,4 @@
-/**=====================================================================
+/**--------------------------------------------------------------------
  *																		
  *   				   Mathematics extension library 					
  *																		
@@ -9,24 +9,24 @@
  * 
  * @file 		math_utility.h 
  * 
- * @biref 		Design some interfaces for matrix/vector operation.
+ * @brief 		Design some interfaces for matrix/vector operation.
  * 
  * @author		Longfei Wang
  * 
  * @version		1.0.0
  * 
- * @data		2019/12/14
+ * @date		2019/12/14
  * 
  * @license		
  * 
  * Copyright (C) 2019 Longfei Wang.
  * 
  * --------------------------------------------------------------------
- *  Change History :                                  
- *  <Date>     | <Version> |   <Author>    | <Description>       
- * --------------------------------------------------------------------
- *  2019/12/14 | 1.0.0     | Longfei Wang  | Create the file          
- *====================================================================*/
+ * Change History:                        
+ * 
+ * 2021.7.29 Complete the doxygen comments.
+ * 
+ * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_UTILITY_H_LF
 #define LIB_MATH_UTILITY_H_LF
 #include <Eigen/Dense>
@@ -36,11 +36,15 @@
 
 namespace mmath{
 
-
-/** @brief Return the absoluted Matrix.
-* M  represents the row of the matrix.
-* N  represents the column of the matrix.
-*/
+/**
+ * @brief Return the absoluted Matrix.
+ * 
+ * @tparam T The type of the matrix, e.g, float, double
+ * @tparam M Represents the row of the matrix.
+ * @tparam N Represents the column of the matrix.
+ * @param mat 
+ * @return Eigen::Matrix<T, M, N> 
+ */
 template<typename T, int M, int N>
 Eigen::Matrix<T, M, N> absMat(const Eigen::Matrix<T, M, N>& mat)
 {
@@ -54,13 +58,33 @@ Eigen::Matrix<T, M, N> absMat(const Eigen::Matrix<T, M, N>& mat)
 }
 
 
-/** @brief Return the skew-symmetric matrix based on the input vector.
-*/
+/**
+ * @brief Return the skew-symmetric matrix based on the input vector.
+ * 
+ * @param vec The input 3D vector.
+ * @return 	Eigen::Matrix3f 
+ */
 Eigen::Matrix3f skewSymmetric(Eigen::Vector3f &vec);
+/**
+ * @brief Return the skew-symmetric matrix based on the input vector.
+ * 
+ * @param vec The input 3D vector.
+ * @return Eigen::Matrix3f 
+ */
 Eigen::Matrix3f skewSymmetric(Eigen::RowVector3f &vec);
 
 
-/** @brief Return a vector contain 'num' numeral between 'start' and 'end'.
+/**
+ * @brief Return a vector contain 'num' numeral between 'start' and 'end'.
+ * 
+ * @tparam T1 
+ * @tparam T2 
+ * @tparam T3 
+ * @param start 	The start value.
+ * @param end 		The end value.
+ * @param num 		The number of values in the range [start, end].
+ * @param output 	The output values, start <= values <= end.
+ * @return std::vector<T3>& 
  */
 template<typename T1, typename T2, typename T3>
 std::vector<T3>& linespace(const T1 start, const T2 end, const int num, std::vector<T3> &output)

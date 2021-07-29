@@ -1,4 +1,4 @@
-/**=====================================================================
+/**--------------------------------------------------------------------
  *																		
  *   				   Mathematics extension library 					
  *																		
@@ -9,24 +9,24 @@
  * 
  * @file 		math_rotation.h 
  * 
- * @biref 		Design some interfaces for calculating rotation matrix.
+ * @brief 		Design some interfaces for calculating rotation matrix.
  * 
  * @author		Longfei Wang
  * 
  * @version		1.0.0
  * 
- * @data		2019/12/14
+ * @date		2019/12/14
  * 
  * @license		
  * 
  * Copyright (C) 2019 Longfei Wang.
  * 
  * --------------------------------------------------------------------
- *  Change History :                                  
- *  <Date>     | <Version> |   <Author>    | <Description>       
- * --------------------------------------------------------------------
- *  2019/12/14 | 1.0.0     | Longfei Wang  | Create the file          
- *====================================================================*/
+ * Change History:                        
+ * 
+ * 2021.7.29 Complete the doxygen comments.
+ * 
+ * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_ROTATION_H_LF
 #define LIB_MATH_ROTATION_H_LF
 #include <Eigen/Dense>
@@ -35,7 +35,13 @@
 
 namespace mmath{
 
-/** @brief Return a rotation matrix with rotated by x-axis by radian.
+/**
+ * @brief Return a rotation matrix with rotated by x-axis by radian.
+ * 
+ * @tparam T 
+ * @tparam T1 
+ * @param radian The angle value described by radian.
+ * @return Eigen::Matrix<T, 3, 3> 
  */
 template<typename T = float, typename T1 = double>
 Eigen::Matrix<T, 3, 3> rotByX(const T1 radian)
@@ -50,7 +56,13 @@ Eigen::Matrix<T, 3, 3> rotByX(const T1 radian)
 	return rot;
 }
 
-/** @brief Return a rotation matrix with rotated by y-axis by radian.
+/**
+ * @brief Return a rotation matrix with rotated by y-axis by radian.
+ * 
+ * @tparam T 
+ * @tparam T1 
+ * @param radian The angle value described by radian.
+ * @return Eigen::Matrix<T, 3, 3> 
  */
 template<typename T = float, typename T1 = double>
 Eigen::Matrix<T, 3, 3> rotByY(const T1 radian)
@@ -65,8 +77,13 @@ Eigen::Matrix<T, 3, 3> rotByY(const T1 radian)
 	return rot;
 }
 
-
-/** @brief Return a rotation matrix with rotated by z-axis by radian.
+/**
+ * @brief Return a rotation matrix with rotated by z-axis by radian.
+ * 
+ * @tparam T 
+ * @tparam T1 
+ * @param radian The angle value described by radian.
+ * @return Eigen::Matrix<T, 3, 3> 
  */
 template<typename T = float, typename T1 = double>
 Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian)
@@ -81,9 +98,12 @@ Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian)
 	return rot;
 }
 
-
-/** @brief Return the rotation matrix based on the direction vector z.
-*/
+/**
+ * @brief Create a Rotation Matrix By Vector-Z.
+ * 
+ * @param z The direction vector that represent the z-axis.
+ * @return Eigen::Matrix3f 
+ */
 Eigen::Matrix3f createRotMatByVecZ(Eigen::Vector3f z);
 
 

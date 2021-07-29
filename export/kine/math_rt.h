@@ -1,4 +1,4 @@
-/**=====================================================================
+/**--------------------------------------------------------------------
  *																		
  *   				   Mathematics extension library 					
  *																		
@@ -9,25 +9,22 @@
  * 
  * @file 		math_rt.h 
  * 
- * @biref 		Define a description for 3D transformation.
+ * @brief 		Define a description for 3D transformation.
  * 
  * @author		Longfei Wang
  * 
  * @version		1.0.0
  * 
- * @data		2019/12/14
+ * @date		2019/12/14
  * 
  * @license		
  * 
  * Copyright (C) 2019 Longfei Wang.
  * 
  * --------------------------------------------------------------------
- *  Change History :                                  
- *  <Date>     | <Version> |   <Author>    | <Description>       
- * --------------------------------------------------------------------
- *  2019/12/14 | 1.0.0     | Longfei Wang  | Create the file          
- *  2019/12/14 | 1.0.1     | Longfei Wang  | Add inverse()
- *====================================================================*/
+ * Change History:                        
+ * 
+ * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_RT_H_LF
 #define LIB_MATH_RT_H_LF
 #include <Eigen/Dense>
@@ -38,7 +35,8 @@ using EMat3f = Eigen::Matrix3f;
 using EMat4f = Eigen::Matrix4f;
 using EVec3f = Eigen::Vector3f;
 
-/** @brief A class designed to describe the transformation.
+/** 
+ * @brief A class designed to describe the transformation.
  * This class can furtherly simplify the calculation of pose-trasform.
  * There are three members include in this class:
  *   R	--  denotes the rotation.
@@ -54,8 +52,18 @@ public:
 
 	RT& operator= (const RT& rt);
 
+	/**
+	 * @brief Return the inverse of the RT.
+	 * 
+	 * @return RT 
+	 */
     RT inverse();
 
+	/**
+	 * @brief Return the RT info for print/std::out.
+	 * 
+	 * @return char* 
+	 */
 	char* to_c_str() const;
 
 	EMat3f R;
