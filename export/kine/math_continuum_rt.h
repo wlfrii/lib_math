@@ -29,12 +29,13 @@
 #define LIB_MATH_CONTINUUM_RT_H_LF
 #include <Eigen/Dense>
 #include "math_rt.h"
-#include "math_configspc.h"
+#include "math_continuum_configspc.h"
 
 namespace mmath{
+namespace continuum{
 
 /** 
- * @brief Calculation the rotation and position of the end frame of single 
+ * @brief Calculating the rotation and position of the end frame of single 
 * continuum segment with respect to its base frame.
 *
 * @param L      The length of the segment.
@@ -58,9 +59,8 @@ void calcSingleSegmentRT(const ConfigSpc& q, RT& rt);
 RT   calcSingleSegmentRT(const ConfigSpc& q);
 
 
-
 /** 
- * @brief Calculation the rotation and position of the end frame of single 
+ * @brief Calculating the rotation and position of the end frame of single 
 * continuum segment with a rigid segment, with respect to its base frame.
 * @param L      The length of the segment.
 * @param Lr     The length of the rigid segment.
@@ -83,5 +83,11 @@ void calcSingleWithRigidSegmentRT(const ConfigSpc& q, float Lr, RT& rt);
  */
 RT   calcSingleWithRigidSegmentRT(const ConfigSpc& q, float Lr);
 
-} // mmath
+
+
+void calcForwardKinematics(const ConfigSpcs& qs, RT& rt);
+RT calcForwardKinematics(const ConfigSpcs& qs);
+
+
+}} // mmath::continuum
 #endif // LIB_MATH_CONTINUUM_RT_H_LF

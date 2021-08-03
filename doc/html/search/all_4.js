@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lib_5fmath_2eh_7',['lib_math.h',['../lib__math_8h.html',1,'']]],
-  ['linespace_8',['linespace',['../math__utility_8h.html#a0437af482086b268eb00ab54bbf6c7a9',1,'mmath']]]
+  ['jointspc_7',['JointSpc',['../classmmath_1_1continuum_1_1_joint_spc.html',1,'mmath::continuum']]]
 ];

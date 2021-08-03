@@ -25,13 +25,14 @@
  * Change History:                        
  * 
  * -------------------------------------------------------------------*/
-#ifndef LIB_MATH_CONFIGSPC_H_LF
-#define LIB_MATH_CONFIGSPC_H_LF
+#ifndef LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
+#define LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
+#include <vector>
 
 namespace mmath{
-
+namespace continuum{
 /** 
- * @brief A class that store the configuration of each continuum segment.
+ * @brief A class stores the configuration of each continuum segment.
  * 
  * There are four member included in this class.
  * theta    --  the bending angle
@@ -57,5 +58,31 @@ public:
 	bool is_bend;
 };
 
-} // mmath
+/**
+ * @brief Configurations of multi continuum.
+ */
+using ConfigSpcs = std::vector<ConfigSpc>;
+
+
+/**
+ * @brief A class stores the configuration values based on joint space of two segment continuum.
+ */
+class JointSpc
+{
+public:
+	JointSpc()
+		: L(0), phi(0)
+		, theta1(0), delta1(0)
+		, theta2(0), delta2(0)
+	{}
+
+	float L;
+	float phi;
+	float theta1;
+	float delta1;
+	float theta2;
+	float delta2;
+};
+
+}} // mmath::continuum
 #endif // LIB_MATH_CONFIGSPC_H_LF

@@ -1,11 +1,13 @@
 var math__continuum__rt_8h =
 [
-    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a623d32402bfeedc221c1e0bef477e853", null ],
-    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#ad26abea5d65390ad7208812dc76c937f", null ],
-    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a53b04c2f33281fd358dd9dd121a99708", null ],
-    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#af83d1497e839a9dcc1c59d700fab29a3", null ],
-    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a25e59309a02f09be1e051cff3062aa6b", null ],
-    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a134bbb7011d78d063e0c64672fb476b1", null ],
-    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a42aa3308e7cd6722d4a3c37c036da9a9", null ],
-    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a7b5dcf8c7e4fbb1f3800097788854d4d", null ]
+    [ "calcForwardKinematics", "math__continuum__rt_8h.html#a0481e109a2fb3b88a83ac0bc98d50978", null ],
+    [ "calcForwardKinematics", "math__continuum__rt_8h.html#a602ea6adfcdcceb26fba84872112fb71", null ],
+    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a456e6ab7141b14e02a766d56efc8199d", null ],
+    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a30ad5a739bb90cea2172f4b664b519fc", null ],
+    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a914010a936093e9cda1974fa17039d46", null ],
+    [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a58c397f6adeee707a715005dbfaa848b", null ],
+    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a9d3f4c2619302aa13c681b7869bb84e0", null ],
+    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a72eadc07010a3de4d213dd66a58f8883", null ],
+    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a2e220217bf6ec62a9344fd722b14d487", null ],
+    [ "calcSingleWithRigidSegmentRT", "math__continuum__rt_8h.html#a5d252440be43d814ff5ccffb90db8b8a", null ]
 ];

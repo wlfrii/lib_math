@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lib_math: Data Structures</title>
+<title>lib_math: mmath::continuum::ConfigSpc Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('annotated.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classmmath_1_1continuum_1_1_config_spc.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,24 +83,52 @@ $(document).ready(function(){initNavTree('annotated.html',''); initResizable(); 
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">Data Structures</div>  </div>
+<div class="title">mmath::continuum::ConfigSpc Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here are the data structures with brief descriptions:</div><div class="directory">
-<div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span><span onclick="javascript:toggleLevel(3);">3</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><b>mmath</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_0_" class="arrow" onclick="toggleFolder('0_0_')">&#9660;</span><span class="icona"><span class="icon">N</span></span><b>continuum</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classmmath_1_1continuum_1_1_config_spc.html" target="_self">ConfigSpc</a></td><td class="desc">A class stores the configuration of each continuum segment </td></tr>
-<tr id="row_0_0_1_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classmmath_1_1continuum_1_1_joint_spc.html" target="_self">JointSpc</a></td><td class="desc">A class stores the configuration values based on joint space of two segment continuum </td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classmmath_1_1_r_t.html" target="_self">RT</a></td><td class="desc">A class designed to describe the transformation. This class can furtherly simplify the calculation of pose-trasform. There are three members include in this class: R &ndash; denotes the rotation. p &ndash; denotes the position. T &ndash; denotes the transformation, detemined by R and p </td></tr>
+
+<p>A class stores the configuration of each continuum segment.  
+ <a href="classmmath_1_1continuum_1_1_config_spc.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="math__continuum__configspc_8h_source.html">math_continuum_configspc.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a58aa8c7137002eecb437d252dc2c84d7"><td class="memItemLeft" align="right" valign="top"><a id="a58aa8c7137002eecb437d252dc2c84d7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ConfigSpc</b> (float theta, float delta, float len, bool bend=false)</td></tr>
+<tr class="separator:a58aa8c7137002eecb437d252dc2c84d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:af7fe6279e8f79d55d8546884947c873b"><td class="memItemLeft" align="right" valign="top"><a id="af7fe6279e8f79d55d8546884947c873b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>theta</b></td></tr>
+<tr class="separator:af7fe6279e8f79d55d8546884947c873b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd3e4f2583fc61adaa27e2c898a177e"><td class="memItemLeft" align="right" valign="top"><a id="abdd3e4f2583fc61adaa27e2c898a177e"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b></td></tr>
+<tr class="separator:abdd3e4f2583fc61adaa27e2c898a177e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae90b1caaf77a0d44a98135f96329edd1"><td class="memItemLeft" align="right" valign="top"><a id="ae90b1caaf77a0d44a98135f96329edd1"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>length</b></td></tr>
+<tr class="separator:ae90b1caaf77a0d44a98135f96329edd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8842fc8f863da50c1ed96047f2918db8"><td class="memItemLeft" align="right" valign="top"><a id="a8842fc8f863da50c1ed96047f2918db8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_bend</b></td></tr>
+<tr class="separator:a8842fc8f863da50c1ed96047f2918db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- directory -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class stores the configuration of each continuum segment. </p>
+<p>There are four member included in this class. theta &ndash; the bending angle delta &ndash; the bending direction length &ndash; the length of the segment is_bend &ndash; sepcifiy the bending/rigid segment, the default value is bending segment. If rigid segment is set, the kinematics of this segment will only consider a rotation alone z. </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>export/kine/<a class="el" href="math__continuum__configspc_8h_source.html">math_continuum_configspc.h</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><b>mmath</b></li><li class="navelem"><b>continuum</b></li><li class="navelem"><a class="el" href="classmmath_1_1continuum_1_1_config_spc.html">ConfigSpc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

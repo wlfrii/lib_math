@@ -32,7 +32,7 @@
 #include "math_utility.h"
 #include "math_rotation.h"
 #include "kine/math_rt.h"
-#include "kine/math_configspc.h"
+#include "kine/math_continuum_configspc.h"
 #include "kine/math_continuum_rt.h"
 
 #endif // LIB_MATH_LIB_LF

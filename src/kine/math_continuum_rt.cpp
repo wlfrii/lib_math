@@ -2,6 +2,7 @@
 #include "../../export/math_rotation.h"
 
 namespace mmath{
+namespace continuum{
 
 extern const double PI;
 
@@ -61,4 +62,4 @@ RT calcSingleWithRigidSegmentRT(const ConfigSpc& q, float Lr)
 	return calcSingleWithRigidSegmentRT(q.length, q.theta, q.delta, Lr);
 }
 
-} // mmath
+}} // mmath::continuum

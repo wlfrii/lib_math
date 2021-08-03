@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['to_5fc_5fstr_21',['to_c_str',['../classmmath_1_1_r_t.html#ab693d3a3505013518f0437d60c5f86b6',1,'mmath::RT']]]
+  ['skewsymmetric_20',['skewSymmetric',['../math__utility_8h.html#a911f2f54fe4224db881c6c2db4c62186',1,'mmath::skewSymmetric(Eigen::Vector3f &amp;vec)'],['../math__utility_8h.html#a1f74a312be5e894b31a8020b40e11d52',1,'mmath::skewSymmetric(Eigen::RowVector3f &amp;vec)']]]
 ];
