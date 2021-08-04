@@ -24,13 +24,29 @@
  * --------------------------------------------------------------------
  * Change History:                        
  * 
+ * 2021.8.3 Add ConfigSpcs, and task space.
+ * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
 #define LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
-#include <vector>
+#include <array>
+#include <stdint.h>
+#include "math_rt.h"
 
 namespace mmath{
 namespace continuum{
+
+
+enum SegmentType{
+	SEGMENT_TROCAR_TO_SEG1BASE,
+	SEGMENT_SEG1BASE_TO_SEG1END,
+	SEGMENT_SEG1END_TO_SEG2BASE,
+	SEGMENT_SEG2BASE_TO_SEG2END,
+	SEGMENT_SEG2END_TO_GRIPPER,
+	SEGMENT_TYPE_NONE
+};
+
+
 /** 
  * @brief A class stores the configuration of each continuum segment.
  * 
@@ -45,13 +61,12 @@ namespace continuum{
 class ConfigSpc
 {
 public:
-	ConfigSpc(float theta, float delta, float len, bool bend = false)
-		: theta(theta), delta(delta), length(len), is_bend(bend)
-	{}
+	ConfigSpc(SegmentType type = SEGMENT_TYPE_NONE, float theta = 0, 
+		float delta = 0, float len = 0, bool bend = false);
+	
+	void clear();
 
-	ConfigSpc() : theta(0), delta(0), length(0), is_bend(false)
-	{}
-
+	SegmentType type;
 	float theta;
 	float delta;
 	float length;
@@ -59,29 +74,73 @@ public:
 };
 
 /**
- * @brief Configurations of multi continuum.
+ * @brief Configurations of twe-segment continuum robot.
  */
-using ConfigSpcs = std::vector<ConfigSpc>;
-
-
-/**
- * @brief A class stores the configuration values based on joint space of two segment continuum.
- */
-class JointSpc
-{
+const int MAX_SECTION_COUNT = 5;
+template <uint8_t N = MAX_SECTION_COUNT>
+class ConfigSpcs
+{ 	
 public:
-	JointSpc()
-		: L(0), phi(0)
-		, theta1(0), delta1(0)
-		, theta2(0), delta2(0)
+	ConfigSpcs() : _count(0)
 	{}
 
-	float L;
-	float phi;
-	float theta1;
-	float delta1;
-	float theta2;
-	float delta2;
+	ConfigSpc& operator[] (uint8_t idx)
+	{
+		return _config_spcs[idx];
+	}
+
+	const ConfigSpc& operator[] (uint8_t idx) const
+	{
+		return _config_spcs[idx];
+	}
+
+	bool push_back(const ConfigSpc& config_spc)
+	{
+		if(_count >= N){
+			return false;
+		}
+		_config_spcs[_count++] = config_spc;
+		return true;
+	}
+	
+	int size() const
+	{
+		return _count;
+	}
+
+	void clear()
+	{
+		for(int i = 0; i < count; i++){
+        	_config_spcs[i].clear();
+    	}
+	}
+
+private:
+	ConfigSpc	_config_spcs[N];
+	uint8_t 	_count;
+};
+
+/**
+ * @brief A class stores the RT of each segment based on task space of
+ * continuum robot.
+ */
+template<uint8_t N = 5>
+class TaskSpc
+{
+public:
+	TaskSpc() {}
+
+	void clear();
+
+	//!< Stores each segment transformation for the whole rotot
+	std::array<RT, SEGMENT_TYPE_COUNT> T_segments;
+
+	//!< The transformation form robot end to base
+	RT T_trocar_to_gripper;
+
+private:
+	RT rt[N];
+
 };
 
 }} // mmath::continuum
