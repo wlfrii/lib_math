@@ -24,14 +24,10 @@
  * --------------------------------------------------------------------
  * Change History:                        
  * 
- * 2021.8.3 Add ConfigSpcs, and task space.
- * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
 #define LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
-#include <array>
 #include <stdint.h>
-#include "math_rt.h"
 
 namespace mmath{
 namespace continuum{
@@ -61,86 +57,20 @@ enum SegmentType{
 class ConfigSpc
 {
 public:
-	ConfigSpc(SegmentType type = SEGMENT_TYPE_NONE, float theta = 0, 
-		float delta = 0, float len = 0, bool bend = false);
+	ConfigSpc(float theta = 0, 
+		float delta = 0, float len = 0, bool bend = false)
+		: theta(theta), delta(delta), length(len), is_bend(bend)
+	{}
 	
-	void clear();
+	void clear()
+	{
+		*this = ConfigSpc();
+	}
 
-	SegmentType type;
 	float theta;
 	float delta;
 	float length;
 	bool is_bend;
-};
-
-/**
- * @brief Configurations of twe-segment continuum robot.
- */
-const int MAX_SECTION_COUNT = 5;
-template <uint8_t N = MAX_SECTION_COUNT>
-class ConfigSpcs
-{ 	
-public:
-	ConfigSpcs() : _count(0)
-	{}
-
-	ConfigSpc& operator[] (uint8_t idx)
-	{
-		return _config_spcs[idx];
-	}
-
-	const ConfigSpc& operator[] (uint8_t idx) const
-	{
-		return _config_spcs[idx];
-	}
-
-	bool push_back(const ConfigSpc& config_spc)
-	{
-		if(_count >= N){
-			return false;
-		}
-		_config_spcs[_count++] = config_spc;
-		return true;
-	}
-	
-	int size() const
-	{
-		return _count;
-	}
-
-	void clear()
-	{
-		for(int i = 0; i < count; i++){
-        	_config_spcs[i].clear();
-    	}
-	}
-
-private:
-	ConfigSpc	_config_spcs[N];
-	uint8_t 	_count;
-};
-
-/**
- * @brief A class stores the RT of each segment based on task space of
- * continuum robot.
- */
-template<uint8_t N = 5>
-class TaskSpc
-{
-public:
-	TaskSpc() {}
-
-	void clear();
-
-	//!< Stores each segment transformation for the whole rotot
-	std::array<RT, SEGMENT_TYPE_COUNT> T_segments;
-
-	//!< The transformation form robot end to base
-	RT T_trocar_to_gripper;
-
-private:
-	RT rt[N];
-
 };
 
 }} // mmath::continuum

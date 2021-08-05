@@ -22,7 +22,7 @@
  * Copyright (C) 2019 Longfei Wang.
  * 
  * --------------------------------------------------------------------
- * Change History:                        
+ * Change History:                
  * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_RT_H_LF
@@ -39,18 +39,21 @@ using EVec3f = Eigen::Vector3f;
  * @brief A class designed to describe the transformation.
  * This class can furtherly simplify the calculation of pose-trasform.
  * There are three members include in this class:
- *   R	--  denotes the rotation.
- *   p  --  denotes the position.
- *   T  --  denotes the transformation, detemined by R and p.
+ *   R	--  denotes the rotation or orientation.
+ *   t  --  denotes the translation or position.
+ *   T  --  denotes the transformation, detemined by R and t.
  */
 class RT
 {
 public:
-	explicit RT(const EMat3f &R = EMat3f::Identity(), const EVec3f &t = {0, 0, 0});
-	explicit RT(float px, float py, float pz);
-	explicit RT(float pts[16], bool is_row_fisrt = true);
+	explicit RT(const EMat3f& R = EMat3f::Identity(), const EVec3f& t = {0, 0, 0});
+	explicit RT(const EMat3f& R);
+	explicit RT(float tx, float ty, float tz);
+	explicit RT(float data[16], bool is_row_fisrt = true);
 
 	RT& operator= (const RT& rt);
+	RT  operator* (const RT& rt);
+	RT& operator*= (const RT& rt);
 
 	/**
 	 * @brief Return the inverse of the RT.
@@ -67,7 +70,7 @@ public:
 	char* to_c_str() const;
 
 	EMat3f R;
-	EVec3f p;
+	EVec3f t;
 	EMat4f T;
 };
 

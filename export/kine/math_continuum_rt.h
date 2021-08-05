@@ -84,10 +84,5 @@ void calcSingleWithRigidSegmentRT(const ConfigSpc& q, float Lr, RT& rt);
 RT   calcSingleWithRigidSegmentRT(const ConfigSpc& q, float Lr);
 
 
-
-void calcForwardKinematics(const ConfigSpcs& qs, RT& rt);
-RT calcForwardKinematics(const ConfigSpcs& qs);
-
-
 }} // mmath::continuum
 #endif // LIB_MATH_CONTINUUM_RT_H_LF
