@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classmmath_1_1_r_t.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>A class designed to describe the transformation. This class can furtherly simplify the calculation of pose-trasform. There are three members include in this class: R &ndash; denotes the rotation. p &ndash; denotes the position. T &ndash; denotes the transformation, detemined by R and p.  
+<p>A class designed to describe the transformation. This class can furtherly simplify the calculation of pose-trasform. There are three members include in this class: R &ndash; denotes the rotation or orientation. t &ndash; denotes the translation or position. T &ndash; denotes the transformation, detemined by R and t.  
  <a href="classmmath_1_1_r_t.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="math__rt_8h_source.html">math_rt.h</a>&gt;</code></p>
@@ -101,15 +101,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac17d8f994c0868d273a4a0c60b000266"><td class="memItemLeft" align="right" valign="top"><a id="ac17d8f994c0868d273a4a0c60b000266"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>RT</b> (const EMat3f &amp;R=EMat3f::Identity(), const EVec3f &amp;t={0, 0, 0})</td></tr>
 <tr class="separator:ac17d8f994c0868d273a4a0c60b000266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02f2cf848442fbd2db6c4a852541b51a"><td class="memItemLeft" align="right" valign="top"><a id="a02f2cf848442fbd2db6c4a852541b51a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RT</b> (float px, float py, float pz)</td></tr>
-<tr class="separator:a02f2cf848442fbd2db6c4a852541b51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab77a030c808184c49d6e15086baa85e8"><td class="memItemLeft" align="right" valign="top"><a id="ab77a030c808184c49d6e15086baa85e8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RT</b> (float pts[16], bool is_row_fisrt=true)</td></tr>
-<tr class="separator:ab77a030c808184c49d6e15086baa85e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1295206d77e3a02cca6d55c246091e7e"><td class="memItemLeft" align="right" valign="top"><a id="a1295206d77e3a02cca6d55c246091e7e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RT</b> (const EMat3f &amp;R)</td></tr>
+<tr class="separator:a1295206d77e3a02cca6d55c246091e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e008080d05963b7e8d44866c7a38f65"><td class="memItemLeft" align="right" valign="top"><a id="a4e008080d05963b7e8d44866c7a38f65"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RT</b> (float tx, float ty, float tz)</td></tr>
+<tr class="separator:a4e008080d05963b7e8d44866c7a38f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ee713870cb61dd52666da9e7d1825a8"><td class="memItemLeft" align="right" valign="top"><a id="a1ee713870cb61dd52666da9e7d1825a8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RT</b> (float data[16], bool is_row_fisrt=true)</td></tr>
+<tr class="separator:a1ee713870cb61dd52666da9e7d1825a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc7beec9a4ccd5366db7c6f886b387af"><td class="memItemLeft" align="right" valign="top"><a id="afc7beec9a4ccd5366db7c6f886b387af"></a>
 <a class="el" href="classmmath_1_1_r_t.html">RT</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classmmath_1_1_r_t.html">RT</a> &amp;rt)</td></tr>
 <tr class="separator:afc7beec9a4ccd5366db7c6f886b387af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed4378caf4ef64729fd30280220175e"><td class="memItemLeft" align="right" valign="top"><a id="a1ed4378caf4ef64729fd30280220175e"></a>
+<a class="el" href="classmmath_1_1_r_t.html">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classmmath_1_1_r_t.html">RT</a> &amp;rt)</td></tr>
+<tr class="separator:a1ed4378caf4ef64729fd30280220175e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c6439f4bc1ac5188599470b2a84b88"><td class="memItemLeft" align="right" valign="top"><a id="a30c6439f4bc1ac5188599470b2a84b88"></a>
+<a class="el" href="classmmath_1_1_r_t.html">RT</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const <a class="el" href="classmmath_1_1_r_t.html">RT</a> &amp;rt)</td></tr>
+<tr class="separator:a30c6439f4bc1ac5188599470b2a84b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a7b9d089c28e78bac1eff9a5f0e72c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_r_t.html">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_r_t.html#a5a7b9d089c28e78bac1eff9a5f0e72c3">inverse</a> ()</td></tr>
 <tr class="memdesc:a5a7b9d089c28e78bac1eff9a5f0e72c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the inverse of the <a class="el" href="classmmath_1_1_r_t.html" title="A class designed to describe the transformation. This class can furtherly simplify the calculation of...">RT</a>.  <a href="classmmath_1_1_r_t.html#a5a7b9d089c28e78bac1eff9a5f0e72c3">More...</a><br /></td></tr>
 <tr class="separator:a5a7b9d089c28e78bac1eff9a5f0e72c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,15 +131,15 @@ Data Fields</h2></td></tr>
 <tr class="memitem:abfae214ecff1e0663948a3422400b425"><td class="memItemLeft" align="right" valign="top"><a id="abfae214ecff1e0663948a3422400b425"></a>
 EMat3f&#160;</td><td class="memItemRight" valign="bottom"><b>R</b></td></tr>
 <tr class="separator:abfae214ecff1e0663948a3422400b425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0177556b13aa792b0a4c75fe024f1ca"><td class="memItemLeft" align="right" valign="top"><a id="ad0177556b13aa792b0a4c75fe024f1ca"></a>
-EVec3f&#160;</td><td class="memItemRight" valign="bottom"><b>p</b></td></tr>
-<tr class="separator:ad0177556b13aa792b0a4c75fe024f1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf48a1e6fa29349355d1ee7c02e3fd4"><td class="memItemLeft" align="right" valign="top"><a id="aadf48a1e6fa29349355d1ee7c02e3fd4"></a>
+EVec3f&#160;</td><td class="memItemRight" valign="bottom"><b>t</b></td></tr>
+<tr class="separator:aadf48a1e6fa29349355d1ee7c02e3fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a193ae0796202da6cf850c653c3916c02"><td class="memItemLeft" align="right" valign="top"><a id="a193ae0796202da6cf850c653c3916c02"></a>
 EMat4f&#160;</td><td class="memItemRight" valign="bottom"><b>T</b></td></tr>
 <tr class="separator:a193ae0796202da6cf850c653c3916c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class designed to describe the transformation. This class can furtherly simplify the calculation of pose-trasform. There are three members include in this class: R &ndash; denotes the rotation. p &ndash; denotes the position. T &ndash; denotes the transformation, detemined by R and p. </p>
+<div class="textblock"><p>A class designed to describe the transformation. This class can furtherly simplify the calculation of pose-trasform. There are three members include in this class: R &ndash; denotes the rotation or orientation. t &ndash; denotes the translation or position. T &ndash; denotes the transformation, detemined by R and t. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5a7b9d089c28e78bac1eff9a5f0e72c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a7b9d089c28e78bac1eff9a5f0e72c3">&#9670;&nbsp;</a></span>inverse()</h2>

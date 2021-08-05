@@ -1,7 +1,7 @@
 var classmmath_1_1continuum_1_1_config_spc =
 [
-    [ "ConfigSpc", "classmmath_1_1continuum_1_1_config_spc.html#a58aa8c7137002eecb437d252dc2c84d7", null ],
-    [ "ConfigSpc", "classmmath_1_1continuum_1_1_config_spc.html#ae4699223de7038a3a29095aece243571", null ],
+    [ "ConfigSpc", "classmmath_1_1continuum_1_1_config_spc.html#a8d42d96f06d403524661a1cbebfe2184", null ],
+    [ "clear", "classmmath_1_1continuum_1_1_config_spc.html#a192072dbbba37a1a42aead78ddb0d5eb", null ],
     [ "delta", "classmmath_1_1continuum_1_1_config_spc.html#abdd3e4f2583fc61adaa27e2c898a177e", null ],
     [ "is_bend", "classmmath_1_1continuum_1_1_config_spc.html#a8842fc8f863da50c1ed96047f2918db8", null ],
     [ "length", "classmmath_1_1continuum_1_1_config_spc.html#ae90b1caaf77a0d44a98135f96329edd1", null ],

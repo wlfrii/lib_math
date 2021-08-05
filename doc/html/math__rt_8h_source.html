@@ -101,23 +101,26 @@ $(document).ready(function(){initNavTree('math__rt_8h_source.html',''); initResi
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classmmath_1_1_r_t.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmmath_1_1_r_t.html">RT</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>(<span class="keyword">const</span> EMat3f &amp;R = EMat3f::Identity(), <span class="keyword">const</span> EVec3f &amp;t = {0, 0, 0});</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>(<span class="keywordtype">float</span> px, <span class="keywordtype">float</span> py, <span class="keywordtype">float</span> pz);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>(<span class="keywordtype">float</span> pts[16], <span class="keywordtype">bool</span> is_row_fisrt = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classmmath_1_1_r_t.html">RT</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>&amp; rt);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classmmath_1_1_r_t.html#a5a7b9d089c28e78bac1eff9a5f0e72c3">   60</a></span>&#160;    <a class="code" href="classmmath_1_1_r_t.html">RT</a> <a class="code" href="classmmath_1_1_r_t.html#a5a7b9d089c28e78bac1eff9a5f0e72c3">inverse</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classmmath_1_1_r_t.html#ab693d3a3505013518f0437d60c5f86b6">   67</a></span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="classmmath_1_1_r_t.html#ab693d3a3505013518f0437d60c5f86b6">to_c_str</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    EMat3f R;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    EVec3f p;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    EMat4f T;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// mmath</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIB_MATH_RT_H_LF</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>(<span class="keyword">const</span> EMat3f&amp; R = EMat3f::Identity(), <span class="keyword">const</span> EVec3f&amp; t = {0, 0, 0});</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>(<span class="keyword">const</span> EMat3f&amp; R);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>(<span class="keywordtype">float</span> tx, <span class="keywordtype">float</span> ty, <span class="keywordtype">float</span> tz);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>(<span class="keywordtype">float</span> data[16], <span class="keywordtype">bool</span> is_row_fisrt = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classmmath_1_1_r_t.html">RT</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>&amp; rt);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classmmath_1_1_r_t.html">RT</a>  operator* (<span class="keyword">const</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>&amp; rt);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classmmath_1_1_r_t.html">RT</a>&amp; operator*= (<span class="keyword">const</span> <a class="code" href="classmmath_1_1_r_t.html">RT</a>&amp; rt);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classmmath_1_1_r_t.html#a5a7b9d089c28e78bac1eff9a5f0e72c3">   63</a></span>&#160;    <a class="code" href="classmmath_1_1_r_t.html">RT</a> <a class="code" href="classmmath_1_1_r_t.html#a5a7b9d089c28e78bac1eff9a5f0e72c3">inverse</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classmmath_1_1_r_t.html#ab693d3a3505013518f0437d60c5f86b6">   70</a></span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="classmmath_1_1_r_t.html#ab693d3a3505013518f0437d60c5f86b6">to_c_str</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    EMat3f R;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    EVec3f t;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    EMat4f T;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// mmath</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIB_MATH_RT_H_LF</span></div>
 <div class="ttc" id="aclassmmath_1_1_r_t_html"><div class="ttname"><a href="classmmath_1_1_r_t.html">mmath::RT</a></div><div class="ttdoc">A class designed to describe the transformation. This class can furtherly simplify the calculation of...</div><div class="ttdef"><b>Definition:</b> math_rt.h:47</div></div>
 <div class="ttc" id="aclassmmath_1_1_r_t_html_a5a7b9d089c28e78bac1eff9a5f0e72c3"><div class="ttname"><a href="classmmath_1_1_r_t.html#a5a7b9d089c28e78bac1eff9a5f0e72c3">mmath::RT::inverse</a></div><div class="ttdeci">RT inverse()</div><div class="ttdoc">Return the inverse of the RT.</div></div>
 <div class="ttc" id="aclassmmath_1_1_r_t_html_ab693d3a3505013518f0437d60c5f86b6"><div class="ttname"><a href="classmmath_1_1_r_t.html#ab693d3a3505013518f0437d60c5f86b6">mmath::RT::to_c_str</a></div><div class="ttdeci">char * to_c_str() const</div><div class="ttdoc">Return the RT info for print/std::out.</div></div>

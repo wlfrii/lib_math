@@ -1,7 +1,5 @@
 var math__continuum__rt_8h =
 [
-    [ "calcForwardKinematics", "math__continuum__rt_8h.html#a0481e109a2fb3b88a83ac0bc98d50978", null ],
-    [ "calcForwardKinematics", "math__continuum__rt_8h.html#a602ea6adfcdcceb26fba84872112fb71", null ],
     [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a456e6ab7141b14e02a766d56efc8199d", null ],
     [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a30ad5a739bb90cea2172f4b664b519fc", null ],
     [ "calcSingleSegmentRT", "math__continuum__rt_8h.html#a914010a936093e9cda1974fa17039d46", null ],
