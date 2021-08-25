@@ -3,7 +3,6 @@ project(lib_math_test)
 
 set(CMAKE_CXX_STANDARD 14)
 
-find_package(Catch2 REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 set(CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../buildtarget/)
@@ -12,17 +11,19 @@ find_package(lib_math REQUIRED)
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_SRC)
 add_executable(${PROJECT_NAME}
-    main.cpp
+    # main.cpp
     ${SRC_SRC}
 )
 
+set(CATCH_INCLUDE_DIR /usr/local/Cellar/catch2/2.13.7/include/)
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/src
+        $<BUILD_INTERFACE:${CATCH_INCLUDE_DIR}>
         $<BUILD_INTERFACE:${EIGEN3_INCLUDE_DIRS}>
+    PRIVATE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
 )
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
     ${lib_math_LIBRARIES}
-    ${CATCH_LIBRARIES}
 )

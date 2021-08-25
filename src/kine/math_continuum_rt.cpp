@@ -1,10 +1,9 @@
 #include "../../export/kine/math_continuum_rt.h"
 #include "../../export/math_rotation.h"
+#include "../../export/math_angle_radian.h"
 
 namespace mmath{
 namespace continuum{
-
-extern const double PI;
 
 /* Calulate RT of a single continuum segment */
 void calcSingleSegmentRT(float L, float theta, float delta, RT& rt)

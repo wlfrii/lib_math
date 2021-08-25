@@ -89,6 +89,7 @@ std::vector<T>& linespace(double start, double end, int num, std::vector<T> &out
 {
 	if (!std::is_arithmetic<T>::value)
 		std::abort();
+	output.clear();
 
 	if (num == 1)
 	{
@@ -103,8 +104,9 @@ std::vector<T>& linespace(double start, double end, int num, std::vector<T> &out
 	}
 
 	float step = static_cast<T>(end - start) / static_cast<T>(num - 1);
-	for (int i = 0; i < num; ++i)
+	for (int i = 0; i < num-1; ++i)
 		output.push_back(static_cast<T>(start + i * step));
+	output.push_back(static_cast<T>(end));
 
 	return output;
 }
@@ -125,7 +127,8 @@ std::vector<T>& linespace(double start, double gap, double end, std::vector<T> &
 	if (!std::is_arithmetic<T>::value)
 		std::abort();
 
-	while(start < end){
+	output.clear();
+	while(abs(start - end) > 1e-7){
 		output.push_back(static_cast<T>(start));
 		start += gap;
 	}

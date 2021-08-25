@@ -27,7 +27,8 @@
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
 #define LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
-#include <stdint.h>
+#include <cstdint>
+#include <cstdio>
 
 namespace mmath{
 namespace continuum{
@@ -65,6 +66,14 @@ public:
 	void clear()
 	{
 		*this = ConfigSpc();
+	}
+
+	char* c_str() const
+	{
+		static char info[64];
+		sprintf(info, "theta:%f,delta:%f,length:%f,is_bend:%d",
+			theta, delta, length, is_bend);
+		return info;
 	}
 
 	float theta;
