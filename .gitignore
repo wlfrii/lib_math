@@ -3,8 +3,8 @@
 # Ignore the zip files
 *.zip
 
-# Ignore the qt.pro.user file
-*.pro.user
+# Ignore the .user file
+*.user
 
 # Ignore the vs.pdb
 *.pdb
