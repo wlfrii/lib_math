@@ -77,40 +77,62 @@ Eigen::Matrix3f skewSymmetric(Eigen::RowVector3f &vec);
 /**
  * @brief Return a vector contain 'num' numeral between 'start' and 'end'.
  * 
- * @tparam T1 
- * @tparam T2 
- * @tparam T3 
- * @param start 	The start value.
- * @param end 		The end value.
+ * @tparam T 
+ * @param start  	The start value.
+ * @param end  		The end value.
  * @param num 		The number of values in the range [start, end].
  * @param output 	The output values, start <= values <= end.
- * @return std::vector<T3>& 
+ * @return std::vector<T>& 
  */
-template<typename T1, typename T2, typename T3>
-std::vector<T3>& linespace(const T1 start, const T2 end, const int num, std::vector<T3> &output)
+template<typename T = double>
+std::vector<T>& linespace(double start, double end, int num, std::vector<T> &output)
 {
-	if (!std::is_arithmetic<T1>::value || !std::is_arithmetic<T2>::value)
+	if (!std::is_arithmetic<T>::value)
 		std::abort();
 
 	if (num == 1)
 	{
-		output.push_back(static_cast<T3>(start));
+		output.push_back(static_cast<T>(start));
 		return output;
 	}
 	else if (num == 2)
 	{
-		output.push_back(static_cast<T3>(start));
-		output.push_back(static_cast<T3>(end));
+		output.push_back(static_cast<T>(start));
+		output.push_back(static_cast<T>(end));
 		return output;
 	}
 
-	float step = (static_cast<T3>(end) - static_cast<T3>(start)) / static_cast<T3>(num - 1);
+	float step = static_cast<T>(end - start) / static_cast<T>(num - 1);
 	for (int i = 0; i < num; ++i)
-		output.push_back(static_cast<T3>(start + i * step));
+		output.push_back(static_cast<T>(start + i * step));
 
 	return output;
 }
 
+/**
+ * @brief Return a vector that the difference between each adjacent values is 'gap'
+ * 
+ * @tparam T 
+ * @param start   	The start value.
+ * @param gap  		The gap between adjacent values.
+ * @param end  		The end value.
+ * @param output 	The output values, start : gap : end.
+ * @return std::vector<T>& 
+ */
+template<typename T = double>
+std::vector<T>& linespace(double start, double gap, double end, std::vector<T> &output)
+{
+	if (!std::is_arithmetic<T>::value)
+		std::abort();
+
+	while(start < end){
+		output.push_back(static_cast<T>(start));
+		start += gap;
+	}
+	output.push_back(static_cast<T>(end));
+	
+	return output;
+}
 
 } // mmath
 #endif // LIB_MATH_UTILITY_H_LF
