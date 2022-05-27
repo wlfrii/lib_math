@@ -92,7 +92,7 @@ install(EXPORT ${PROJECT_NAME}-targets
 # --------------------------------------------------------------------
 #                         Creating Packages
 # --------------------------------------------------------------------
-# Create a library that can be found be find_package()
+# Create a library that can be found by find_package()
 # i.e., creat a ConfigVersion.cmake file
 # Install the Config, ConfigVersion and Custom find moduls
 include(CMakePackageConfigHelpers)
