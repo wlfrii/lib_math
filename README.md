@@ -56,4 +56,4 @@ Note, all the interfaces are defined in `mmath{}` namespace.
 
 ## Interfaces Manual
 
-Download this repository and see the interfaces manual by opening `./doc/lib_math_doc.html`.
+Download this repository and see the interfaces manual by opening `./doc/lib_math_doc.html` by your brouwser.
