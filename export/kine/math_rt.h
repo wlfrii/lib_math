@@ -7,9 +7,9 @@
  * it to construct your own project. It is wellcome to use this library
  * in your scientific research work.
  * 
- * @file 		math_rt.h 
+ * @file 		pose.h 
  * 
- * @brief 		Define a description for 3D transformation.
+ * @brief 		Define a description for 3D rigid transformation.
  * 
  * @author		Longfei Wang
  * 
@@ -23,6 +23,8 @@
  * 
  * --------------------------------------------------------------------
  * Change History:                
+ * 
+ * 2022/06/06 Rename the file and refactor the codes
  * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_RT_H_LF

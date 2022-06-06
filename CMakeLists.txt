@@ -6,12 +6,15 @@ project(lib_math
     LANGUAGES CXX)
 message(STATUS "Project: ${PROJECT_NAME}")
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 # Set the install path and prefix
 set(MODULE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 message(STATUS "Module root: ${MODULE_ROOT}")
-set(REPO_ROOT ${MODULE_ROOT}/../../)
+set(REPO_ROOT ${MODULE_ROOT}/../)
 message(STATUS "Repo root: ${REPO_ROOT}")
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX 
@@ -19,6 +22,7 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     )
 endif()
 message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
+
 
 # make cache variables for install destinations
 include(GNUInstallDirs)

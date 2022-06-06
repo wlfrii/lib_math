@@ -7,7 +7,7 @@
  * it to construct your own project. It is wellcome to use this library
  * in your scientific research work.
  * 
- * @file 		math_rotation.h 
+ * @file 		rotation.h 
  * 
  * @brief 		Design some interfaces for calculating rotation matrix.
  * 
@@ -24,7 +24,8 @@
  * --------------------------------------------------------------------
  * Change History:                        
  * 
- * 2021.7.29 Complete the doxygen comments.
+ * 2021/07/29 Complete the doxygen comments.
+ * 2022/06/06  Complete the doxygen comments.
  * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_ROTATION_H_LF
@@ -32,18 +33,19 @@
 #include <Eigen/Dense>
 #include <type_traits>
 #include <cmath>
+#include "../angle.h"
 
 namespace mmath{
 
 /**
  * @brief Return a rotation matrix with rotated by x-axis by radian.
  * 
- * @tparam T 
- * @tparam T1 
+ * @tparam T     Type of return matrix.
+ * @tparam T1    Type of input value. 
  * @param radian The angle value described by radian.
- * @return Eigen::Matrix<T, 3, 3> 
+ * @return  A rotation matrix.
  */
-template<typename T = float, typename T1 = double>
+template<typename T = double, typename T1 = double>
 Eigen::Matrix<T, 3, 3> rotByX(const T1 radian)
 {
 	if (!std::is_arithmetic<T1>::value)
@@ -56,15 +58,31 @@ Eigen::Matrix<T, 3, 3> rotByX(const T1 radian)
 	return rot;
 }
 
+
+/**
+ * @brief Return a rotation matrix with rotated by x-axis by radian.
+ * 
+ * @tparam T     Type of return matrix.
+ * @tparam T1    Type of input value. 
+ * @param radian The angle value described by degree.
+ * @return  A rotation matrix.
+ */
+template<typename T = double, typename T1 = double>
+Eigen::Matrix<T, 3, 3> rotByXd(const T1 degree)
+{
+	return rotByX<T, T1>(deg2rad(degree));
+}
+
+
 /**
  * @brief Return a rotation matrix with rotated by y-axis by radian.
  * 
- * @tparam T 
- * @tparam T1 
+ * @tparam T     Type of return matrix.
+ * @tparam T1    Type of input value. 
  * @param radian The angle value described by radian.
- * @return Eigen::Matrix<T, 3, 3> 
+ * @return  A rotation matrix.
  */
-template<typename T = float, typename T1 = double>
+template<typename T = double, typename T1 = double>
 Eigen::Matrix<T, 3, 3> rotByY(const T1 radian)
 {
 	if (!std::is_arithmetic<T1>::value)
@@ -77,15 +95,31 @@ Eigen::Matrix<T, 3, 3> rotByY(const T1 radian)
 	return rot;
 }
 
+
+/**
+ * @brief Return a rotation matrix with rotated by y-axis by radian.
+ * 
+ * @tparam T     Type of return matrix.
+ * @tparam T1    Type of input value. 
+ * @param degree The angle value described by degree.
+ * @return  A rotation matrix.
+ */
+template<typename T = double, typename T1 = double>
+Eigen::Matrix<T, 3, 3> rotByYd(const T1 degree)
+{
+	return rotByY<T, T1>(deg2rad(degree));
+}
+
+
 /**
  * @brief Return a rotation matrix with rotated by z-axis by radian.
  * 
- * @tparam T 
- * @tparam T1 
+ * @tparam T     Type of return matrix.
+ * @tparam T1    Type of input value. 
  * @param radian The angle value described by radian.
- * @return Eigen::Matrix<T, 3, 3> 
+ * @return  A rotation matrix.
  */
-template<typename T = float, typename T1 = double>
+template<typename T = double, typename T1 = double>
 Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian)
 {
 	if (!std::is_arithmetic<T1>::value)
@@ -98,14 +132,48 @@ Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian)
 	return rot;
 }
 
-/**
- * @brief Create a Rotation Matrix By Vector-Z.
- * 
- * @param z The direction vector that represent the z-axis.
- * @return Eigen::Matrix3f 
- */
-Eigen::Matrix3f createRotMatByVecZ(Eigen::Vector3f z);
 
+/**
+ * @brief Return a rotation matrix with rotated by z-axis by radian.
+ * 
+ * @tparam T     Type of return matrix.
+ * @tparam T1    Type of input value. 
+ * @param degree The angle value described by degree.
+ * @return  A rotation matrix.
+ */
+template<typename T = double, typename T1 = double>
+Eigen::Matrix<T, 3, 3> rotByZd(const T1 degree)
+{
+	return rotByZ<T, T1>(deg2rad(degree));
+}
+
+
+/**
+ * @brief Create a Rotation Matrix By Vector-Z
+ * 
+ * @tparam T     Type of return matrix.
+ * @tparam T1    Type of input value. 
+ * @param vec_z The vector denotes z-axis
+ * @return  A rotation matrix.
+ */
+template<typename T = double, typename T1 = double>
+Eigen::Matrix<T, 3, 3> createRotMatByVecZ(Eigen::Vector<T1, 3> vec_z)
+{
+	Eigen::Vector<T, 3> z(vec_z[0], vec_z[1], vec_z[2]);
+	z /= z.norm();
+
+	Eigen::Vector<T, 3> x(1, 0, 0);
+	auto y = z.cross(x);
+	y /= y.norm();
+	x = y.cross(z);
+	x /= x.norm();
+
+	Eigen::Matrix<T, 3, 3> mat;
+	mat.col(0) = x;
+	mat.col(1) = y;
+	mat.col(2) = z;
+	return mat;
+}
 
 } // mmath
 #endif // LIB_MATH_ROTATION_H_LF
