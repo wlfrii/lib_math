@@ -61,15 +61,6 @@ void  calcSingleSegmentPose(Tp L, Tp theta, Tp delta, Pose<Tp>& pose)
 
 
 /**
- * @brief Explicit interface
- */
-inline void calcSingleSegmentPosef(float L, float theta, float delta, Pose<float>& pose)
-{
-    calcSingleSegmentPose<float>(L, theta, delta, pose);
-}
-
-
-/**
  * @brief Override based on 'void calcSingleSegmentPose()'
  */
 template <typename Tp = double>
@@ -78,15 +69,6 @@ Pose<Tp> calcSingleSegmentPose(Tp L, Tp theta, Tp delta)
     Pose<Tp> pose;
     calcSingleSegmentPose<Tp>(L, theta, delta, pose);
     return pose;
-}
-
-
-/**
- * @brief Explicit interface
- */
-inline Pose<float> calcSingleSegmentPosef(float L, float theta, float delta)
-{
-    return calcSingleSegmentPose<float>(L, theta, delta);
 }
 
 
@@ -107,15 +89,6 @@ void calcSingleSegmentPose(const ConfigSpc<Tp>& q, Pose<Tp>& pose)
 
 
 /**
- * @brief Explicit interface
- */
-inline void calcSingleSegmentPosef(const ConfigSpc<float>& q, Pose<float>& pose)
-{
-    calcSingleSegmentPose<float>(q, pose);
-}
-
-
-/**
  * @brief Override based on 'void calcSingleSegmentPose()'
  */
 template <typename Tp = double>
@@ -130,10 +103,19 @@ Pose<Tp> calcSingleSegmentPose(const ConfigSpc<Tp>& q)
 /**
  * @brief Explicit interface
  */
-inline Pose<float> calcSingleSegmentPosef(const ConfigSpc<float>& q)
-{
-    return calcSingleSegmentPose<float>(q);
-}
+void calcSingleSegmentPosef(float L, float theta, float delta, Pose<float>& pose);
+/**
+ * @brief Explicit interface
+ */
+Pose<float> calcSingleSegmentPosef(float L, float theta, float delta);
+/**
+ * @brief Explicit interface
+ */
+void calcSingleSegmentPosef(const ConfigSpc<float>& q, Pose<float>& pose);
+/**
+ * @brief Explicit interface
+ */
+Pose<float> calcSingleSegmentPosef(const ConfigSpc<float>& q);
 
 
 /** 
@@ -155,15 +137,6 @@ void calcSingleWithRigidSegmentPose(Tp L, Tp theta, Tp delta, Tp Lr, Pose<Tp>& p
 
 
 /**
- * @brief Explicit interface
- */
-inline void calcSingleWithRigidSegmentPosef(float L, float theta, float delta, float Lr, Pose<float>& pose)
-{
-    calcSingleWithRigidSegmentPose<float>(L, Lr, theta, delta, pose);
-}
-
-
-/**
  * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
  */
 template <typename Tp = double>
@@ -176,15 +149,6 @@ Pose<Tp> calcSingleWithRigidSegmentPose(Tp L, Tp theta, Tp delta, Tp Lr)
 
 
 /**
- * @brief Explicit interface
- */
-inline Pose<float> calcSingleWithRigidSegmentPosef(float L, float theta, float delta, float Lr)
-{
-    return calcSingleWithRigidSegmentPose<float>(L, theta, delta, Lr);
-}
-
-
-/**
  * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
  */
 template <typename Tp = double>
@@ -192,15 +156,6 @@ void calcSingleWithRigidSegmentPose(const ConfigSpc<Tp>& q, Tp Lr, Pose<Tp>& pos
 {
     calcSingleSegmentPose<Tp>(q, pose);
     pose.t += Lr * pose.R.rightCols(0);
-}
-
-
-/**
- * @brief Explicit interface
- */
-inline void calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr, Pose<float>& pose)
-{
-    calcSingleWithRigidSegmentPose<float>(q, Lr, pose);
 }
 
 
@@ -219,10 +174,20 @@ Pose<Tp> calcSingleWithRigidSegmentPose(const ConfigSpc<Tp>& q, Tp Lr)
 /**
  * @brief Explicit interface
  */
-inline Pose<float> calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr)
-{
-    return calcSingleWithRigidSegmentPose<float>(q, Lr);
-}
+void calcSingleWithRigidSegmentPosef(float L, float theta, float delta, float Lr, Pose<float>& pose);
+/**
+ * @brief Explicit interface
+ */
+Pose<float> calcSingleWithRigidSegmentPosef(float L, float theta, float delta, float Lr);
+/**
+ * @brief Explicit interface
+ */
+void calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr, Pose<float>& pose)
+/**
+ * @brief Explicit interface
+ */
+Pose<float> calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr);
+
 
 }} // mmath::continuum
 #endif // LIB_MATH_CONTINUUM_RT_H_LF
