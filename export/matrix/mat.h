@@ -22,8 +22,8 @@
  * --------------------------------------------------------------------
  * Change History:                        
  * 
- * 2021-07-29 Complete the doxygen comments.
- * 2022-06-06 Refactor code.
+ * 2021/07/29 Complete the doxygen comments.
+ * 2022/06/06 Templated the functions.
  * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_MAT_H_LF

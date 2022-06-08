@@ -13,8 +13,6 @@
  * 
  * @author		Longfei Wang
  * 
- * @version		1.0.0
- * 
  * @date		2019/12/14
  * 
  * @license		
@@ -24,7 +22,7 @@
  * --------------------------------------------------------------------
  * Change History:                        
  * 
- * 2021.7.29 Complete the doxygen comments.
+ * 2021/07/29 Complete the doxygen comments.
  * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_LINSPACE_H_LF

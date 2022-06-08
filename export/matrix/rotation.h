@@ -13,8 +13,6 @@
  * 
  * @author		Longfei Wang
  * 
- * @version		1.0.0
- * 
  * @date		2019/12/14
  * 
  * @license		
@@ -33,7 +31,7 @@
 #include <Eigen/Dense>
 #include <type_traits>
 #include <cmath>
-#include "../angle.h"
+#include "../util/angle.h"
 
 namespace mmath{
 

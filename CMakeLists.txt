@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(lib_math 
-    VERSION 1.1.0 
+    VERSION 1.2.0
     DESCRIPTION "A extended library for matrix mathematics"
     LANGUAGES CXX)
 message(STATUS "Project: ${PROJECT_NAME}")
@@ -22,7 +22,6 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     )
 endif()
 message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
-
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -85,6 +84,14 @@ install(FILES ${EXPORT_H}
 file(GLOB EXPORT_H export/kine/*.h)
 install(FILES ${EXPORT_H}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/kine
+)
+file(GLOB EXPORT_H export/matrix/*.h)
+install(FILES ${EXPORT_H}
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/matrix
+)
+file(GLOB EXPORT_H export/util/*.h)
+install(FILES ${EXPORT_H}
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/util
 )
 # 3. Explicitly install the ${PROJECT_NAME}Targets export details.
 install(EXPORT ${PROJECT_NAME}-targets

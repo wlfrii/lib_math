@@ -13,7 +13,7 @@
  * 
  * @author		Longfei Wang
  * 
- * @version		1.0.0
+ * @version		1.2.0
  * 
  * @date		2020/07/04
  * 
@@ -24,15 +24,36 @@
  * --------------------------------------------------------------------
  * Change History:                        
  * 
+ * #v1.1 Complete kinematics related utilities.
+ * #v1.2 Templated most of the interfaces.
+ * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_LIB_LF
 #define LIB_MATH_LIB_LF
 
-#include "math_angle_radian.h"
-#include "math_utility.h"
-#include "math_rotation.h"
-#include "kine/math_rt.h"
-#include "kine/math_continuum_configspc.h"
-#include "kine/math_continuum_rt.h"
+// Tiny utilities
+#include "util/angle.h"
+#include "util/linspace.h"
+
+// Matrix related utilities
+#include "matrix/mat.h"
+#include "matrix/rotation.h"
+#include "matrix/skew.h"
+
+// Kinematics related utilities
+#include "kine/pose.h"
+#include "kine/continuum_configspc.h"
+#include "kine/continuum_pose.h"
+
+// Some explicit template class
+namespace mmath {
+
+using Posef = Pose<float>;
+
+namespace continuum {
+
+using ConfigSpcf = ConfigSpc<float>;
+
+}}
 
 #endif // LIB_MATH_LIB_LF
