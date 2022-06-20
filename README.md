@@ -43,7 +43,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 )
 ```
 
-The library could then be used by only including the following header file in your source file. Note, all the interfaces are defined in `mmath{}` namespace. A tiny examples is given as follows.
+The library could then be used by only including the following header file in your source file. Note, all the interfaces are defined in `mmath{}` namespace. A tiny example is given as follows.
 
 ```c++
 #include <lib_math/lib_math>
