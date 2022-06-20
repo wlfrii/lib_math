@@ -12,14 +12,17 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Set the install path and prefix
-set(MODULE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
-message(STATUS "Module root: ${MODULE_ROOT}")
-set(REPO_ROOT ${MODULE_ROOT}/../)
-message(STATUS "Repo root: ${REPO_ROOT}")
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    set(CMAKE_INSTALL_PREFIX 
-        ${REPO_ROOT}/buildtarget/ CACHE PATH "repo root" FORCE
-    )
+option(SPECIFY_INSTALL_PATH "Specify the install path" OFF)
+if(SPECIFY_INSTALL_PATH)
+    set(MODULE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
+    message(STATUS "Module root: ${MODULE_ROOT}")
+    set(REPO_ROOT ${MODULE_ROOT}/../)
+    message(STATUS "Repo root: ${REPO_ROOT}")
+    if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+        set(CMAKE_INSTALL_PREFIX
+            ${REPO_ROOT}/buildtarget/ CACHE PATH "repo root" FORCE
+            )
+    endif()
 endif()
 message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 
@@ -92,6 +95,10 @@ install(FILES ${EXPORT_H}
 file(GLOB EXPORT_H export/util/*.h)
 install(FILES ${EXPORT_H}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/util
+)
+file(GLOB EXPORT_H export/curve/*.h)
+install(FILES ${EXPORT_H}
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/curve
 )
 # 3. Explicitly install the ${PROJECT_NAME}Targets export details.
 install(EXPORT ${PROJECT_NAME}-targets
