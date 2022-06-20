@@ -57,9 +57,9 @@ struct Line
  * @return Tp1  Distance between the given 2D point and the given line
  */
 template<typename Tp1 = double, typename Tp2, typename Tp3>
-Tp1 disFromPt2Line(Tp2 x, Tp2 y, const Line<Tp3>& kb)
+Tp1 disFromPt2Line(Tp2 x, Tp2 y, const Line<Tp3>& l)
 {
-    return static_cast<Tp1>((kb[0] * x - y + kb[1]) / sqrt(kb[0]*kb[0] + 1));
+    return static_cast<Tp1>((l.k * x - y + l.b) / sqrt(l.k*l.k + 1));
 }
 
 
@@ -74,9 +74,9 @@ Tp1 disFromPt2Line(Tp2 x, Tp2 y, const Line<Tp3>& kb)
  * @return Tp1
  */
 template<typename Tp1 = double, typename Tp2, typename Tp3>
-Tp1 disFromPt2Line(const Eigen::Vector<Tp2, 2> &pts, const Line<Tp3>& kb)
+Tp1 disFromPt2Line(const Eigen::Vector<Tp2, 2> &pts, const Line<Tp3>& l)
 {
-    return static_cast<Tp1>((kb[0] * pts[0] - pts[1] + kb[1]) / sqrt(kb[0]*kb[0] + 1));
+    return static_cast<Tp1>((l.k * pts[0] - pts[1] + l.b) / sqrt(l.k*l.k + 1));
 }
 
 

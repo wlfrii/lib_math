@@ -48,12 +48,12 @@ struct GaussianCurve
     Tp mu;
     Tp sigma;
 
-    template<typename Tp1, typename Tp2>
+    template<typename Tp1 = double, typename Tp2>
     Tp1 valueAt(Tp2 x){
         return a * exp(-0.5*pow((x - mu) / sigma, 2));
     }
 
-    template<typename Tp1, typename Tp2>
+    template<typename Tp1 = double, typename Tp2>
     Eigen::Vector<Tp1, 3> JocabianAt(Tp2 x){
         Tp1 f = this->valueAt(x);
         Eigen::Vector<Tp1, 3> J;
@@ -209,7 +209,7 @@ template <typename Tp = double, typename Tp1>
 GaussianCurve<Tp> fitGuassianCurve(const std::vector<Eigen::Vector<Tp1, 2>>& pts,
                                    uint16_t max_iterations = 100)
 {
-    std::vector<Tp1> xs(pts.sie()), ys(pts.size());
+    std::vector<Tp1> xs(pts.size()), ys(pts.size());
     for(size_t i = 0; i < pts.size(); i++){
         xs[i] = pts[i][0];
         ys[i] = pts[i][1];
