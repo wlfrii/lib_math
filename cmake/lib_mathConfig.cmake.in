@@ -1,6 +1,6 @@
 set(BINARY lib_math)
 
-get_filename_component(${BINARY}_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(${BINARY}_CONFIG_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 
 include(CMakeFindDependencyMacro)
 
@@ -15,8 +15,9 @@ find_dependency(Eigen3 REQUIRED)
 
 # Add the targets file
 if(NOT TARGET ${BINARY})
-    include("${${BINARY}_CMAKE_DIR}/${BINARY}Targets.cmake")
+    include("${${BINARY}_CONFIG_DIR}/${BINARY}Targets.cmake")
 endif()
 
 
 set(${BINARY}_LIBRARIES ${BINARY})
+set(${BINARY}_INCLUDE_DIRS ${${BINARY}_CONFIG_DIR}/../../../include/)
