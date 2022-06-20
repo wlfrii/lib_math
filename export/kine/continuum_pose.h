@@ -182,7 +182,7 @@ Pose<float> calcSingleWithRigidSegmentPosef(float L, float theta, float delta, f
 /**
  * @brief Explicit interface
  */
-void calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr, Pose<float>& pose)
+void calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr, Pose<float>& pose);
 /**
  * @brief Explicit interface
  */

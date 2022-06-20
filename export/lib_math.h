@@ -45,10 +45,18 @@
 #include "kine/continuum_configspc.h"
 #include "kine/continuum_pose.h"
 
+// Curve related utilities
+#include "curve/line_2d.h"
+#include "curve/gauss_curve_2d.h"
+
+
 // Some explicit template class
 namespace mmath {
 
 using Posef = Pose<float>;
+
+using Linef = Line<float>;
+using GaussianCurvef = GaussianCurve<float>;
 
 namespace continuum {
 
