@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rt_22',['RT',['../classmmath_1_1_r_t.html',1,'mmath']]]
+  ['gaussiancurve_39',['GaussianCurve',['../structmmath_1_1_gaussian_curve.html',1,'mmath']]]
 ];

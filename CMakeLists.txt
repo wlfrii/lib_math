@@ -12,7 +12,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Set the install path and prefix
-option(SPECIFY_INSTALL_PATH "Specify the install path" OFF)
+option(SPECIFY_INSTALL_PATH "Specify the install path" ON)
 if(SPECIFY_INSTALL_PATH)
     set(MODULE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
     message(STATUS "Module root: ${MODULE_ROOT}")

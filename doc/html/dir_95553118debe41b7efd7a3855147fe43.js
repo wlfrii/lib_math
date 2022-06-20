@@ -1,6 +1,10 @@
 var dir_95553118debe41b7efd7a3855147fe43 =
 [
-    [ "math_continuum_configspc.h", "math__continuum__configspc_8h_source.html", null ],
-    [ "math_continuum_rt.h", "math__continuum__rt_8h.html", "math__continuum__rt_8h" ],
-    [ "math_rt.h", "math__rt_8h.html", "math__rt_8h" ]
+    [ "continuum_configspc.h", "continuum__configspc_8h.html", [
+      [ "ConfigSpc", "classmmath_1_1continuum_1_1_config_spc.html", "classmmath_1_1continuum_1_1_config_spc" ]
+    ] ],
+    [ "continuum_pose.h", "continuum__pose_8h.html", "continuum__pose_8h" ],
+    [ "pose.h", "pose_8h.html", [
+      [ "Pose", "classmmath_1_1_pose.html", "classmmath_1_1_pose" ]
+    ] ]
 ];

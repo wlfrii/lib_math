@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['math_5fangle_5fradian_2eh_9',['math_angle_radian.h',['../math__angle__radian_8h.html',1,'']]],
-  ['math_5fcontinuum_5frt_2eh_10',['math_continuum_rt.h',['../math__continuum__rt_8h.html',1,'']]],
-  ['math_5frotation_2eh_11',['math_rotation.h',['../math__rotation_8h.html',1,'']]],
-  ['math_5frt_2eh_12',['math_rt.h',['../math__rt_8h.html',1,'']]],
-  ['math_5futility_2eh_13',['math_utility.h',['../math__utility_8h.html',1,'']]]
+  ['lib_5fmath_2eh_19',['lib_math.h',['../lib__math_8h.html',1,'']]],
+  ['line_20',['Line',['../structmmath_1_1_line.html',1,'mmath']]],
+  ['line_5f2d_2eh_21',['line_2d.h',['../line__2d_8h.html',1,'']]],
+  ['linspace_22',['linspace',['../linspace_8h.html#a689da5a0a3b021b49b4ef68cefe7fe91',1,'mmath::linspace(double start, double end, int num, std::vector&lt; T &gt; &amp;output)'],['../linspace_8h.html#a4bbb093476b8da2e2f69dadffa534832',1,'mmath::linspace(double start, double gap, double end, std::vector&lt; T &gt; &amp;output)']]],
+  ['linspace_2eh_23',['linspace.h',['../linspace_8h.html',1,'']]]
 ];

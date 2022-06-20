@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['skewsymmetric_19',['skewSymmetric',['../math__utility_8h.html#a911f2f54fe4224db881c6c2db4c62186',1,'mmath::skewSymmetric(Eigen::Vector3f &amp;vec)'],['../math__utility_8h.html#a1f74a312be5e894b31a8020b40e11d52',1,'mmath::skewSymmetric(Eigen::RowVector3f &amp;vec)']]]
+  ['q_26',['q',['../classmmath_1_1_pose.html#a30d6399770bc94c5709577a47f2c946c',1,'mmath::Pose']]]
 ];

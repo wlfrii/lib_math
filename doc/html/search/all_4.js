@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['lib_5fmath_2eh_7',['lib_math.h',['../lib__math_8h.html',1,'']]],
-  ['linespace_8',['linespace',['../math__utility_8h.html#a0437af482086b268eb00ab54bbf6c7a9',1,'mmath']]]
+  ['increase_16',['increase',['../classmmath_1_1_pose.html#a88c83f5729213502461c902f79562c06',1,'mmath::Pose']]],
+  ['info_17',['info',['../classmmath_1_1_pose.html#a56ccb72793396f87badbaf67457e8fc5',1,'mmath::Pose']]],
+  ['inverse_18',['inverse',['../classmmath_1_1_pose.html#acce9f0120b24b76b6383c3a9803f39a5',1,'mmath::Pose']]]
 ];
