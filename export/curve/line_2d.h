@@ -40,6 +40,12 @@ template <typename Tp = double>
 struct Line
 {
     Line(Tp k = 0, Tp b = 0) : k(k), b(b) {}
+
+    template<typename Tp1 = double, typename Tp2>
+    Tp1 distanceTo(Eigen::Vector<Tp2, 2>){
+        return static_cast<Tp1>((k * x - y + b) / sqrt(k*k + 1));
+    }
+
     Tp k;
     Tp b;
 };
