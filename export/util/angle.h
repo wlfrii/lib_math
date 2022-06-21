@@ -53,6 +53,20 @@ inline T1 deg2rad(const T2 degree)
 
 
 /**
+ * @brief Convert the angle with unit of degree to angle with unit of radian.
+ * 
+ * @tparam T1 
+ * @param degree The angle value described by degree.
+ * @return float
+ */
+template<typename T1 = double>
+inline float deg2radf(const T1 degree)
+{
+	return deg2rad<float, T1>(degree);
+}
+
+
+/**
  * @brief Convert the angle with unit of radian to angle with unit of degree.
  * 
  * @tparam T1 
@@ -68,6 +82,21 @@ inline T1 rad2deg(const T2 radian)
 
 	return static_cast<T1>(radian / PI * 180.0);
 }
+
+
+/**
+ * @brief Convert the angle with unit of radian to angle with unit of degree.
+ * 
+ * @tparam T1 
+ * @param radian The angle value described by radian.
+ * @return float
+ */
+template<typename T1 = double>
+inline float rad2degf(const T1 degree)
+{
+	return rad2deg<float, T1>(degree);
+}
+
 
 } // mmath
 #endif // LIB_MATH_ANGLE_RADIAN_H_LF
