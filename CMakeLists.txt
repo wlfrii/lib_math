@@ -32,9 +32,9 @@ include(GNUInstallDirs)
 # --------------------------------------------------------------------
 #                   Create target and set properties
 # --------------------------------------------------------------------
-file(GLOB_RECURSE SRCS src/*.cpp)
-add_library(${PROJECT_NAME} STATIC
-    ${SRCS}
+#file(GLOB_RECURSE SRCS src/*.cpp)
+add_library(${PROJECT_NAME} INTERFACE
+#    ${SRCS}
 )
 
 # Specifies include directories to use when compiling a given target.  
@@ -52,13 +52,13 @@ endif(${Eigen3_FOUND})
 # from an installed location. If we don't do this, when CMake creates 
 # the export information it will export a path that is specific to the 
 # current build directory and will not be valid for other projects.
-target_include_directories(${PROJECT_NAME}
-    PUBLIC
-        $<BUILD_INTERFACE:${EIGEN3_INCLUDE_DIRS}>
+target_include_directories(${PROJECT_NAME} INTERFACE
+#    PUBLIC
+#        $<BUILD_INTERFACE:${EIGEN3_INCLUDE_DIRS}>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/export>
-        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-    PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src
+#        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+#    PRIVATE
+#        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 # --------------------------------------------------------------------
