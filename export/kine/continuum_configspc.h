@@ -27,6 +27,7 @@
 #define LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
 #include <cstdint>
 #include <cstdio>
+#include "kine_precision.h"
 
 namespace mmath{
 namespace continuum{
@@ -43,32 +44,32 @@ namespace continuum{
  *              bending segment. If rigid segment is set, the kinematics
  *              of this segment will only consider a rotation alone z.
  */ 
-template <typename Tp = double>
 class ConfigSpc
 {
 public:
-    ConfigSpc(Tp theta = 0, Tp delta = 0, Tp len = 0, bool bend = false)
-		: theta(theta), delta(delta), length(len), is_bend(bend)
-	{}
+    ConfigSpc(kfloat theta = 0, kfloat delta = 0, kfloat len = 0, bool bend = false)
+        : theta(theta), delta(delta), length(len), is_bend(bend)
+    {}
 	
-	void clear()
-	{
-        *this = ConfigSpc<Tp>();
-	}
+    inline void clear()
+    {
+        *this = ConfigSpc();
+    }
 
-	char* c_str() const
-	{
-		static char info[64];
-		sprintf(info, "theta:%f,delta:%f,length:%f,is_bend:%d",
-			theta, delta, length, is_bend);
-		return info;
-	}
+    inline char *c_str() const
+    {
+        static char info[64];
+        sprintf(info, "theta:%f,delta:%f,length:%f,is_bend:%d",
+                theta, delta, length, is_bend);
+        return info;
+    }
 
-    Tp theta;
-    Tp delta;
-    Tp length;
+    kfloat theta;
+    kfloat delta;
+    kfloat length;
 	bool is_bend;
 };
+
 
 
 }} // mmath::continuum
