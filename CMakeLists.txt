@@ -33,7 +33,7 @@ include(GNUInstallDirs)
 #                   Create target and set properties
 # --------------------------------------------------------------------
 file(GLOB_RECURSE SRCS src/*.cpp)
-add_library(${PROJECT_NAME} STATIC 
+add_library(${PROJECT_NAME} STATIC
     ${SRCS}
 )
 

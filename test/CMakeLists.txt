@@ -13,7 +13,7 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_SRC)
 add_executable(${PROJECT_NAME}
     # main.cpp
     ${SRC_SRC}
-)
+    )
 
 # Use catch2 as the test library
 set(CATCH_INCLUDE_DIR /usr/local/Cellar/catch2/2.13.9/include/)
@@ -21,6 +21,7 @@ target_include_directories(${PROJECT_NAME}
     PUBLIC
         $<BUILD_INTERFACE:${CATCH_INCLUDE_DIR}>
         $<BUILD_INTERFACE:${EIGEN3_INCLUDE_DIRS}>
+        $<BUILD_INTERFACE:${lib_math_INCLUDE_DIRS}>
     PRIVATE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
 )
