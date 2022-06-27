@@ -62,13 +62,13 @@ Eigen::Matrix<T, 3, 3> rotByX(const T1 radian)
  * 
  * @tparam T     Type of return matrix.
  * @tparam T1    Type of input value. 
- * @param radian The angle value described by degree.
+ * @param radian The angle value described by radian.
  * @return  A rotation matrix.
  */
 template<typename T1 = double>
-Eigen::Matrix3f rotByXf(const T1 degree)
+Eigen::Matrix3f rotByXf(const T1 radian)
 {
-	return rotByX<float, T1>(deg2rad(degree));
+    return rotByX<float, T1>(radian);
 }
 
 
@@ -99,13 +99,13 @@ Eigen::Matrix<T, 3, 3> rotByY(const T1 radian)
  * 
  * @tparam T     Type of return matrix.
  * @tparam T1    Type of input value. 
- * @param degree The angle value described by degree.
+ * @param radian The angle value described by radian.
  * @return  A rotation matrix.
  */
 template<typename T1 = double>
-Eigen::Matrix3f rotByYf(const T1 degree)
+Eigen::Matrix3f rotByYf(const T1 radian)
 {
-	return rotByY<float, T1>(deg2rad(degree));
+    return rotByY<float, T1>(radian);
 }
 
 
@@ -135,13 +135,13 @@ Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian)
  * @brief Return a rotation matrix with rotated by z-axis by radian.
  * 
  * @tparam T1    Type of input value. 
- * @param degree The angle value described by degree.
+ * @param radian The angle value described by radian.
  * @return  A rotation matrix.
  */
 template<typename T1 = double>
-Eigen::Matrix3f rotByZf(const T1 degree)
+Eigen::Matrix3f rotByZf(const T1 radian)
 {
-	return rotByZ<float, T1>(deg2rad(degree));
+    return rotByZ<float, T1>(radian);
 }
 
 

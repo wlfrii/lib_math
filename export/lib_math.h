@@ -39,6 +39,7 @@
 #include "matrix/mat.h"
 #include "matrix/rotation.h"
 #include "matrix/skew.h"
+#include "matrix/drotation.h"
 
 // Kinematics related utilities
 #include "kine/pose.h"
