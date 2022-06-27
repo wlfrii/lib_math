@@ -48,7 +48,7 @@ template <typename Tp = double, typename Tp1 = double>
 void  calcSingleSegmentPose(Tp1 L, Tp1 theta, Tp1 delta, Pose<Tp>& pose)
 {
     Eigen::Matrix<Tp, 3, 3> R_t1_2_tb =
-            rotByZ<Tp>(-PI / 2 - delta)*rotByY<Tp>(-PI / 2);
+            rotByZ<Tp>(-PI / 2 + delta)*rotByY<Tp>(-PI / 2);
     pose.R = R_t1_2_tb * rotByZ<Tp>(theta) * R_t1_2_tb.transpose();
     if (abs(theta) < 1e-5) {
         pose.t = { 0, 0, L };
@@ -149,7 +149,8 @@ template <typename Tp = double, typename Tp1 = double>
 void calcSingleWithRigidSegmentPose(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr, Pose<Tp>& pose)
 {
     pose = calcSingleSegmentPose<Tp>(L, theta, delta);
-    pose.t += Lr * pose.R.rightCols(0);
+    Eigen::Vector<Tp, 3> z(pose.R(0,2), pose.R(1,2), pose.R(2,2));
+    pose.t += Lr * z;
 }
 
 
@@ -160,7 +161,7 @@ template <typename Tp = double, typename Tp1 = double>
 Pose<Tp> calcSingleWithRigidSegmentPose(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr)
 {
     Pose<Tp> pose;
-    calcSingleWithRigidSegmentPose<Tp>(L, Lr, theta, delta, pose);
+    calcSingleWithRigidSegmentPose<Tp>(L, theta, delta, Lr, pose);
     return pose;
 }
 
@@ -169,10 +170,11 @@ Pose<Tp> calcSingleWithRigidSegmentPose(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr)
  * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
  */
 template <typename Tp = double, typename Tp1 = double>
-void calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp Lr, Pose<Tp>& pose)
+void calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp1 Lr, Pose<Tp>& pose)
 {
     calcSingleSegmentPose<Tp>(q, pose);
-    pose.t += Lr * pose.R.rightCols(0);
+    Eigen::Vector<Tp, 3> z(pose.R(0,2), pose.R(1,2), pose.R(2,2));
+    pose.t += Lr * z;
 }
 
 
@@ -180,7 +182,7 @@ void calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp Lr, Pose<Tp>& po
  * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
  */
 template <typename Tp = double, typename Tp1 = double>
-Pose<Tp> calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp Lr)
+Pose<Tp> calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp1 Lr)
 {
     Pose<Tp> pose;
     calcSingleWithRigidSegmentPose<Tp>(q, Lr, pose);
@@ -194,7 +196,7 @@ Pose<Tp> calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp Lr)
 template<typename Tp1 = float>
 void calcSingleWithRigidSegmentPosef(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr, Pose<float>& pose)
 {
-    calcSingleWithRigidSegmentPose<float>(L, Lr, theta, delta, pose);
+    calcSingleWithRigidSegmentPose<float>(L, theta, delta, Lr, pose);
 }
 /**
  * @brief Explicit interface
