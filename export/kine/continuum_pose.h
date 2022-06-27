@@ -36,15 +36,16 @@ namespace continuum{
 /** 
  * @brief Calculating the rotation and position of the end frame of single 
  * continuum segment with respect to its base frame.
- * @tparam Tp    The type of inputs, generally float or double.
+ * @tparam Tp    The type of outputs, generally float or double.
+ * @tparam Tp1   The type of inputs, generally float or double.
  * @param L      The length of the segment.
  * @param theta  The bending angle of the segment.
  * @param delta  The bending direction of the segment.
  * @return rt The rotation and position matrix of single continuum segment with
  * respect to its base frame.
  */
-template <typename Tp = double>
-void  calcSingleSegmentPose(Tp L, Tp theta, Tp delta, Pose<Tp>& pose)
+template <typename Tp = double, typename Tp1 = double>
+void  calcSingleSegmentPose(Tp1 L, Tp1 theta, Tp1 delta, Pose<Tp>& pose)
 {
     Eigen::Matrix<Tp, 3, 3> R_t1_2_tb =
             rotByZ<Tp>(-PI / 2 - delta)*rotByY<Tp>(-PI / 2);
@@ -63,8 +64,8 @@ void  calcSingleSegmentPose(Tp L, Tp theta, Tp delta, Pose<Tp>& pose)
 /**
  * @brief Override based on 'void calcSingleSegmentPose()'
  */
-template <typename Tp = double>
-Pose<Tp> calcSingleSegmentPose(Tp L, Tp theta, Tp delta)
+template <typename Tp = double, typename Tp1 = double>
+Pose<Tp> calcSingleSegmentPose(Tp1 L, Tp1 theta, Tp1 delta)
 {
     Pose<Tp> pose;
     calcSingleSegmentPose<Tp>(L, theta, delta, pose);
@@ -75,8 +76,8 @@ Pose<Tp> calcSingleSegmentPose(Tp L, Tp theta, Tp delta)
 /**
  * @brief Override based on 'void calcSingleSegmentPose()'
  */
-template <typename Tp = double>
-void calcSingleSegmentPose(const ConfigSpc<Tp>& q, Pose<Tp>& pose)
+template <typename Tp = double, typename Tp1 = double>
+void calcSingleSegmentPose(const ConfigSpc<Tp1>& q, Pose<Tp>& pose)
 {
     if(q.is_bend){
         calcSingleSegmentPose<Tp>(q.length, q.theta, q.delta, pose);
@@ -91,8 +92,8 @@ void calcSingleSegmentPose(const ConfigSpc<Tp>& q, Pose<Tp>& pose)
 /**
  * @brief Override based on 'void calcSingleSegmentPose()'
  */
-template <typename Tp = double>
-Pose<Tp> calcSingleSegmentPose(const ConfigSpc<Tp>& q)
+template <typename Tp = double, typename Tp1 = double>
+Pose<Tp> calcSingleSegmentPose(const ConfigSpc<Tp1>& q)
 {
     Pose<Tp> pose;
     calcSingleSegmentPose<Tp>(q, pose);
@@ -103,19 +104,35 @@ Pose<Tp> calcSingleSegmentPose(const ConfigSpc<Tp>& q)
 /**
  * @brief Explicit interface
  */
-void calcSingleSegmentPosef(float L, float theta, float delta, Pose<float>& pose);
+template<typename Tp1 = float>
+void calcSingleSegmentPosef(Tp1 L, Tp1 theta, Tp1 delta, Pose<float>& pose)
+{
+    calcSingleSegmentPose<float>(L, theta, delta, pose);
+}
 /**
  * @brief Explicit interface
  */
-Pose<float> calcSingleSegmentPosef(float L, float theta, float delta);
+template<typename Tp1 = float>
+Pose<float> calcSingleSegmentPosef(Tp1 L, Tp1 theta, Tp1 delta)
+{
+    return calcSingleSegmentPose<float>(L, theta, delta);
+}
 /**
  * @brief Explicit interface
  */
-void calcSingleSegmentPosef(const ConfigSpc<float>& q, Pose<float>& pose);
+template<typename Tp1 = float>
+void calcSingleSegmentPosef(const ConfigSpc<Tp1>& q, Pose<float>& pose)
+{
+    calcSingleSegmentPose<float>(q, pose);
+}
 /**
  * @brief Explicit interface
  */
-Pose<float> calcSingleSegmentPosef(const ConfigSpc<float>& q);
+template<typename Tp1 = float>
+Pose<float> calcSingleSegmentPosef(const ConfigSpc<Tp1>& q)
+{
+    return calcSingleSegmentPose<float>(q);
+}
 
 
 /** 
@@ -128,8 +145,8 @@ Pose<float> calcSingleSegmentPosef(const ConfigSpc<float>& q);
  * @return rt The rotation and position matrix of single continuum segment with
  * respect to its base frame.
  */
-template <typename Tp = double>
-void calcSingleWithRigidSegmentPose(Tp L, Tp theta, Tp delta, Tp Lr, Pose<Tp>& pose)
+template <typename Tp = double, typename Tp1 = double>
+void calcSingleWithRigidSegmentPose(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr, Pose<Tp>& pose)
 {
     pose = calcSingleSegmentPose<Tp>(L, theta, delta);
     pose.t += Lr * pose.R.rightCols(0);
@@ -139,8 +156,8 @@ void calcSingleWithRigidSegmentPose(Tp L, Tp theta, Tp delta, Tp Lr, Pose<Tp>& p
 /**
  * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
  */
-template <typename Tp = double>
-Pose<Tp> calcSingleWithRigidSegmentPose(Tp L, Tp theta, Tp delta, Tp Lr)
+template <typename Tp = double, typename Tp1 = double>
+Pose<Tp> calcSingleWithRigidSegmentPose(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr)
 {
     Pose<Tp> pose;
     calcSingleWithRigidSegmentPose<Tp>(L, Lr, theta, delta, pose);
@@ -151,8 +168,8 @@ Pose<Tp> calcSingleWithRigidSegmentPose(Tp L, Tp theta, Tp delta, Tp Lr)
 /**
  * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
  */
-template <typename Tp = double>
-void calcSingleWithRigidSegmentPose(const ConfigSpc<Tp>& q, Tp Lr, Pose<Tp>& pose)
+template <typename Tp = double, typename Tp1 = double>
+void calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp Lr, Pose<Tp>& pose)
 {
     calcSingleSegmentPose<Tp>(q, pose);
     pose.t += Lr * pose.R.rightCols(0);
@@ -162,8 +179,8 @@ void calcSingleWithRigidSegmentPose(const ConfigSpc<Tp>& q, Tp Lr, Pose<Tp>& pos
 /**
  * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
  */
-template <typename Tp = double>
-Pose<Tp> calcSingleWithRigidSegmentPose(const ConfigSpc<Tp>& q, Tp Lr)
+template <typename Tp = double, typename Tp1 = double>
+Pose<Tp> calcSingleWithRigidSegmentPose(const ConfigSpc<Tp1>& q, Tp Lr)
 {
     Pose<Tp> pose;
     calcSingleWithRigidSegmentPose<Tp>(q, Lr, pose);
@@ -174,19 +191,35 @@ Pose<Tp> calcSingleWithRigidSegmentPose(const ConfigSpc<Tp>& q, Tp Lr)
 /**
  * @brief Explicit interface
  */
-void calcSingleWithRigidSegmentPosef(float L, float theta, float delta, float Lr, Pose<float>& pose);
+template<typename Tp1 = float>
+void calcSingleWithRigidSegmentPosef(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr, Pose<float>& pose)
+{
+    calcSingleWithRigidSegmentPose<float>(L, Lr, theta, delta, pose);
+}
 /**
  * @brief Explicit interface
  */
-Pose<float> calcSingleWithRigidSegmentPosef(float L, float theta, float delta, float Lr);
+template<typename Tp1 = float>
+Pose<float> calcSingleWithRigidSegmentPosef(Tp1 L, Tp1 theta, Tp1 delta, Tp1 Lr)
+{
+    return calcSingleWithRigidSegmentPose<float>(L, theta, delta, Lr);
+}
 /**
  * @brief Explicit interface
  */
-void calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr, Pose<float>& pose);
+template<typename Tp1 = float>
+void calcSingleWithRigidSegmentPosef(const ConfigSpc<Tp1>& q, Tp1 Lr, Pose<float>& pose)
+{
+    calcSingleWithRigidSegmentPose<float>(q, Lr, pose);
+}
 /**
  * @brief Explicit interface
  */
-Pose<float> calcSingleWithRigidSegmentPosef(const ConfigSpc<float>& q, float Lr);
+template<typename Tp1 = float>
+Pose<float> calcSingleWithRigidSegmentPosef(const ConfigSpc<Tp1>& q, Tp1 Lr)
+{
+    return calcSingleWithRigidSegmentPose<float>(q, Lr);
+}
 
 
 }} // mmath::continuum
