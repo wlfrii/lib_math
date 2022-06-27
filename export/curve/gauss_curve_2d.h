@@ -38,7 +38,7 @@ namespace mmath{
  * 
  * @tparam Tp 
  */
-template <typename Tp>
+template <typename Tp = double>
 struct GaussianCurve
 {
     GaussianCurve(Tp a = 0, Tp mu = 0, Tp sigma = 0)
@@ -205,7 +205,7 @@ GaussianCurve<Tp> fitGuassianCurve(const std::vector<Tp1>& xs,
  * @param max_iterations 
  * @return GaussianCurve<Tp> 
  */
-template <typename Tp = double, typename Tp1>
+template <typename Tp = double, typename Tp1 = double>
 GaussianCurve<Tp> fitGuassianCurve(const std::vector<Eigen::Vector<Tp1, 2>>& pts,
                                    uint16_t max_iterations = 100)
 {
