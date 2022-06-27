@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lib_math: export/matrix/rotation.h File Reference</title>
+<title>lib_math: export/matrix/drotation.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('rotation_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('drotation_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,69 +86,66 @@ $(document).ready(function(){initNavTree('rotation_8h.html',''); initResizable()
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">rotation.h File Reference</div>  </div>
+<div class="title">drotation.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Design some interfaces for calculating rotation matrix.  
+<p>Interfaces for calculating derivatives of rotation matrix.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Eigen/Dense&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
-<code>#include &quot;../util/angle.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rotation_8h_source.html">rotation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="skew_8h_source.html">skew.h</a>&quot;</code><br />
 </div>
-<p><a href="rotation_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="drotation_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af76c297908a1aa9e0fbc3a47e77a5f3e"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename T1  = double&gt; </td></tr>
-<tr class="memitem:af76c297908a1aa9e0fbc3a47e77a5f3e"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, 3, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rotation_8h.html#af76c297908a1aa9e0fbc3a47e77a5f3e">mmath::rotByX</a> (const T1 radian)</td></tr>
-<tr class="memdesc:af76c297908a1aa9e0fbc3a47e77a5f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a rotation matrix with rotated by x-axis by radian.  <a href="rotation_8h.html#af76c297908a1aa9e0fbc3a47e77a5f3e">More...</a><br /></td></tr>
-<tr class="separator:af76c297908a1aa9e0fbc3a47e77a5f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66df831f76b1f8ea0205c6534dd1558"><td class="memTemplParams" colspan="2">template&lt;typename T1  = double&gt; </td></tr>
-<tr class="memitem:ae66df831f76b1f8ea0205c6534dd1558"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix3f&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rotation_8h.html#ae66df831f76b1f8ea0205c6534dd1558">mmath::rotByXf</a> (const T1 radian)</td></tr>
-<tr class="memdesc:ae66df831f76b1f8ea0205c6534dd1558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a rotation matrix with rotated by x-axis by radian.  <a href="rotation_8h.html#ae66df831f76b1f8ea0205c6534dd1558">More...</a><br /></td></tr>
-<tr class="separator:ae66df831f76b1f8ea0205c6534dd1558"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe17af27e5c0e05e2c097bd133f926cc"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename T1  = double&gt; </td></tr>
-<tr class="memitem:afe17af27e5c0e05e2c097bd133f926cc"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, 3, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rotation_8h.html#afe17af27e5c0e05e2c097bd133f926cc">mmath::rotByY</a> (const T1 radian)</td></tr>
-<tr class="memdesc:afe17af27e5c0e05e2c097bd133f926cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a rotation matrix with rotated by y-axis by radian.  <a href="rotation_8h.html#afe17af27e5c0e05e2c097bd133f926cc">More...</a><br /></td></tr>
-<tr class="separator:afe17af27e5c0e05e2c097bd133f926cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4d1b5b4e4d2760367b02b86cf7a1801"><td class="memTemplParams" colspan="2">template&lt;typename T1  = double&gt; </td></tr>
-<tr class="memitem:aa4d1b5b4e4d2760367b02b86cf7a1801"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix3f&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rotation_8h.html#aa4d1b5b4e4d2760367b02b86cf7a1801">mmath::rotByYf</a> (const T1 radian)</td></tr>
-<tr class="memdesc:aa4d1b5b4e4d2760367b02b86cf7a1801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a rotation matrix with rotated by y-axis by radian.  <a href="rotation_8h.html#aa4d1b5b4e4d2760367b02b86cf7a1801">More...</a><br /></td></tr>
-<tr class="separator:aa4d1b5b4e4d2760367b02b86cf7a1801"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acffec19c536e1c82c29f2253dad881c5"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename T1  = double&gt; </td></tr>
-<tr class="memitem:acffec19c536e1c82c29f2253dad881c5"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, 3, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rotation_8h.html#acffec19c536e1c82c29f2253dad881c5">mmath::rotByZ</a> (const T1 radian)</td></tr>
-<tr class="memdesc:acffec19c536e1c82c29f2253dad881c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a rotation matrix with rotated by z-axis by radian.  <a href="rotation_8h.html#acffec19c536e1c82c29f2253dad881c5">More...</a><br /></td></tr>
-<tr class="separator:acffec19c536e1c82c29f2253dad881c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac41fe24a4915bfca82636fabcb3e7c0"><td class="memTemplParams" colspan="2">template&lt;typename T1  = double&gt; </td></tr>
-<tr class="memitem:aac41fe24a4915bfca82636fabcb3e7c0"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix3f&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rotation_8h.html#aac41fe24a4915bfca82636fabcb3e7c0">mmath::rotByZf</a> (const T1 radian)</td></tr>
-<tr class="memdesc:aac41fe24a4915bfca82636fabcb3e7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a rotation matrix with rotated by z-axis by radian.  <a href="rotation_8h.html#aac41fe24a4915bfca82636fabcb3e7c0">More...</a><br /></td></tr>
-<tr class="separator:aac41fe24a4915bfca82636fabcb3e7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43ee0030be3d23d67cb545f9b17d1e42"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename T1  = double&gt; </td></tr>
-<tr class="memitem:a43ee0030be3d23d67cb545f9b17d1e42"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, 3, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rotation_8h.html#a43ee0030be3d23d67cb545f9b17d1e42">mmath::createRotMatByVecZ</a> (Eigen::Vector&lt; T1, 3 &gt; vec_z)</td></tr>
-<tr class="memdesc:a43ee0030be3d23d67cb545f9b17d1e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Rotation Matrix By Vector-Z.  <a href="rotation_8h.html#a43ee0030be3d23d67cb545f9b17d1e42">More...</a><br /></td></tr>
-<tr class="separator:a43ee0030be3d23d67cb545f9b17d1e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e5a0e9518a1e1ebeaeb3e9db03817f"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename T1  = double&gt; </td></tr>
+<tr class="memitem:a71e5a0e9518a1e1ebeaeb3e9db03817f"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, 3, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="drotation_8h.html#a71e5a0e9518a1e1ebeaeb3e9db03817f">mmath::dRotByX</a> (const T1 radian)</td></tr>
+<tr class="memdesc:a71e5a0e9518a1e1ebeaeb3e9db03817f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the derivatives of rotation matrix with rotated by x-axis by radian.  <a href="drotation_8h.html#a71e5a0e9518a1e1ebeaeb3e9db03817f">More...</a><br /></td></tr>
+<tr class="separator:a71e5a0e9518a1e1ebeaeb3e9db03817f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2884ca350633656a728fc614c953b3"><td class="memTemplParams" colspan="2">template&lt;typename T1  = double&gt; </td></tr>
+<tr class="memitem:acf2884ca350633656a728fc614c953b3"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix3f&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="drotation_8h.html#acf2884ca350633656a728fc614c953b3">mmath::dRotByXf</a> (const T1 radian)</td></tr>
+<tr class="memdesc:acf2884ca350633656a728fc614c953b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the derivatives of rotation matrix with rotated by x-axis by radian.  <a href="drotation_8h.html#acf2884ca350633656a728fc614c953b3">More...</a><br /></td></tr>
+<tr class="separator:acf2884ca350633656a728fc614c953b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace181f7b3b9f320acb194fd830a32a1f"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename T1  = double&gt; </td></tr>
+<tr class="memitem:ace181f7b3b9f320acb194fd830a32a1f"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, 3, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="drotation_8h.html#ace181f7b3b9f320acb194fd830a32a1f">mmath::dRotByY</a> (const T1 radian)</td></tr>
+<tr class="memdesc:ace181f7b3b9f320acb194fd830a32a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the derivatives of rotation matrix with rotated by y-axis by radian.  <a href="drotation_8h.html#ace181f7b3b9f320acb194fd830a32a1f">More...</a><br /></td></tr>
+<tr class="separator:ace181f7b3b9f320acb194fd830a32a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a3ad19f90f821f56a125b5aeb566e6"><td class="memTemplParams" colspan="2">template&lt;typename T1  = double&gt; </td></tr>
+<tr class="memitem:a08a3ad19f90f821f56a125b5aeb566e6"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix3f&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="drotation_8h.html#a08a3ad19f90f821f56a125b5aeb566e6">mmath::dRotByYf</a> (const T1 radian)</td></tr>
+<tr class="memdesc:a08a3ad19f90f821f56a125b5aeb566e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the derivatives of rotation matrix with rotated by y-axis by radian.  <a href="drotation_8h.html#a08a3ad19f90f821f56a125b5aeb566e6">More...</a><br /></td></tr>
+<tr class="separator:a08a3ad19f90f821f56a125b5aeb566e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8d21586b5225a8e8969320440873a0"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename T1  = double&gt; </td></tr>
+<tr class="memitem:a7c8d21586b5225a8e8969320440873a0"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, 3, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="drotation_8h.html#a7c8d21586b5225a8e8969320440873a0">mmath::dRotByZ</a> (const T1 radian)</td></tr>
+<tr class="memdesc:a7c8d21586b5225a8e8969320440873a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the derivatives of rotation matrix with rotated by z-axis by radian.  <a href="drotation_8h.html#a7c8d21586b5225a8e8969320440873a0">More...</a><br /></td></tr>
+<tr class="separator:a7c8d21586b5225a8e8969320440873a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0faa23ce679876351521c90e419737"><td class="memTemplParams" colspan="2">template&lt;typename T1  = double&gt; </td></tr>
+<tr class="memitem:aef0faa23ce679876351521c90e419737"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix3f&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="drotation_8h.html#aef0faa23ce679876351521c90e419737">mmath::dRotByZf</a> (const T1 radian)</td></tr>
+<tr class="memdesc:aef0faa23ce679876351521c90e419737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the derivatives of rotation matrix with rotated by z-axis by radian.  <a href="drotation_8h.html#aef0faa23ce679876351521c90e419737">More...</a><br /></td></tr>
+<tr class="separator:aef0faa23ce679876351521c90e419737"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Design some interfaces for calculating rotation matrix. </p>
+<div class="textblock"><p>Interfaces for calculating derivatives of rotation matrix. </p>
 <hr  />
  <pre class="fragment">               Mathematics extension library                    
 </pre><p> Description: <br  />
  This file is part of lib_math. You can redistribute it and or modify it to construct your own project. It is wellcome to use this library in your scientific research work.</p>
 <dl class="section author"><dt>Author</dt><dd>Longfei Wang</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2019/12/14</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022/06/27</dd></dl>
 <p>@license <br  />
 </p>
 <p>Copyright (C) 2019 Longfei Wang.</p>
 <hr  />
 <p> Change History: <br  />
 </p>
-<p>2021/07/29 Complete the doxygen comments. 2022/06/06 Complete the doxygen comments.</p>
+<p>2022/06/27 Complete the file.</p>
 <hr  />
  </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a43ee0030be3d23d67cb545f9b17d1e42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43ee0030be3d23d67cb545f9b17d1e42">&#9670;&nbsp;</a></span>createRotMatByVecZ()</h2>
+<a id="a71e5a0e9518a1e1ebeaeb3e9db03817f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e5a0e9518a1e1ebeaeb3e9db03817f">&#9670;&nbsp;</a></span>dRotByX()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,43 +153,7 @@ Functions</h2></td></tr>
 template&lt;typename T  = double, typename T1  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix&lt;T, 3, 3&gt; mmath::createRotMatByVecZ </td>
-          <td>(</td>
-          <td class="paramtype">Eigen::Vector&lt; T1, 3 &gt;&#160;</td>
-          <td class="paramname"><em>vec_z</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Create a Rotation Matrix By Vector-Z. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Type of return matrix. </td></tr>
-    <tr><td class="paramname">T1</td><td>Type of input value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vec_z</td><td>The vector denotes z-axis </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A rotation matrix. </dd></dl>
-
-</div>
-</div>
-<a id="af76c297908a1aa9e0fbc3a47e77a5f3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af76c297908a1aa9e0fbc3a47e77a5f3e">&#9670;&nbsp;</a></span>rotByX()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T  = double, typename T1  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Matrix&lt;T, 3, 3&gt; mmath::rotByX </td>
+          <td class="memname">Eigen::Matrix&lt;T, 3, 3&gt; mmath::dRotByX </td>
           <td>(</td>
           <td class="paramtype">const T1&#160;</td>
           <td class="paramname"><em>radian</em></td><td>)</td>
@@ -201,7 +162,7 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return a rotation matrix with rotated by x-axis by radian. </p>
+<p>Return the derivatives of rotation matrix with rotated by x-axis by radian. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Type of return matrix. </td></tr>
@@ -219,8 +180,8 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
 
 </div>
 </div>
-<a id="ae66df831f76b1f8ea0205c6534dd1558"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66df831f76b1f8ea0205c6534dd1558">&#9670;&nbsp;</a></span>rotByXf()</h2>
+<a id="acf2884ca350633656a728fc614c953b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2884ca350633656a728fc614c953b3">&#9670;&nbsp;</a></span>dRotByXf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +189,7 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
 template&lt;typename T1  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix3f mmath::rotByXf </td>
+          <td class="memname">Eigen::Matrix3f mmath::dRotByXf </td>
           <td>(</td>
           <td class="paramtype">const T1&#160;</td>
           <td class="paramname"><em>radian</em></td><td>)</td>
@@ -237,7 +198,7 @@ template&lt;typename T1  = double&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return a rotation matrix with rotated by x-axis by radian. </p>
+<p>Return the derivatives of rotation matrix with rotated by x-axis by radian. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Type of return matrix. </td></tr>
@@ -255,8 +216,8 @@ template&lt;typename T1  = double&gt; </div>
 
 </div>
 </div>
-<a id="afe17af27e5c0e05e2c097bd133f926cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe17af27e5c0e05e2c097bd133f926cc">&#9670;&nbsp;</a></span>rotByY()</h2>
+<a id="ace181f7b3b9f320acb194fd830a32a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace181f7b3b9f320acb194fd830a32a1f">&#9670;&nbsp;</a></span>dRotByY()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +225,7 @@ template&lt;typename T1  = double&gt; </div>
 template&lt;typename T  = double, typename T1  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix&lt;T, 3, 3&gt; mmath::rotByY </td>
+          <td class="memname">Eigen::Matrix&lt;T, 3, 3&gt; mmath::dRotByY </td>
           <td>(</td>
           <td class="paramtype">const T1&#160;</td>
           <td class="paramname"><em>radian</em></td><td>)</td>
@@ -273,7 +234,7 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return a rotation matrix with rotated by y-axis by radian. </p>
+<p>Return the derivatives of rotation matrix with rotated by y-axis by radian. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Type of return matrix. </td></tr>
@@ -291,8 +252,8 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
 
 </div>
 </div>
-<a id="aa4d1b5b4e4d2760367b02b86cf7a1801"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4d1b5b4e4d2760367b02b86cf7a1801">&#9670;&nbsp;</a></span>rotByYf()</h2>
+<a id="a08a3ad19f90f821f56a125b5aeb566e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a3ad19f90f821f56a125b5aeb566e6">&#9670;&nbsp;</a></span>dRotByYf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +261,7 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
 template&lt;typename T1  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix3f mmath::rotByYf </td>
+          <td class="memname">Eigen::Matrix3f mmath::dRotByYf </td>
           <td>(</td>
           <td class="paramtype">const T1&#160;</td>
           <td class="paramname"><em>radian</em></td><td>)</td>
@@ -309,7 +270,7 @@ template&lt;typename T1  = double&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return a rotation matrix with rotated by y-axis by radian. </p>
+<p>Return the derivatives of rotation matrix with rotated by y-axis by radian. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Type of return matrix. </td></tr>
@@ -327,8 +288,8 @@ template&lt;typename T1  = double&gt; </div>
 
 </div>
 </div>
-<a id="acffec19c536e1c82c29f2253dad881c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acffec19c536e1c82c29f2253dad881c5">&#9670;&nbsp;</a></span>rotByZ()</h2>
+<a id="a7c8d21586b5225a8e8969320440873a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c8d21586b5225a8e8969320440873a0">&#9670;&nbsp;</a></span>dRotByZ()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +297,7 @@ template&lt;typename T1  = double&gt; </div>
 template&lt;typename T  = double, typename T1  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix&lt;T, 3, 3&gt; mmath::rotByZ </td>
+          <td class="memname">Eigen::Matrix&lt;T, 3, 3&gt; mmath::dRotByZ </td>
           <td>(</td>
           <td class="paramtype">const T1&#160;</td>
           <td class="paramname"><em>radian</em></td><td>)</td>
@@ -345,7 +306,7 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return a rotation matrix with rotated by z-axis by radian. </p>
+<p>Return the derivatives of rotation matrix with rotated by z-axis by radian. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Type of return matrix. </td></tr>
@@ -363,8 +324,8 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
 
 </div>
 </div>
-<a id="aac41fe24a4915bfca82636fabcb3e7c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac41fe24a4915bfca82636fabcb3e7c0">&#9670;&nbsp;</a></span>rotByZf()</h2>
+<a id="aef0faa23ce679876351521c90e419737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0faa23ce679876351521c90e419737">&#9670;&nbsp;</a></span>dRotByZf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,7 +333,7 @@ template&lt;typename T  = double, typename T1  = double&gt; </div>
 template&lt;typename T1  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix3f mmath::rotByZf </td>
+          <td class="memname">Eigen::Matrix3f mmath::dRotByZf </td>
           <td>(</td>
           <td class="paramtype">const T1&#160;</td>
           <td class="paramname"><em>radian</em></td><td>)</td>
@@ -381,7 +342,7 @@ template&lt;typename T1  = double&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return a rotation matrix with rotated by z-axis by radian. </p>
+<p>Return the derivatives of rotation matrix with rotated by z-axis by radian. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T1</td><td>Type of input value. </td></tr>
@@ -403,7 +364,7 @@ template&lt;typename T1  = double&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_65956747a6f6d37dadfdcf67b1aa1faa.html">export</a></li><li class="navelem"><a class="el" href="dir_2486f5e7637db8087b05278434656ab8.html">matrix</a></li><li class="navelem"><a class="el" href="rotation_8h.html">rotation.h</a></li>
+    <li class="navelem"><a class="el" href="dir_65956747a6f6d37dadfdcf67b1aa1faa.html">export</a></li><li class="navelem"><a class="el" href="dir_2486f5e7637db8087b05278434656ab8.html">matrix</a></li><li class="navelem"><a class="el" href="drotation_8h.html">drotation.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

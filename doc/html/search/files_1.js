@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gauss_5fcurve_5f2d_2eh_44',['gauss_curve_2d.h',['../gauss__curve__2d_8h.html',1,'']]]
+  ['dcontinuum_5fpose_2eh_53',['dcontinuum_pose.h',['../dcontinuum__pose_8h.html',1,'']]],
+  ['drotation_2eh_54',['drotation.h',['../drotation_8h.html',1,'']]]
 ];
