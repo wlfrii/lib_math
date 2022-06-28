@@ -12,6 +12,8 @@ The library will be updated continuously.
 
 ## How to use?
 
+### I. Configure the library in your project
+
 Download this library from github.
 ```bash
 git clone https://github.com/wlfrii/lib_math.git
@@ -43,6 +45,8 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 )
 ```
 
+### II. Use the library
+
 The library could then be used by only including the following header file in your source file. Note, all the interfaces are defined in `mmath{}` namespace. A tiny example is given as follows.
 
 ```c++
@@ -63,6 +67,16 @@ int main()
 }
 ```
 
+Some other usage that could be the reference can be found in [lib_math/test](https://github.com/wlfrii/lib_math/tree/main/test/src) folder.
+
+
+__NOTE__: The `precision` for calculation of kinemaices related functions is change to `float`, which is generally enough for most of application. To enable `double` precision, define `LIB_MATH_KINE_DOUBLE` before include this library, as follows.
+```c++
+#define LIB_MATH_KINE_DOUBLE
+#include <lib_math/lib_math>
+```
+
+
 ## Interfaces Manual
 
-Download this repository and see the interfaces manual by opening `./doc/lib_math_doc.html` by your browser.
+Download this repository and see the interfaces manual by opening `./doc/lib_math_doc.html` via your browser.
