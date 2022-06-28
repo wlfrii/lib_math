@@ -42,9 +42,11 @@
 #include "matrix/drotation.h"
 
 // Kinematics related utilities
+#include "kine/kine_precision.h"
 #include "kine/pose.h"
 #include "kine/continuum_configspc.h"
 #include "kine/continuum_pose.h"
+#include "kine/dcontinuum_pose.h"
 
 // Curve related utilities
 #include "curve/line_2d.h"
@@ -54,15 +56,9 @@
 // Some explicit template class
 namespace mmath {
 
-using Posef = Pose<float>;
-
 using Linef = Line<float>;
 using GaussianCurvef = GaussianCurve<float>;
 
-namespace continuum {
-
-using ConfigSpcf = ConfigSpc<float>;
-
-}}
+}
 
 #endif // LIB_MATH_LIB_LF
