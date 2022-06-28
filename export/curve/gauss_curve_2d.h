@@ -44,15 +44,33 @@ struct GaussianCurve
     GaussianCurve(Tp a = 0, Tp mu = 0, Tp sigma = 0)
         : a(a), mu(mu), sigma(sigma) {}
 
-    Tp a;
-    Tp mu;
-    Tp sigma;
+    Tp a;       // The coefficient of Gaussian function.
+    Tp mu;      // The mean value of Gaussian function.
+    Tp sigma;   // The standard derivation of Gaussian function.
 
+
+    /**
+     * @brief Compute the Gaussian value.
+     * 
+     * @tparam Tp1 
+     * @tparam Tp2 
+     * @param x  The value of a given position.
+     * @return Tp1 The Gaussian value at \param x.
+     */
     template<typename Tp1 = double, typename Tp2>
     Tp1 valueAt(Tp2 x){
         return a * exp(-0.5*pow((x - mu) / sigma, 2));
     }
 
+
+    /**
+     * @brief Compute the Jocabian of Gaussian curve.
+     * 
+     * @tparam Tp1 
+     * @tparam Tp2 
+     * @param x  The value of a given position.
+     * @return Eigen::Vector<Tp1, 3>  The Jocabian value for a, mu, and sigma at \param x.
+     */
     template<typename Tp1 = double, typename Tp2>
     Eigen::Vector<Tp1, 3> JocabianAt(Tp2 x){
         Tp1 f = this->valueAt(x);
@@ -66,15 +84,15 @@ struct GaussianCurve
 
 
 /**
- * @brief 
+ * @brief Compute the Gaussian value.
  * 
  * @tparam Tp 
  * @tparam Tp1 
  * @tparam Tp2 
- * @param a 
- * @param mu 
- * @param sigma 
- * @param x 
+ * @param a      The coefficient of Gaussian function.
+ * @param mu     The mean value of Gaussian function.
+ * @param sigma  The standard derivation of Gaussian function.
+ * @param x      The value of a given position.
  * @return Tp 
  */
 template <typename Tp = double, typename Tp1, typename Tp2>
@@ -85,14 +103,11 @@ Tp GuassianFunc(Tp1 a, Tp1 mu, Tp1 sigma, Tp2 x)
 
 
 /**
- * @brief 
+ * @brief Compute the Gaussian value.
+ *
+ * @param gauss  The GaussianCurve object
  * 
- * @tparam Tp 
- * @tparam Tp1 
- * @tparam Tp2 
- * @param gauss 
- * @param x 
- * @return Tp 
+ * @sa GaussianFunc 
  */
 template <typename Tp = double, typename Tp1, typename Tp2>
 Tp GuassianFunc(GaussianCurve<Tp1> gauss, Tp2 x)
@@ -102,15 +117,15 @@ Tp GuassianFunc(GaussianCurve<Tp1> gauss, Tp2 x)
 
 
 /**
- * @brief 
+ * @brief Compute the Jocabian of Gaussian curve.
  * 
  * @tparam Tp 
  * @tparam Tp1 
  * @tparam Tp2 
- * @param a 
- * @param mu 
- * @param sigma 
- * @param x 
+ * @param a      The coefficient of Gaussian function.
+ * @param mu     The mean value of Gaussian function.
+ * @param sigma  The standard derivation of Gaussian function.
+ * @param x      The value of a given position.
  * @return Eigen::Vector<Tp, 3> 
  */
 template <typename Tp = double, typename Tp1, typename Tp2>
@@ -126,13 +141,13 @@ Eigen::Vector<Tp, 3> GuassianJocabian(Tp1 a, Tp1 mu, Tp1 sigma, Tp2 x)
 
 
 /**
- * @brief 
+ * @brief Fit Gaussian curve by Netwon-Gaussian method.
  * 
  * @tparam Tp 
  * @tparam Tp1 
- * @param xs 
- * @param ys 
- * @param max_iterations 
+ * @param xs  A set of x coordinates.
+ * @param ys  A set of y coordinates.
+ * @param max_iterations  The max iteration times, with default value 100.
  * @return GaussianCurve<Tp> 
  */
 template <typename Tp = double, typename Tp1>
@@ -197,13 +212,11 @@ GaussianCurve<Tp> fitGuassianCurve(const std::vector<Tp1>& xs,
 
 
 /**
- * @brief 
+ * @brief Fit Gaussian curve by Netwon-Gaussian method.
  * 
- * @tparam Tp 
- * @tparam Tp1 
- * @param pts 
- * @param max_iterations 
- * @return GaussianCurve<Tp> 
+ * @param pts  A set of coordinates of 2D point.
+ * 
+ * @sa fitGuassianCurve
  */
 template <typename Tp = double, typename Tp1 = double>
 GaussianCurve<Tp> fitGuassianCurve(const std::vector<Eigen::Vector<Tp1, 2>>& pts,

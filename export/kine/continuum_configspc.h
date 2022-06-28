@@ -51,12 +51,20 @@ public:
         : theta(theta), delta(delta), length(len), is_bend(bend)
     {}
 	
-    inline void clear()
+
+    /**
+     * @brief Clear current configure value.
+     */
+    void clear()
     {
         *this = ConfigSpc();
     }
 
-    inline char *c_str() const
+
+    /**
+     * @brief Return a string a current configure value.
+     */
+    char *c_str() const
     {
         static char info[64];
         sprintf(info, "theta:%f,delta:%f,length:%f,is_bend:%d",

@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['ransacfitlinebias_36',['ransacFitLineBias',['../line__2d_8h.html#a800dc32f765f08946568d8457fe84028',1,'mmath::ransacFitLineBias(Tp1 k, const std::vector&lt; Tp2 &gt; &amp;xs, const std::vector&lt; Tp2 &gt; &amp;ys, uint16_t iterations=100, float thresh=2)'],['../line__2d_8h.html#a650239d1c974a65cd1cec9bb0f5aa5dc',1,'mmath::ransacFitLineBias(Tp1 k, const std::vector&lt; Eigen::Vector&lt; Tp2, 2 &gt;&gt; &amp;pts, uint16_t iterations=100, float thresh=2)']]],
-  ['rotation_2eh_37',['rotation.h',['../rotation_8h.html',1,'']]],
-  ['rotbyx_38',['rotByX',['../rotation_8h.html#af76c297908a1aa9e0fbc3a47e77a5f3e',1,'mmath']]],
-  ['rotbyxf_39',['rotByXf',['../rotation_8h.html#ae66df831f76b1f8ea0205c6534dd1558',1,'mmath']]],
-  ['rotbyy_40',['rotByY',['../rotation_8h.html#afe17af27e5c0e05e2c097bd133f926cc',1,'mmath']]],
-  ['rotbyyf_41',['rotByYf',['../rotation_8h.html#aa4d1b5b4e4d2760367b02b86cf7a1801',1,'mmath']]],
-  ['rotbyz_42',['rotByZ',['../rotation_8h.html#acffec19c536e1c82c29f2253dad881c5',1,'mmath']]],
-  ['rotbyzf_43',['rotByZf',['../rotation_8h.html#aac41fe24a4915bfca82636fabcb3e7c0',1,'mmath']]]
+  ['pose_39',['Pose',['../classmmath_1_1_pose.html',1,'mmath::Pose'],['../classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631',1,'mmath::Pose::Pose(const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;T)'],['../classmmath_1_1_pose.html#ab61f06be3b16d86a06540a3532b8a825',1,'mmath::Pose::Pose(const Eigen::Matrix&lt; Tp1, 3, 3 &gt; &amp;R=Eigen::Matrix&lt; Tp1, 3, 3 &gt;::Identity(), const Eigen::Vector&lt; Tp2, 3 &gt; &amp;t={0, 0, 0})'],['../classmmath_1_1_pose.html#ab9a2881e540e17946db4c28704bbe61c',1,'mmath::Pose::Pose(Tp1 tx, Tp1 ty, Tp1 tz)'],['../classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7',1,'mmath::Pose::Pose(Tp1 data[16], bool is_row_fisrt=true)']]],
+  ['pose_2eh_40',['pose.h',['../pose_8h.html',1,'']]]
 ];

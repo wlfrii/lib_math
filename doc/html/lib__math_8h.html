@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">lib_math
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
    <div id="projectbrief">A mathematics extension library primarily designed for robot kinematics</div>
   </td>
@@ -98,9 +98,11 @@ $(document).ready(function(){initNavTree('lib__math_8h.html',''); initResizable(
 <code>#include &quot;<a class="el" href="rotation_8h_source.html">matrix/rotation.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="skew_8h_source.html">matrix/skew.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drotation_8h_source.html">matrix/drotation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kine__precision_8h_source.html">kine/kine_precision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="pose_8h_source.html">kine/pose.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="continuum__configspc_8h_source.html">kine/continuum_configspc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="continuum__pose_8h_source.html">kine/continuum_pose.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dcontinuum__pose_8h_source.html">kine/dcontinuum_pose.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="line__2d_8h_source.html">curve/line_2d.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gauss__curve__2d_8h_source.html">curve/gauss_curve_2d.h</a>&quot;</code><br />
 </div>
@@ -108,18 +110,12 @@ $(document).ready(function(){initNavTree('lib__math_8h.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:af4d747b12bae7d4b0b5e02f31ecae0d7"><td class="memItemLeft" align="right" valign="top"><a id="af4d747b12bae7d4b0b5e02f31ecae0d7"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>mmath::Posef</b> = Pose&lt; float &gt;</td></tr>
-<tr class="separator:af4d747b12bae7d4b0b5e02f31ecae0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7f6448f31be95fa23c5c25cea466503"><td class="memItemLeft" align="right" valign="top"><a id="aa7f6448f31be95fa23c5c25cea466503"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>mmath::Linef</b> = Line&lt; float &gt;</td></tr>
 <tr class="separator:aa7f6448f31be95fa23c5c25cea466503"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa32b10bf68fccf2a60679cafe497edc6"><td class="memItemLeft" align="right" valign="top"><a id="aa32b10bf68fccf2a60679cafe497edc6"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>mmath::GaussianCurvef</b> = GaussianCurve&lt; float &gt;</td></tr>
 <tr class="separator:aa32b10bf68fccf2a60679cafe497edc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaed4e3b906a80fbe870731bd758bf8ef"><td class="memItemLeft" align="right" valign="top"><a id="aaed4e3b906a80fbe870731bd758bf8ef"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>mmath::continuum::ConfigSpcf</b> = ConfigSpc&lt; float &gt;</td></tr>
-<tr class="separator:aaed4e3b906a80fbe870731bd758bf8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The header file for the library. </p>

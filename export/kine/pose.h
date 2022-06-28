@@ -145,8 +145,8 @@ public:
     char *info() const;
 
 
-    Eigen::Matrix<kfloat, 3, 3> R;
-    Eigen::Vector<kfloat, 3>    t;
+    Eigen::Matrix<kfloat, 3, 3> R; // The rotation/orientation matrix
+    Eigen::Vector<kfloat, 3>    t; // The translation/position vector
 };
 
 

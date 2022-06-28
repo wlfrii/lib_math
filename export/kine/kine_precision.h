@@ -28,6 +28,10 @@
 
 namespace mmath{
 
+/**
+ * @brief To use double precision when using ./kine, define this MACRO in 
+ * your preprocessing list before include <lib_math/lib_math.h>
+ */
 #ifdef LIB_MATH_KINE_DOUBLE
 using kfloat = double;
 #else

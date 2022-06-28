@@ -39,7 +39,7 @@ namespace continuum{
  * @param L      The length of the segment.
  * @param theta  The bending angle of the segment.
  * @param delta  The bending direction of the segment.
- * @return rt The rotation and position matrix of single continuum segment with
+ * @return The rotation and position matrix of single continuum segment with
  * respect to its base frame.
  */
 void  calcSingleSegmentPose(kfloat L, kfloat theta, kfloat delta, Pose &pose);
@@ -71,7 +71,7 @@ Pose calcSingleSegmentPose(const ConfigSpc& q);
  * @param theta  The bending angle of the segment.
  * @param delta  The bending direction of the segment.
  * @param Lr     The length of the rigid segment.
- * @return rt The rotation and position matrix of single continuum segment with
+ * @return The rotation and position matrix of single continuum segment with
  * respect to its base frame.
  */
 void calcSingleWithRigidSegmentPose(kfloat L, kfloat theta, kfloat delta,

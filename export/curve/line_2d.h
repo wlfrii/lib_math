@@ -52,7 +52,7 @@ struct Line
 
 
 /**
- * @brief
+ * @brief  Calculate the distance between an 2D point and a given Line.
  *
  * @tparam Tp1
  * @tparam Tp2
@@ -70,14 +70,12 @@ Tp1 disFromPt2Line(Tp2 x, Tp2 y, const Line<Tp3>& l)
 
 
 /**
- * @brief
+ * @brief Calculate the distance between an 2D point and a given Line.
  *
- * @tparam Tp1
- * @tparam Tp2
- * @tparam Tp3
- * @param pts
- * @param kb
- * @return Tp1
+ * @param pts   The coordinate of a 2D point
+ * @param kb    The given Line object
+ *
+ * @sa disFromPt2Line
  */
 template<typename Tp1 = double, typename Tp2, typename Tp3>
 Tp1 disFromPt2Line(const Eigen::Vector<Tp2, 2> &pts, const Line<Tp3>& l)
@@ -91,8 +89,8 @@ Tp1 disFromPt2Line(const Eigen::Vector<Tp2, 2> &pts, const Line<Tp3>& l)
  * 
  * @tparam Tp1 
  * @tparam Tp2 
- * @param xs 
- * @param ys 
+ * @param xs   A set of x coordinates of 2D points.
+ * @param ys   A set of y coordinates of 2D points.
  * @return Line<Tp1> 
  */
 template<typename Tp1 = double, typename Tp2>
@@ -116,12 +114,11 @@ Line<Tp1> fitLine(const std::vector<Tp2>& xs, const std::vector<Tp2>& ys)
 
 
 /**
- * @brief 
+ * @brief  Fit 2D line based on 2D points.
  * 
- * @tparam Tp1 
- * @tparam Tp2 
- * @param pts 
- * @return Line<Tp1> 
+ * @param pts A set of coordinate of a 2D point
+ * 
+ * @sa fitLine
  */
 template<typename Tp1 = double, typename Tp2>
 Line<Tp1> fitLine(const std::vector<Eigen::Vector<Tp2, 2>>& pts)
@@ -142,15 +139,16 @@ Line<Tp1> fitLine(const std::vector<Eigen::Vector<Tp2, 2>>& pts)
 
 
 /**
- * @brief 
+ * @brief  Fit bias of 2D line based on 2D points.
  * 
  * @tparam Tp1 
  * @tparam Tp2 
- * @param k 
- * @param xs 
- * @param ys 
- * @param iterations 
- * @param thresh 
+ * @param k     The specified slope of 2D Line.
+ * @param xs    A set of x coordinates.
+ * @param ys    A set of y coordinates.
+ * @param iterations  The max iteration times, with default value 100.
+ * @param thresh  The threshold to exclude outlier 2D points, with default 
+ * value 2.
  * @return Tp1 
  */
 template<typename Tp1 = double, typename Tp2>
@@ -187,15 +185,11 @@ Tp1 ransacFitLineBias(Tp1 k, const std::vector<Tp2>& xs, const std::vector<Tp2>&
 
 
 /**
- * @brief 
+ * @brief Fit bias of 2D line based on 2D points.
  * 
- * @tparam Tp1 
- * @tparam Tp2 
- * @param k 
- * @param pts 
- * @param iterations 
- * @param thresh 
- * @return Tp1 
+ * @param pts A set of coordinate of a 2D point.
+ * 
+ * @sa ransacFitLineBias
  */
 template<typename Tp1 = double, typename Tp2>
 Tp1 ransacFitLineBias(Tp1 k, const std::vector<Eigen::Vector<Tp2, 2>>& pts,

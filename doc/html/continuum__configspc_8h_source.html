@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">lib_math
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
    <div id="projectbrief">A mathematics extension library primarily designed for robot kinematics</div>
   </td>
@@ -92,42 +92,49 @@ $(document).ready(function(){initNavTree('continuum__configspc_8h_source.html','
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define LIB_MATH_CONTINUUM_CONFIGSPC_H_LF</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>mmath{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>continuum{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kine__precision_8h.html">kine_precision.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>mmath{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>continuum{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Tp = <span class="keywordtype">double</span>&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classmmath_1_1continuum_1_1_config_spc.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmmath_1_1continuum_1_1_config_spc.html">ConfigSpc</a></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classmmath_1_1continuum_1_1_config_spc.html">ConfigSpc</a>(Tp theta = 0, Tp delta = 0, Tp len = 0, <span class="keywordtype">bool</span> bend = <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classmmath_1_1continuum_1_1_config_spc.html">ConfigSpc</a>(<a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> theta = 0, <a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> delta = 0, <a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> len = 0, <span class="keywordtype">bool</span> bend = <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        : theta(theta), delta(delta), length(len), is_bend(bend)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> clear()</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        *<span class="keyword">this</span> = <a class="code" href="classmmath_1_1continuum_1_1_config_spc.html">ConfigSpc&lt;Tp&gt;</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">char</span>* c_str()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> info[64];</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        sprintf(info, <span class="stringliteral">&quot;theta:%f,delta:%f,length:%f,is_bend:%d&quot;</span>,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            theta, delta, length, is_bend);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> info;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Tp theta;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Tp delta;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Tp length;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> is_bend;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}} <span class="comment">// mmath::continuum</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIB_MATH_CONFIGSPC_H_LF</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classmmath_1_1continuum_1_1_config_spc.html#a192072dbbba37a1a42aead78ddb0d5eb">   58</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmmath_1_1continuum_1_1_config_spc.html#a192072dbbba37a1a42aead78ddb0d5eb">clear</a>()</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        *<span class="keyword">this</span> = <a class="code" href="classmmath_1_1continuum_1_1_config_spc.html">ConfigSpc</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classmmath_1_1continuum_1_1_config_spc.html#a52654d7148e2287f8003c479d9725d31">   67</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="classmmath_1_1continuum_1_1_config_spc.html#a52654d7148e2287f8003c479d9725d31">c_str</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> info[64];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        sprintf(info, <span class="stringliteral">&quot;theta:%f,delta:%f,length:%f,is_bend:%d&quot;</span>,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                theta, delta, length, is_bend);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> info;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> theta;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> delta;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> length;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> is_bend;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}} <span class="comment">// mmath::continuum</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIB_MATH_CONFIGSPC_H_LF</span></div>
 <div class="ttc" id="aclassmmath_1_1continuum_1_1_config_spc_html"><div class="ttname"><a href="classmmath_1_1continuum_1_1_config_spc.html">mmath::continuum::ConfigSpc</a></div><div class="ttdoc">A class stores the configuration of each continuum segment.</div><div class="ttdef"><b>Definition:</b> continuum_configspc.h:48</div></div>
+<div class="ttc" id="aclassmmath_1_1continuum_1_1_config_spc_html_a192072dbbba37a1a42aead78ddb0d5eb"><div class="ttname"><a href="classmmath_1_1continuum_1_1_config_spc.html#a192072dbbba37a1a42aead78ddb0d5eb">mmath::continuum::ConfigSpc::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear current configure value.</div><div class="ttdef"><b>Definition:</b> continuum_configspc.h:58</div></div>
+<div class="ttc" id="aclassmmath_1_1continuum_1_1_config_spc_html_a52654d7148e2287f8003c479d9725d31"><div class="ttname"><a href="classmmath_1_1continuum_1_1_config_spc.html#a52654d7148e2287f8003c479d9725d31">mmath::continuum::ConfigSpc::c_str</a></div><div class="ttdeci">char * c_str() const</div><div class="ttdoc">Return a string a current configure value.</div><div class="ttdef"><b>Definition:</b> continuum_configspc.h:67</div></div>
+<div class="ttc" id="akine__precision_8h_html"><div class="ttname"><a href="kine__precision_8h.html">kine_precision.h</a></div><div class="ttdoc">Control the precision when kinematics-related interfaces.</div></div>
+<div class="ttc" id="akine__precision_8h_html_a8ed6fc0954396a3d610acf829cfa9724"><div class="ttname"><a href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">mmath::kfloat</a></div><div class="ttdeci">float kfloat</div><div class="ttdoc">To use double precision when using ./kine, define this MACRO in your preprocessing list before includ...</div><div class="ttdef"><b>Definition:</b> kine_precision.h:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

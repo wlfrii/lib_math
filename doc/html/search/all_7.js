@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['q_35',['q',['../classmmath_1_1_pose.html#a30d6399770bc94c5709577a47f2c946c',1,'mmath::Pose']]]
+  ['lib_5fmath_2eh_34',['lib_math.h',['../lib__math_8h.html',1,'']]],
+  ['line_35',['Line',['../structmmath_1_1_line.html',1,'mmath']]],
+  ['line_5f2d_2eh_36',['line_2d.h',['../line__2d_8h.html',1,'']]],
+  ['linspace_37',['linspace',['../linspace_8h.html#a689da5a0a3b021b49b4ef68cefe7fe91',1,'mmath::linspace(double start, double end, int num, std::vector&lt; T &gt; &amp;output)'],['../linspace_8h.html#a4bbb093476b8da2e2f69dadffa534832',1,'mmath::linspace(double start, double gap, double end, std::vector&lt; T &gt; &amp;output)']]],
+  ['linspace_2eh_38',['linspace.h',['../linspace_8h.html',1,'']]]
 ];
