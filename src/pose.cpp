@@ -2,6 +2,31 @@
 
 namespace mmath{
 
+Pose &Pose::operator=(const Pose &pose)
+{
+    this->R = pose.R;
+    this->t = pose.t;
+    return *this;
+}
+
+
+Pose Pose::operator*(const Pose &pose)
+{
+    Pose ret;
+    ret.R = this->R * pose.R;
+    ret.t = this->R * pose.t + this->t;
+    return ret;
+}
+
+
+Pose &Pose::operator*=(const Pose &pose)
+{
+    this->R = this->R * pose.R;
+    this->t = this->R * pose.t + this->t;
+    return *this;
+}
+
+
 Eigen::Quaternion<kfloat> Pose::q() const
 {
     return Eigen::Quaternion<kfloat>(R);

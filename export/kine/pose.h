@@ -93,6 +93,28 @@ public:
 
 
     /**
+     * @brief operator =
+     * @param pose
+     * @return
+     */
+    Pose& operator= (const Pose& pose);
+
+    /**
+     * @brief operator *
+     * @param pose
+     * @return
+     */
+    Pose  operator* (const Pose& pose);
+
+    /**
+     * @brief operator *=
+     * @param pose
+     * @return
+     */
+    Pose& operator*= (const Pose& pose);
+
+
+    /**
      * @brief Return quaterion.
      * 
      * @return Eigen::Quaternion<kfloat>
