@@ -203,3 +203,64 @@ TEST_CASE("Test continuum dpose2delta with Lr", "[continuum]")
     CHECK(pose.t[1] == Approx(val).margin(1e-6));
     CHECK(pose.t[2] == Approx(0).margin(1e-6));
 }
+
+
+TEST_CASE("Test continuum pose*=", "[continuum]")
+{
+    float phi = -0.284696;
+    float L = 1.08657;
+    mmath::continuum::ConfigSpc config1(0, phi, L, false);
+    auto pose1 = mmath::continuum::calcSingleSegmentPose(config1);
+    CHECK(pose1.R(0,0) == Approx(0.959747).margin(1e-6));
+    CHECK(pose1.R(0,1) == Approx(0.280866).margin(1e-6));
+    CHECK(pose1.R(1,0) == Approx(-pose1.R(0,1)).margin(1e-6));
+    CHECK(pose1.R(1,1) == Approx(pose1.R(0,0)).margin(1e-6));
+    CHECK(pose1.R(2,2) == Approx(1).margin(1e-6));
+    CHECK(pose1.t[2] == Approx(L).margin(1e-6));
+
+    float theta = 0.169437;
+    float delta = -1.879464;
+    float length = 28.012699;
+    mmath::continuum::ConfigSpc config2(theta, delta, length, true);
+    auto pose2 = mmath::continuum::calcSingleSegmentPose(config2);
+    CHECK(pose2.R(0,0) == Approx(0.998678).margin(1e-6));
+    CHECK(pose2.R(0,1) == Approx(-0.0041447).margin(1e-6));
+    CHECK(pose2.R(0,2) == Approx(-0.0512273).margin(1e-6));
+    CHECK(pose2.R(1,0) == Approx(pose2.R(0,1)).margin(1e-6));
+    CHECK(pose2.R(1,1) == Approx(0.987002).margin(1e-6));
+    CHECK(pose2.R(1,2) == Approx(-0.160658).margin(1e-6));
+    CHECK(pose2.R(2,0) == Approx(-pose2.R(0,2)).margin(1e-6));
+    CHECK(pose2.R(2,1) == Approx(-pose2.R(1,2)).margin(1e-6));
+    CHECK(pose2.R(2,2) == Approx(0.98568).margin(1e-6));
+    CHECK(pose2.t[0] == Approx(-0.719228).margin(1e-6));
+    CHECK(pose2.t[1] == Approx(-2.25563).margin(1e-6));
+    CHECK(pose2.t[2] == Approx(27.8789).margin(1e-6));
+
+    mmath::Pose pose3 = pose1 * pose2;
+    CHECK(pose3.R(0,0) == Approx(0.957315).margin(1e-6));
+    CHECK(pose3.R(0,1) == Approx(0.273237).margin(1e-6));
+    CHECK(pose3.R(0,2) == Approx(-0.0942885).margin(1e-6));
+    CHECK(pose3.R(1,0) == Approx(-0.284472).margin(1e-6));
+    CHECK(pose3.R(1,1) == Approx(0.948436).margin(1e-6));
+    CHECK(pose3.R(1,2) == Approx(-0.139803).margin(1e-6));
+    CHECK(pose3.R(2,0) == Approx(0.0512273).margin(1e-6));
+    CHECK(pose3.R(2,1) == Approx(0.160658).margin(1e-6));
+    CHECK(pose3.R(2,2) == Approx(0.98568).margin(1e-6));
+    CHECK(pose3.t[0] == Approx(-1.32381).margin(1e-6));
+    CHECK(pose3.t[1] == Approx(-1.96283).margin(1e-6));
+    CHECK(pose3.t[2] == Approx(28.9654).margin(1e-6));
+
+    pose1 *= pose2;
+    CHECK(pose1.R(0,0) == Approx(0.957315).margin(1e-6));
+    CHECK(pose1.R(0,1) == Approx(0.273237).margin(1e-6));
+    CHECK(pose1.R(0,2) == Approx(-0.0942885).margin(1e-6));
+    CHECK(pose1.R(1,0) == Approx(-0.284472).margin(1e-6));
+    CHECK(pose1.R(1,1) == Approx(0.948436).margin(1e-6));
+    CHECK(pose1.R(1,2) == Approx(-0.139803).margin(1e-6));
+    CHECK(pose1.R(2,0) == Approx(0.0512273).margin(1e-6));
+    CHECK(pose1.R(2,1) == Approx(0.160658).margin(1e-6));
+    CHECK(pose1.R(2,2) == Approx(0.98568).margin(1e-6));
+    CHECK(pose1.t[0] == Approx(-1.32381).margin(1e-6));
+    CHECK(pose1.t[1] == Approx(-1.96283).margin(1e-6));
+    CHECK(pose1.t[2] == Approx(28.9654).margin(1e-6));
+}

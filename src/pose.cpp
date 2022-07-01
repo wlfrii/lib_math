@@ -21,8 +21,8 @@ Pose Pose::operator*(const Pose &pose)
 
 Pose &Pose::operator*=(const Pose &pose)
 {
-    this->R = this->R * pose.R;
-    this->t = this->R * pose.t + this->t;
+    this->t += this->R * pose.t;
+    this->R *= pose.R;
     return *this;
 }
 
@@ -35,7 +35,7 @@ Eigen::Quaternion<kfloat> Pose::q() const
 
 Eigen::Matrix<kfloat, 4, 4> Pose::T() const
 {
-    Eigen::Matrix<kfloat, 4, 4> T;
+    Eigen::Matrix<kfloat, 4, 4> T = Eigen::Matrix<kfloat, 4, 4>::Identity();
     T.topLeftCorner(3, 3) = R;
     T.topRightCorner(3, 1) = t;
     return T;

@@ -9,7 +9,7 @@ void calcSingleSegmentPose(kfloat L, kfloat theta, kfloat delta, Pose &pose)
             rotByZ<kfloat>(-PI / 2 + delta)*rotByY<kfloat>(-PI / 2);
     pose.R = R_t1_2_tb * rotByZ<kfloat>(theta) * R_t1_2_tb.transpose();
     if (abs(theta) < 1e-5) {
-        pose.t = { 0, 0, L };
+        pose.t = Eigen::Vector<kfloat, 3>(0, 0, L);
     }
     else {
         kfloat rc = L / theta;
@@ -34,7 +34,7 @@ void calcSingleSegmentPose(const ConfigSpc &q, Pose &pose)
     }
     else{
         pose.R = rotByZ<kfloat>(q.delta);
-        pose.t[2] = q.length;
+        pose.t = Eigen::Vector<kfloat, 3>(0, 0, q.length);
     }
 }
 
