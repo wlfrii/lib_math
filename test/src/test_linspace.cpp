@@ -3,10 +3,10 @@
 #include <lib_math/lib_math.h>
 #include <vector>
 
-TEST_CASE("Test linspace", "[util]")
+TEST_CASE("Test void linspace", "[util]")
 {
     std::vector<int> pts;
-    mmath::linspace(0, 150, 31, pts);
+    mmath::linspaceN(0, 150, 31, pts);
     REQUIRE(pts.size() == 31);
     CHECK(pts[0] == 0);
     CHECK(pts[1] == 5);
@@ -48,7 +48,7 @@ TEST_CASE("Test linspace", "[util]")
 
     std::vector<double> theta2_range;
     mmath::linspace(0, mmath::deg2rad(6), mmath::PI*2.0 / 3.0, theta2_range);
-    REQUIRE(theta2_range.size() == 21);
+    REQUIRE(theta2_range.size() == 22);
     CHECK(theta2_range[0] == Approx(0).margin(1e-7));
     CHECK(theta2_range[1] == Approx(0.10471976).margin(1e-7));
     CHECK(theta2_range[2] == Approx(0.20943951).margin(1e-7));
@@ -58,3 +58,30 @@ TEST_CASE("Test linspace", "[util]")
 }
 
 
+TEST_CASE("Test linspace", "[util]")
+{
+    float len_gap = 1.5;
+    float length = 10;
+    std::vector<float> L_range;
+    mmath::linspace(0, len_gap, length, L_range);
+    REQUIRE(L_range.size() == 8);
+    CHECK(L_range[0] == Approx(0).margin(1e-7));
+    CHECK(L_range[1] == Approx(1.5).margin(1e-7));
+    CHECK(L_range[2] == Approx(3.0).margin(1e-7));
+    CHECK(L_range[3] == Approx(4.5).margin(1e-7));
+    CHECK(L_range[4] == Approx(6.0).margin(1e-7));
+    CHECK(L_range[5] == Approx(7.5).margin(1e-7));
+    CHECK(L_range[6] == Approx(9.0).margin(1e-7));
+    CHECK(L_range[7] == Approx(10.0).margin(1e-7));
+
+    L_range = mmath::linspace<float>(0, len_gap, length);
+    REQUIRE(L_range.size() == 8);
+    CHECK(L_range[0] == Approx(0).margin(1e-7));
+    CHECK(L_range[1] == Approx(1.5).margin(1e-7));
+    CHECK(L_range[2] == Approx(3.0).margin(1e-7));
+    CHECK(L_range[3] == Approx(4.5).margin(1e-7));
+    CHECK(L_range[4] == Approx(6.0).margin(1e-7));
+    CHECK(L_range[5] == Approx(7.5).margin(1e-7));
+    CHECK(L_range[6] == Approx(9.0).margin(1e-7));
+    CHECK(L_range[7] == Approx(10.0).margin(1e-7));
+}

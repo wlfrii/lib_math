@@ -34,6 +34,7 @@
 
 namespace mmath{
 
+
 /**
  * @brief Return a vector contain 'num' numeral between 'start' and 'end'.
  * 
@@ -45,10 +46,12 @@ namespace mmath{
  * @return  A vector stores linspaced values. 
  */
 template<typename T = double>
-void linspace(double start, double end, int num, std::vector<T> &output)
+void linspaceN(double start, double end, int num, std::vector<T> &output)
 {
-	if (!std::is_arithmetic<T>::value)
+	if (!std::is_arithmetic<T>::value){
 		std::abort();
+	}
+	assert(start < end);
 	output.clear();
 
 	if (num == 1)
@@ -73,13 +76,13 @@ void linspace(double start, double end, int num, std::vector<T> &output)
 
 
 /**
- * @brief Override based on "void linspce()"
+ * @brief Override based on "void linspceN()"
  */
 template<typename T = double>
-std::vector<T>& linspace(double start, double end, int num)
+std::vector<T> linspaceN(double start, double end, int num)
 {
 	std::vector<T> output;
-	linspace(start, end, num, output);
+	linspaceN(start, end, num, output);
 	return output;
 }
 
@@ -97,11 +100,13 @@ std::vector<T>& linspace(double start, double end, int num)
 template<typename T = double>
 void linspace(double start, double gap, double end, std::vector<T> &output)
 {
-	if (!std::is_arithmetic<T>::value)
+	if (!std::is_arithmetic<T>::value){
 		std::abort();
+	}
+	assert(start < end);
 
 	output.clear();
-	while(abs(start - end) > 1e-7){
+	while(start - end < 0){
 		output.push_back(static_cast<T>(start));
 		start += gap;
 	}
@@ -115,7 +120,7 @@ void linspace(double start, double gap, double end, std::vector<T> &output)
  * @brief Override based on "void linspce()"
  */
 template<typename T = double>
-std::vector<T>& linspace(double start, double gap, double end)
+std::vector<T> linspace(double start, double gap, double end)
 {
 	std::vector<T> output;
 	linspace(start, gap, end, output);
