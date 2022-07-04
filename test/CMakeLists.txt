@@ -13,7 +13,7 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_SRC)
 add_executable(${PROJECT_NAME}
     # main.cpp
     ${SRC_SRC}
-    )
+)
 
 # Use catch2 as the test library
 set(CATCH_INCLUDE_DIR /usr/local/Cellar/catch2/2.13.9/include/)

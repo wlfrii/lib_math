@@ -45,7 +45,7 @@ namespace mmath{
  * @return  A vector stores linspaced values. 
  */
 template<typename T = double>
-std::vector<T>& linspace(double start, double end, int num, std::vector<T> &output)
+void linspace(double start, double end, int num, std::vector<T> &output)
 {
 	if (!std::is_arithmetic<T>::value)
 		std::abort();
@@ -71,6 +71,19 @@ std::vector<T>& linspace(double start, double end, int num, std::vector<T> &outp
 	return output;
 }
 
+
+/**
+ * @brief Override based on "void linspce()"
+ */
+template<typename T = double>
+std::vector<T>& linspace(double start, double end, int num)
+{
+	std::vector<T> output;
+	linspace(start, end, num, output);
+	return output;
+}
+
+
 /**
  * @brief Return a vector that the difference between each adjacent values is 'gap'
  * 
@@ -82,7 +95,7 @@ std::vector<T>& linspace(double start, double end, int num, std::vector<T> &outp
  * @return  A vector stores linspaced values. 
  */
 template<typename T = double>
-std::vector<T>& linspace(double start, double gap, double end, std::vector<T> &output)
+void linspace(double start, double gap, double end, std::vector<T> &output)
 {
 	if (!std::is_arithmetic<T>::value)
 		std::abort();
@@ -94,6 +107,18 @@ std::vector<T>& linspace(double start, double gap, double end, std::vector<T> &o
 	}
 	output.push_back(static_cast<T>(end));
 	
+	return output;
+}
+
+
+/**
+ * @brief Override based on "void linspce()"
+ */
+template<typename T = double>
+std::vector<T>& linspace(double start, double gap, double end)
+{
+	std::vector<T> output;
+	linspace(start, gap, end, output);
 	return output;
 }
 
