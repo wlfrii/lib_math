@@ -158,7 +158,6 @@ public:
                          const Eigen::Vector<kfloat, 3>& dt);
 
 
-
 	/**
      * @brief Return the Pose info for print/std::out.
 	 * 
