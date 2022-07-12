@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pose_39',['Pose',['../classmmath_1_1_pose.html',1,'mmath::Pose'],['../classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631',1,'mmath::Pose::Pose(const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;T)'],['../classmmath_1_1_pose.html#ab61f06be3b16d86a06540a3532b8a825',1,'mmath::Pose::Pose(const Eigen::Matrix&lt; Tp1, 3, 3 &gt; &amp;R=Eigen::Matrix&lt; Tp1, 3, 3 &gt;::Identity(), const Eigen::Vector&lt; Tp2, 3 &gt; &amp;t={0, 0, 0})'],['../classmmath_1_1_pose.html#ab9a2881e540e17946db4c28704bbe61c',1,'mmath::Pose::Pose(Tp1 tx, Tp1 ty, Tp1 tz)'],['../classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7',1,'mmath::Pose::Pose(Tp1 data[16], bool is_row_fisrt=true)']]],
-  ['pose_2eh_40',['pose.h',['../pose_8h.html',1,'']]]
+  ['operator_2a_39',['operator*',['../classmmath_1_1_pose.html#a97572d64f3b560b02c341f4e10b52854',1,'mmath::Pose']]],
+  ['operator_2a_3d_40',['operator*=',['../classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2',1,'mmath::Pose']]],
+  ['operator_3d_41',['operator=',['../classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f',1,'mmath::Pose']]]
 ];

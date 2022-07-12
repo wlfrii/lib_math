@@ -114,6 +114,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a51ea9044da28c6721c29ae9baeb7cba7"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">Pose</a> (Tp1 data[16], bool is_row_fisrt=true)</td></tr>
 <tr class="memdesc:a51ea9044da28c6721c29ae9baeb7cba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object.  <a href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">More...</a><br /></td></tr>
 <tr class="separator:a51ea9044da28c6721c29ae9baeb7cba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94172f6eec60e1747b5a1b8330888c8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">operator=</a> (const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;pose)</td></tr>
+<tr class="memdesc:a94172f6eec60e1747b5a1b8330888c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator =  <a href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">More...</a><br /></td></tr>
+<tr class="separator:a94172f6eec60e1747b5a1b8330888c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97572d64f3b560b02c341f4e10b52854"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a97572d64f3b560b02c341f4e10b52854">operator*</a> (const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;pose)</td></tr>
+<tr class="memdesc:a97572d64f3b560b02c341f4e10b52854"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *  <a href="classmmath_1_1_pose.html#a97572d64f3b560b02c341f4e10b52854">More...</a><br /></td></tr>
+<tr class="separator:a97572d64f3b560b02c341f4e10b52854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47e764356bd808c8bdec3c1f361310b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">operator*=</a> (const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;pose)</td></tr>
+<tr class="memdesc:a47e764356bd808c8bdec3c1f361310b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *=  <a href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">More...</a><br /></td></tr>
+<tr class="separator:a47e764356bd808c8bdec3c1f361310b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ef5d8d0437545ffe52885e06a85bbb"><td class="memItemLeft" align="right" valign="top">Eigen::Quaternion&lt; <a class="el" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">q</a> () const</td></tr>
 <tr class="memdesc:ad6ef5d8d0437545ffe52885e06a85bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return quaterion.  <a href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">More...</a><br /></td></tr>
 <tr class="separator:ad6ef5d8d0437545ffe52885e06a85bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -472,6 +481,87 @@ template&lt;typename Tp1  = kfloat&gt; </div>
 
 <p>Return the inverse of the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object </dd></dl>
+
+</div>
+</div>
+<a id="a97572d64f3b560b02c341f4e10b52854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97572d64f3b560b02c341f4e10b52854">&#9670;&nbsp;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmmath_1_1_pose.html">Pose</a> mmath::Pose::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td>
+          <td class="paramname"><em>pose</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>operator * </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a47e764356bd808c8bdec3c1f361310b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47e764356bd808c8bdec3c1f361310b2">&#9670;&nbsp;</a></span>operator*=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmmath_1_1_pose.html">Pose</a>&amp; mmath::Pose::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td>
+          <td class="paramname"><em>pose</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>operator *= </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a94172f6eec60e1747b5a1b8330888c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94172f6eec60e1747b5a1b8330888c8f">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmmath_1_1_pose.html">Pose</a>&amp; mmath::Pose::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td>
+          <td class="paramname"><em>pose</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>operator = </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

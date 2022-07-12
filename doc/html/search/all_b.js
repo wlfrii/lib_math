@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['skew_2eh_50',['skew.h',['../skew_8h.html',1,'']]],
-  ['skewsymmetric_51',['skewSymmetric',['../skew_8h.html#a7d7aa7eb880ede255d1cc918b39fd900',1,'mmath::skewSymmetric(Eigen::Vector&lt; T1, 3 &gt; &amp;vec)'],['../skew_8h.html#a4e0a0a982302c54c2c2d6348f7461585',1,'mmath::skewSymmetric(Eigen::RowVector&lt; T1, 3 &gt; &amp;vec)']]]
+  ['ransacfitlinebias_45',['ransacFitLineBias',['../line__2d_8h.html#a800dc32f765f08946568d8457fe84028',1,'mmath::ransacFitLineBias(Tp1 k, const std::vector&lt; Tp2 &gt; &amp;xs, const std::vector&lt; Tp2 &gt; &amp;ys, uint16_t iterations=100, float thresh=2)'],['../line__2d_8h.html#a650239d1c974a65cd1cec9bb0f5aa5dc',1,'mmath::ransacFitLineBias(Tp1 k, const std::vector&lt; Eigen::Vector&lt; Tp2, 2 &gt;&gt; &amp;pts, uint16_t iterations=100, float thresh=2)']]],
+  ['rotation_2eh_46',['rotation.h',['../rotation_8h.html',1,'']]],
+  ['rotbyx_47',['rotByX',['../rotation_8h.html#af76c297908a1aa9e0fbc3a47e77a5f3e',1,'mmath']]],
+  ['rotbyxf_48',['rotByXf',['../rotation_8h.html#ae66df831f76b1f8ea0205c6534dd1558',1,'mmath']]],
+  ['rotbyy_49',['rotByY',['../rotation_8h.html#afe17af27e5c0e05e2c097bd133f926cc',1,'mmath']]],
+  ['rotbyyf_50',['rotByYf',['../rotation_8h.html#aa4d1b5b4e4d2760367b02b86cf7a1801',1,'mmath']]],
+  ['rotbyz_51',['rotByZ',['../rotation_8h.html#acffec19c536e1c82c29f2253dad881c5',1,'mmath']]],
+  ['rotbyzf_52',['rotByZf',['../rotation_8h.html#aac41fe24a4915bfca82636fabcb3e7c0',1,'mmath']]]
 ];
