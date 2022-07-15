@@ -195,8 +195,8 @@ GaussianCurve<Tp> fitGuassianCurve(const std::vector<Tp1>& xs,
         dx = H.ldlt().solve(b); // faster
         //dx = H.inverse() * b;
 
-        if(cost > cost_prev){
-            //printf("Iterations: %d, cost: %f, cos_prev: %f\n", j, cost, cost_prev);
+        if(cost >= cost_prev){
+            // printf("Iterations: %d, cost: %f, cos_prev: %f\n", j, cost, cost_prev);
             break;
         }
 
