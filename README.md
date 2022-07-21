@@ -18,7 +18,7 @@ git clone https://github.com/wlfrii/lib_math.git
 
 ### I. Configure the library in your project 
 
-#### I.1 For Linux / Mac OS
+#### I.1 For Linux / Mac OS (recommended)
 
 After unpackaged the repository, do the <make&install> in your terminal as follows.
 ```bash
