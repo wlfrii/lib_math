@@ -6,18 +6,19 @@ The library will be updated continuously.
 
 ## Requirement
 
-  - <b>Linux / Mac OS</b> system platform.
-  - <b>CMake</b> tool. 
-  - <b>Eigen</b> library should be installed before <make&install> this library.
+  - <b>CMake</b> tool (version should be larger than __3.10__). 
+  - <b>Eigen</b> library (version should be no less that __3.4.0__) .
 
 ## How to use?
-
-### I. Configure the library in your project
 
 Download this library from github.
 ```bash
 git clone https://github.com/wlfrii/lib_math.git
 ```
+
+### I. Configure the library in your project 
+
+#### I.1 For Linux / Mac OS
 
 After unpackaged the repository, do the <make&install> in your terminal as follows.
 ```bash
@@ -44,6 +45,33 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     ${lib_math_LIBRARIES}
 )
 ```
+
+#### I.2 For Windows
+
+Open your terminal and check your cmake supported Visual Studio version first by type the command
+```bash
+cmake -G
+```
+
+Then find the generator name that has an __asterisk *__ in front of the name, which is the support generator. 
+For example, `* Visual Studio 16 2019`.
+
+After unpackaged the repository, do the <make&install> in your terminal as follows.
+```bash
+cd lib_math
+mkdir build
+cd build
+cmake "Visual Studio 16 2019" ..
+make -j
+sudo make install
+```
+
+Finally, open the __lib_math.sln__ in your `build/` folder by your Visual Studio and compile the solution. After compile done, you can include this library into you project by add the path of headers `lib_math/export/` and static library `lib_math.lib`.
+
+__Possible problem__:
+  + Cannot find Eigen3. 
+  __Fix__: *Comment the Line:44-Line:49 of the CMakeLists.txt, and replace `${EIGEN3_INCLUDE_DIRS}` in Line:58 of the CMakeLists.txt by your source code path of Eigen3.*
+
 
 ### II. Use the library
 
