@@ -6,7 +6,7 @@ The library will be updated continuously.
 
 ## Requirement
 
-  - <b>CMake</b> tool (version should be larger than __3.10__). 
+  - <b>CMake</b> tool (version should be no less than __3.10__). 
   - <b>Eigen</b> library (version should be no less that __3.4.0__) .
 
 ## How to use?
