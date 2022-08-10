@@ -1,6 +1,6 @@
 # lib_math
 
-This library is a mathematics extension library based on [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page). Some useful tiny functions that were created in some of my projects are rearranged in this project to facilitate my work.
+This library is a mathematics extension library based on [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page). Some useful tiny functions that were created in some of my projects are rearranged and templated in this project to facilitate my work. 
 
 The library will be updated continuously.
 
