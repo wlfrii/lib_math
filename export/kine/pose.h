@@ -115,6 +115,14 @@ public:
 
 
     /**
+     * @brief Transform a given point or vector
+     * @param p 
+     * @return Eigen::Vector<kfloat, 3> 
+     */
+    Eigen::Vector<kfloat, 3> operator*(const Eigen::Vector<kfloat, 3>& p);
+
+
+    /**
      * @brief Return quaterion.
      * 
      * @return Eigen::Quaternion<kfloat>

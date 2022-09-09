@@ -27,6 +27,14 @@ Pose &Pose::operator*=(const Pose &pose)
 }
 
 
+Eigen::Vector<kfloat, 3> Pose::operator*(const Eigen::Vector<kfloat, 3>& p)
+{
+    Eigen::Vector<kfloat, 3> ret;
+    ret = this->R * p + this->t;
+    return ret;
+}
+
+
 Eigen::Quaternion<kfloat> Pose::q() const
 {
     return Eigen::Quaternion<kfloat>(R);
