@@ -171,6 +171,34 @@ TEST_CASE("Test continuum dpose2delta", "[continuum]")
 }
 
 
+TEST_CASE("Test continuum dpose2L", "[continuum]")
+{
+    float L = 30;
+    float theta = mmath::deg2rad(30);
+    float delta = mmath::deg2rad(50);
+    mmath::Pose pose = mmath::continuum::dSingleSegmentPose2L(L, theta, delta);
+
+    CHECK(pose.R(0,0) == Approx(0).margin(1e-6));
+    CHECK(pose.R(0,1) == Approx(0).margin(1e-6));
+    CHECK(pose.R(0,2) == Approx(0).margin(1e-6));
+
+    CHECK(pose.R(1,0) == Approx(pose.R(0,1)).margin(1e-6));
+    CHECK(pose.R(1,1) == Approx(0).margin(1e-6));
+    CHECK(pose.R(1,2) == Approx(0).margin(1e-6));
+
+    CHECK(pose.R(2,0) == Approx(-pose.R(0,2)).margin(1e-6));
+    CHECK(pose.R(2,1) == Approx(-pose.R(1,2)).margin(1e-6));
+    CHECK(pose.R(2,2) == Approx(0).margin(1e-6));
+
+    float val = 1.0 / theta * cos(delta) * (1 - cos(theta));
+    CHECK(pose.t[0] == Approx(val).margin(1e-6));
+    val = 1.0 / theta * sin(delta) * (1 - cos(theta));
+    CHECK(pose.t[1] == Approx(val).margin(1e-6));
+    val = 1.0 / theta * sin(theta);
+    CHECK(pose.t[2] == Approx(val).margin(1e-6));
+}
+
+
 TEST_CASE("Test continuum dpose2delta with Lr", "[continuum]")
 {
     float L = 30;
@@ -202,6 +230,36 @@ TEST_CASE("Test continuum dpose2delta with Lr", "[continuum]")
     val = L/theta * cos(delta) * (1-cos(theta)) + Lr*cos(delta)*sin(theta);
     CHECK(pose.t[1] == Approx(val).margin(1e-6));
     CHECK(pose.t[2] == Approx(0).margin(1e-6));
+}
+
+
+TEST_CASE("Test continuum dpose2L with Lr", "[continuum]")
+{
+    float L = 30;
+    float Lr = 10;
+    float theta = mmath::deg2rad(30);
+    float delta = mmath::deg2rad(50);
+    mmath::Pose pose = mmath::continuum::dSingleWithRigidSegmentPose2L(
+                L, theta, delta, Lr);
+
+    CHECK(pose.R(0,0) == Approx(0).margin(1e-6));
+    CHECK(pose.R(0,1) == Approx(0).margin(1e-6));
+    CHECK(pose.R(0,2) == Approx(0).margin(1e-6));
+
+    CHECK(pose.R(1,0) == Approx(pose.R(0,1)).margin(1e-6));
+    CHECK(pose.R(1,1) == Approx(0).margin(1e-6));
+    CHECK(pose.R(1,2) == Approx(0).margin(1e-6));
+
+    CHECK(pose.R(2,0) == Approx(-pose.R(0,2)).margin(1e-6));
+    CHECK(pose.R(2,1) == Approx(-pose.R(1,2)).margin(1e-6));
+    CHECK(pose.R(2,2) == Approx(0).margin(1e-6));
+
+    float val = 1.0 / theta * cos(delta) * (1 - cos(theta)) + Lr * cos(delta)*sin(theta);
+    CHECK(pose.t[0] == Approx(val).margin(1e-6));
+    val = 1.0 / theta * sin(delta) * (1 - cos(theta)) + Lr * sin(delta)*sin(theta);
+    CHECK(pose.t[1] == Approx(val).margin(1e-6));
+    val = 1.0 / theta * sin(theta) + Lr * cos(theta);
+    CHECK(pose.t[2] == Approx(val).margin(1e-6));
 }
 
 

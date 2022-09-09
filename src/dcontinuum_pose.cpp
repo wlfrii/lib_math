@@ -56,6 +56,30 @@ Pose dSingleSegmentPose2delta(kfloat L, kfloat theta, kfloat delta)
 }
 
 
+void dSingleSegmentPose2L(kfloat L, kfloat theta, kfloat delta, Pose &dpose)
+{
+    Eigen::Matrix<kfloat, 3, 3> R_t1_2_tb =
+            rotByZ<kfloat>(-PI / 2 + delta)*rotByY<kfloat>(-PI / 2);
+    dpose.R = Eigen::Matrix3f::Zero();
+    if (abs(theta) < 1e-5) {
+        dpose.t = Eigen::Vector<kfloat, 3>(0, 0, 1);
+    }
+    else {
+        kfloat rc = 1.0 / theta;
+        dpose.t = rc * R_t1_2_tb *
+                Eigen::Vector<kfloat, 3>(sin(theta), 1 - cos(theta), 0);
+    }
+}
+
+
+Pose dSingleSegmentPose2L(kfloat L, kfloat theta, kfloat delta)
+{
+    Pose pose;
+    dSingleSegmentPose2L(L, theta, delta, pose);
+    return pose;
+}
+
+
 void dSingleWithRigidSegmentPose2theta(kfloat L, kfloat theta, kfloat delta,
                                        kfloat Lr, Pose &dpose)
 {
@@ -92,6 +116,26 @@ Pose dSingleWithRigidSegmentPose2delta(kfloat L, kfloat theta, kfloat delta,
 {
     Pose pose;
     dSingleWithRigidSegmentPose2delta(L, theta, delta, Lr, pose);
+    return pose;
+}
+
+
+void dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
+                                   kfloat Lr, Pose &dpose)
+{
+    dSingleSegmentPose2L(L, theta, delta, dpose);
+    if (abs(theta) > 1e-5) {
+        dpose.t += Lr * Eigen::Vector<kfloat, 3>(
+                    cos(delta)*sin(theta), sin(delta)*sin(theta), cos(theta));
+    }
+}
+
+
+Pose dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
+                                   kfloat Lr)
+{
+    Pose pose;
+    dSingleWithRigidSegmentPose2L(L, theta, delta, Lr, pose);
     return pose;
 }
 

@@ -33,7 +33,6 @@
 namespace mmath{
 namespace continuum{
 
-
 /**
  * @brief Calculating the partial of rotation and position of the end 
  * frame of single continuum segment, to delta.
@@ -70,6 +69,25 @@ void dSingleSegmentPose2delta(kfloat L, kfloat theta, kfloat delta, Pose &dpose)
  * @sa dSingleSegmentPose2delta
  */
 Pose dSingleSegmentPose2delta(kfloat L, kfloat theta, kfloat delta);
+
+
+/**
+ * @brief Calculating the partial of rotation and position of the end 
+ * frame of single continuum segment, to L.
+ * 
+ * @param L      The length of the segment.
+ * @param theta  The bending angle of the segment.
+ * @param delta  The bending direction of the segment.
+ * @param dpose  The derivatives of pose to theta.
+ */
+void dSingleSegmentPose2L(kfloat L, kfloat theta, kfloat delta, Pose &dpose);
+
+/**
+ * @brief Override based on 'void dSingleSegmentPose2L()'
+ * 
+ * @sa dSingleSegmentPose2theta
+ */
+Pose dSingleSegmentPose2L(kfloat L, kfloat theta, kfloat delta);
 
 
 /**
@@ -115,6 +133,27 @@ void dSingleWithRigidSegmentPose2delta(kfloat L, kfloat theta, kfloat delta,
 Pose dSingleWithRigidSegmentPose2delta(kfloat L, kfloat theta, kfloat delta,
                                        kfloat Lr);
 
+
+/**
+ * @brief Calculating the partial of rotation and position of the end 
+ * frame of single continuum segment with a rigid segment, to L.
+ * 
+ * @param L      The length of the segment.
+ * @param theta  The bending angle of the segment.
+ * @param delta  The bending direction of the segment.
+ * @param Lr     The length of the rigid segment.
+ * @param dpose  The derivatives of pose to theta.
+ */
+void dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
+                                   kfloat Lr, Pose &dpose);
+
+/**
+ * @brief Override based on 'void dSingleWithRigidSegmentPose2theta()'
+ * 
+ * @sa dSingleWithRigidSegmentPose2L
+ */
+Pose dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
+                                   kfloat Lr);
 
 }} // mmath::continuum
 #endif // LIB_MATH_DCONTINUUM_POSE_H_LF
