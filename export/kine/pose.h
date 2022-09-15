@@ -38,7 +38,7 @@ namespace mmath{
 /** 
  * @brief A class designed to describe the transformation (spatial pose).
  * This class can furtherly simplify the calculation of pose-trasform.
- * There are three members include in this class:
+ * There are two members include in this class:
  *   R	--  denotes the rotation or orientation.
  *   t  --  denotes the translation or position.
  */
@@ -105,6 +105,7 @@ public:
      * @return
      */
     Pose  operator* (const Pose& pose);
+    const Pose  operator* (const Pose& pose);
 
     /**
      * @brief operator *=
