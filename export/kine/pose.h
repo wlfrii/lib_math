@@ -31,7 +31,9 @@
 #ifndef LIB_MATH_POSE_H_LF
 #define LIB_MATH_POSE_H_LF
 #include <Eigen/Dense>
+#include <iostream>
 #include "kine_precision.h"
+
 
 namespace mmath{
 
@@ -93,6 +95,29 @@ public:
 
 
     /**
+     * @brief Construct a new Pose object
+     * 
+     * @tparam Tp1 
+     * @param m11 
+     * @param m12 
+     * @param m13 
+     * @param m14 
+     * @param m21 
+     * @param m22 
+     * @param m23 
+     * @param m24 
+     * @param m31 
+     * @param m32 
+     * @param m33 
+     * @param m34 
+     */
+    template<typename Tp1 = kfloat>
+    explicit Pose(Tp1 m11, Tp1 m12, Tp1 m13, Tp1 m14,
+                  Tp1 m21, Tp1 m22, Tp1 m23, Tp1 m24,
+                  Tp1 m31, Tp1 m32, Tp1 m33, Tp1 m34);
+
+
+    /**
      * @brief operator =
      * @param pose
      * @return
@@ -105,7 +130,6 @@ public:
      * @return
      */
     Pose  operator* (const Pose& pose);
-    const Pose  operator* (const Pose& pose);
 
     /**
      * @brief operator *=
@@ -121,6 +145,15 @@ public:
      * @return Eigen::Vector<kfloat, 3> 
      */
     Eigen::Vector<kfloat, 3> operator*(const Eigen::Vector<kfloat, 3>& p);
+
+
+    /**
+     * @brief operator <<
+     * @param os
+     * @param pose
+     * @return
+     */
+    inline friend std::ostream& operator<< (std::ostream& os, const Pose& pose);
 
 
     /**
@@ -227,6 +260,16 @@ Pose::Pose(Tp1 data[], bool is_row_fisrt)
                 data[2], data[6], data[10];
         t = Eigen::Vector<kfloat, 3>(data[12], data[13], data[14]);
     }
+}
+
+
+template<typename Tp1>
+Pose::Pose(Tp1 m11, Tp1 m12, Tp1 m13, Tp1 m14,
+           Tp1 m21, Tp1 m22, Tp1 m23, Tp1 m24,
+           Tp1 m31, Tp1 m32, Tp1 m33, Tp1 m34)
+{
+    this->R << m11, m12, m13, m21, m22, m23, m31, m32, m33;
+    this->t = Eigen::Vector<kfloat, 3>(m14, m24, m34);
 }
 
 } // mmath

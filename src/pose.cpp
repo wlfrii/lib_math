@@ -2,7 +2,7 @@
 
 namespace mmath{
 
-Pose &Pose::operator=(const Pose &pose)
+Pose& Pose::operator=(const Pose &pose)
 {
     this->R = pose.R;
     this->t = pose.t;
@@ -19,7 +19,7 @@ Pose Pose::operator*(const Pose &pose)
 }
 
 
-Pose &Pose::operator*=(const Pose &pose)
+Pose& Pose::operator*=(const Pose &pose)
 {
     this->t += this->R * pose.t;
     this->R *= pose.R;
@@ -32,6 +32,13 @@ Eigen::Vector<kfloat, 3> Pose::operator*(const Eigen::Vector<kfloat, 3>& p)
     Eigen::Vector<kfloat, 3> ret;
     ret = this->R * p + this->t;
     return ret;
+}
+
+
+std::ostream& operator<<(std::ostream &os, const Pose &pose)
+{
+    os << pose.T();
+    return os;
 }
 
 
