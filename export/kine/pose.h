@@ -153,7 +153,7 @@ public:
      * @param pose
      * @return
      */
-    inline friend std::ostream& operator<< (std::ostream& os, const Pose& pose);
+    friend std::ostream& operator<< (std::ostream& os, const Pose& pose);
 
 
     /**
@@ -177,7 +177,7 @@ public:
 	 * 
      * @return Pose object
 	 */
-    Pose inverse();
+    Pose inverse() const;
 
 
     /**

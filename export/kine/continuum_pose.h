@@ -42,7 +42,7 @@ namespace continuum{
  * @return The rotation and position matrix of single continuum segment with
  * respect to its base frame.
  */
-void  calcSingleSegmentPose(kfloat L, kfloat theta, kfloat delta, Pose &pose);
+void calcSingleSegmentPose(kfloat L, kfloat theta, kfloat delta, Pose &pose);
 
 
 /**

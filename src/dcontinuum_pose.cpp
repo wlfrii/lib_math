@@ -139,4 +139,97 @@ Pose dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
     return pose;
 }
 
+
+/*---------------------------------------------------------------------------*/
+/*         Calculate the Jacobian w.r.t Velocity and Angular-Velocity        */
+/*---------------------------------------------------------------------------*/
+
+
+void calcSingleSegmentJacobian(
+        kfloat L, kfloat theta, kfloat delta,
+        Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw)
+{
+    if(abs(theta) <= 1e-5) {
+        Jv << L * cos(delta) * 0.5, 0,
+                L * sin(delta) * 0.5, 0,
+                0, 0;
+        Jw << -sin(delta), 0,
+                cos(delta), 0,
+                0, 0;
+    }
+    else{
+        Jv(0, 0) = L*cos(delta)*(theta*sin(theta) + cos(theta) - 1)/theta*theta;
+        Jv(0, 1) = L*sin(delta)*(cos(theta) - 1)/theta;
+        Jv(1, 0) = L*sin(delta)*(theta*sin(theta) + cos(theta) - 1)/theta*theta;
+        Jv(1, 1) = -L*cos(delta)*(cos(theta) - 1)/theta;
+        Jv(2, 0) = L*(theta*cos(theta) - sin(theta))/theta*theta;
+        Jv(2, 1) = 0;
+
+        Jw << -sin(delta), -sin(theta)*cos(delta),
+                cos(delta), -sin(theta)*sin(delta),
+                0, 1 - cos(theta);
+    }
+}
+
+
+void calcVariableLengthSegmentJacobian(
+        kfloat L, kfloat theta, kfloat delta,
+        Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw)
+{
+    Eigen::Matrix<kfloat, 3, 2> Jv1, Jw1;
+    calcSingleSegmentJacobian(L, theta, delta, Jv1, Jw1);
+    Jv.block(0, 0, 3, 2) = Jv1;
+    Jw.block(0, 0, 3, 2) = Jw1;
+    Jw.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 0);
+    if(abs(theta) <= 1e-5) {
+        Jv.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 1);
+    }
+    else{
+        Jv.col(2) = Eigen::Vector<kfloat, 3>(
+                    cos(delta)*(1 - cos(theta)) / theta,
+                    sin(delta)*(1 - cos(theta)) / theta,
+                    sin(theta) / theta);
+    }
+}
+
+
+void calcSingleWithRigidSegmentJacobian(
+        kfloat L, kfloat theta, kfloat delta, kfloat Lr,
+        Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw)
+{
+    calcSingleSegmentJacobian(L, theta, delta, Jv, Jw);
+    if(abs(theta) <= 1e-5) {
+        Jv(0, 0) += Lr*cos(delta);
+        Jv(1, 0) += Lr*sin(delta);
+    }
+    else{
+        Jv(0, 0) += Lr*cos(theta)*cos(delta);
+        Jv(0, 1) += -Lr*sin(theta)*sin(delta);
+        Jv(1, 0) += Lr*cos(theta)*sin(delta);
+        Jv(1, 1) += Lr*sin(theta)*cos(delta);
+        Jv(2, 0) += -Lr*sin(theta);
+    }
+}
+
+
+void calcVariableLengthWithRigidSegmentJacobian(
+        kfloat L, kfloat theta, kfloat delta, kfloat Lr,
+        Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw)
+{
+    Eigen::Matrix<kfloat, 3, 2> Jv1, Jw1;
+    calcSingleWithRigidSegmentJacobian(L, theta, delta, Lr, Jv1, Jw1);
+    Jv.block(0, 0, 3, 2) = Jv1;
+    Jw.block(0, 0, 3, 2) = Jw1;
+    Jw.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 0);
+    if(abs(theta) <= 1e-5) {
+        Jv.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 1);
+    }
+    else{
+        Jv.col(2) = Eigen::Vector<kfloat, 3>(
+                    cos(delta)*(1 - cos(theta)) / theta,
+                    sin(delta)*(1 - cos(theta)) / theta,
+                    sin(theta) / theta);
+    }
+}
+
 }} // mmath::continuum
