@@ -60,9 +60,35 @@ Eigen::Matrix<T, 3, 3> skewSymmetric(Eigen::Vector<T1, 3> &vec)
 template<typename T = double, typename T1 = double>
 Eigen::Matrix<T, 3, 3> skewSymmetric(Eigen::RowVector<T1, 3> &vec)
 {
-    Eigen::Matrix<T, 3, 3> mat;
-	mat << 0, -vec(2), vec(1), vec(2), 0, -vec(0), -vec(1), vec(0), 0;
-	return mat;
+	return skewSymmetric<T>(vec.transpose());
+}
+
+
+/**
+ * @brief Return the skew-symmetric matrix based on the input vector.
+ * 
+ * @tparam T  Type of input vector.
+ * @param vec A 3D column vector.
+ * @return A skew symmetric matrix.
+ */
+template<typename T = double>
+Eigen::Matrix3f skewSymmetricf(Eigen::Vector<T, 3> &vec)
+{
+	return skewSymmetric<float>(vec);
+}
+
+
+/**
+ * @brief Return the skew-symmetric matrix based on the input vector.
+ * 
+ * @tparam T  Type of input vector.
+ * @param vec A 3D row vector.
+ * @return A skew symmetric matrix.
+ */
+template<typename T = double>
+Eigen::Matrix3f skewSymmetricf(Eigen::RowVector<T, 3> &vec)
+{
+	return skewSymmetric<float>(vec);
 }
 
 

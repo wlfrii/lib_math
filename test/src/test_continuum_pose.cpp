@@ -414,4 +414,8 @@ TEST_CASE("Test continuum Jacobian", "[continuum]")
     CHECK(Jw(0, 2) == Approx(0).margin(1e-6));
     CHECK(Jw(1, 2) == Approx(0).margin(1e-6));
     CHECK(Jw(2, 2) == Approx(0).margin(1e-6));
+
+
+    // mmath::continuum::calcVariableLengthWithRigidSegmentJacobian(
+    //             L, theta, delta, Lr, Jv, Jw);
 }
