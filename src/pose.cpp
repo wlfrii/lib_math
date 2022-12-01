@@ -1,4 +1,5 @@
 #include "../export/kine/pose.h"
+#include <iomanip>
 
 namespace mmath{
 
@@ -37,7 +38,14 @@ Eigen::Vector<kfloat, 3> Pose::operator*(const Eigen::Vector<kfloat, 3>& p)
 
 std::ostream& operator<<(std::ostream &os, const Pose &pose)
 {
-    os << pose.T();
+    int w = 12;
+    for(uint8_t i = 0; i < 3; i++) {
+        os << std::setw(w) << pose.R(i, 0) << " "
+           << std::setw(w) << pose.R(i, 1) << " "
+           << std::setw(w) << pose.R(i, 2) << " "
+           << std::setw(w) << pose.t[i];
+        if(i < 2) os << "\n";
+    }    
     return os;
 }
 
@@ -57,7 +65,7 @@ Eigen::Matrix<kfloat, 4, 4> Pose::T() const
 }
 
 
-Pose Pose::inverse()
+Pose Pose::inverse() const
 {
     Eigen::Matrix<kfloat, 4, 4> T;
     T.topLeftCorner(3, 3) = R.transpose();
