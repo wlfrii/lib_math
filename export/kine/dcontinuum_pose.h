@@ -169,11 +169,23 @@ Pose dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
  * @param L      The length of the segment.
  * @param theta  The bending angle of the segment.
  * @param delta  The bending direction of the segment.
- * @param Jv     The returned Jacobian w.r.t Velocity
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity
+ * @param Jv     The returned Jacobian w.r.t Velocity, with 
+ *               [Jv_theta(:), Jv_delta(:)]
+ * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
+ *               [Jw_theta(:), Jw_delta(:)]
  */
 void calcSingleSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta,
+        Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw);
+
+
+/**
+ * @brief Calculate the Jabobian of a single segment w.r.t Velocity and Angular
+ *        -Velocity.
+ * 
+ * @param q  The ConfigSpc object
+ */
+void calcSingleSegmentJacobian(const ConfigSpc &q,
         Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw);
 
 
@@ -184,11 +196,23 @@ void calcSingleSegmentJacobian(
  * @param L      The length of the segment.
  * @param theta  The bending angle of the segment.
  * @param delta  The bending direction of the segment.
- * @param Jv     The returned Jacobian w.r.t Velocity
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity
+ * @param Jv     The returned Jacobian w.r.t Velocity, with 
+ *               [Jv_theta(:), Jv_delta(:), Jv_L(:)]
+ * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
+ *               [Jw_theta(:), Jw_delta(:), Jw_L(:)]
  */
 void calcVariableLengthSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta,
+        Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw);
+
+
+/**
+ * @brief Calculate the Jabobian of a single segment tha has a variable length
+ *        w.r.t Velocity and Angular-Velocity.
+ * 
+ * @param q  The ConfigSpc object
+ */
+void calcVariableLengthSegmentJacobian(const ConfigSpc &q,
         Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw);
 
 
@@ -200,13 +224,24 @@ void calcVariableLengthSegmentJacobian(
  * @param theta  The bending angle of the segment.
  * @param delta  The bending direction of the segment.
  * @param Lr     The length of the rigid segment.
- * @param Jv     The returned Jacobian w.r.t Velocity
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity
+ * @param Jv     The returned Jacobian w.r.t Velocity, with 
+ *               [Jv_theta(:), Jv_delta(:)]
+ * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
+ *               [Jw_theta(:), Jw_delta(:)]
  */
 void calcSingleWithRigidSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta, kfloat Lr,
         Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw);
 
+
+/**
+ * @brief Calculate the Jabobian of a single segment with a rigid segment w.r.t
+ *        Velocity and Angular-Velocity.
+ * 
+ * @param q  The ConfigSpc object
+ */
+void calcSingleWithRigidSegmentJacobian(const ConfigSpc &q, kfloat Lr,
+        Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw);
 
 
 /**
@@ -217,14 +252,24 @@ void calcSingleWithRigidSegmentJacobian(
  * @param theta  The bending angle of the segment.
  * @param delta  The bending direction of the segment.
  * @param Lr     The length of the rigid segment.
- * @param Jv     The returned Jacobian w.r.t Velocity
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity
+ * @param Jv     The returned Jacobian w.r.t Velocity, with 
+ *               [Jv_theta(:), Jv_delta(:), Jv_L(:)]
+ * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
+ *               [Jw_theta(:), Jw_delta(:), Jw_L(:)]
  */
 void calcVariableLengthWithRigidSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta, kfloat Lr,
         Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw);
 
 
+/**
+ * @brief Calculate the Jabobian of a single segment tha has a variable length
+ *        and followed by a rigid segment, w.r.t Velocity and Angular-Velocity.
+ * 
+ * @param q  The ConfigSpc object
+ */
+void calcVariableLengthWithRigidSegmentJacobian(const ConfigSpc &q, kfloat Lr,
+        Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw);
 
 }} // mmath::continuum
 #endif // LIB_MATH_DCONTINUUM_POSE_H_LF

@@ -157,18 +157,49 @@ void calcSingleSegmentJacobian(
                 cos(delta), 0,
                 0, 0;
     }
-    else{
-        Jv(0, 0) = L*cos(delta)*(theta*sin(theta) + cos(theta) - 1)/theta*theta;
-        Jv(0, 1) = L*sin(delta)*(cos(theta) - 1)/theta;
-        Jv(1, 0) = L*sin(delta)*(theta*sin(theta) + cos(theta) - 1)/theta*theta;
-        Jv(1, 1) = -L*cos(delta)*(cos(theta) - 1)/theta;
-        Jv(2, 0) = L*(theta*cos(theta) - sin(theta))/theta*theta;
+    else {
+        Jv(0, 0) = L*cos(delta) * (theta*sin(theta) + cos(theta) - 1) /
+                powf(theta, 2);
+        Jv(0, 1) = L*sin(delta) * (cos(theta) - 1)/theta;
+        Jv(1, 0) = L*sin(delta) * (theta*sin(theta) + cos(theta) - 1) /
+                powf(theta, 2);
+        Jv(1, 1) = -L*cos(delta) * (cos(theta) - 1) / theta;
+        Jv(2, 0) = L*(theta*cos(theta) - sin(theta)) / powf(theta, 2);
         Jv(2, 1) = 0;
 
         Jw << -sin(delta), -sin(theta)*cos(delta),
                 cos(delta), -sin(theta)*sin(delta),
                 0, 1 - cos(theta);
     }
+}
+
+
+void calcSingleSegmentJacobian(const ConfigSpc &q,
+        Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw)
+{
+    if(q.is_bend) {
+        calcSingleSegmentJacobian(q.length, q.theta, q.delta, Jv, Jw);
+    }
+    else {
+        Jv = Eigen::Matrix<kfloat, 3, 2>::Zero();
+        Jw = Eigen::Matrix<kfloat, 3, 2>::Zero();
+    }
+}
+
+
+namespace {
+Eigen::Vector<kfloat, 3> calcJv2L(kfloat theta, kfloat delta)
+{
+    if(abs(theta) <= 1e-5) {
+        return Eigen::Vector<kfloat, 3>(0, 0, 1);
+    }
+    else {
+        return Eigen::Vector<kfloat, 3>(
+                    cos(delta)*(1 - cos(theta)) / theta,
+                    sin(delta)*(1 - cos(theta)) / theta,
+                    sin(theta) / theta);
+    }
+}
 }
 
 
@@ -181,14 +212,20 @@ void calcVariableLengthSegmentJacobian(
     Jv.block(0, 0, 3, 2) = Jv1;
     Jw.block(0, 0, 3, 2) = Jw1;
     Jw.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 0);
-    if(abs(theta) <= 1e-5) {
-        Jv.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 1);
+    Jv.col(2) = calcJv2L(theta, delta);
+}
+
+
+void calcVariableLengthSegmentJacobian(const ConfigSpc &q,
+        Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw)
+{
+    if(q.is_bend) {
+        calcVariableLengthSegmentJacobian(q.length, q.theta, q.delta, Jv, Jw);
     }
-    else{
-        Jv.col(2) = Eigen::Vector<kfloat, 3>(
-                    cos(delta)*(1 - cos(theta)) / theta,
-                    sin(delta)*(1 - cos(theta)) / theta,
-                    sin(theta) / theta);
+    else {
+        Jv = Eigen::Matrix<kfloat, 3, 3>::Zero();
+        Jv(2, 2) = 1;
+        Jw = Eigen::Matrix<kfloat, 3, 3>::Zero();
     }
 }
 
@@ -202,12 +239,26 @@ void calcSingleWithRigidSegmentJacobian(
         Jv(0, 0) += Lr*cos(delta);
         Jv(1, 0) += Lr*sin(delta);
     }
-    else{
+    else {
         Jv(0, 0) += Lr*cos(theta)*cos(delta);
         Jv(0, 1) += -Lr*sin(theta)*sin(delta);
         Jv(1, 0) += Lr*cos(theta)*sin(delta);
         Jv(1, 1) += Lr*sin(theta)*cos(delta);
         Jv(2, 0) += -Lr*sin(theta);
+    }
+}
+
+
+void calcSingleWithRigidSegmentJacobian(const ConfigSpc &q, kfloat Lr,
+        Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw)
+{
+    if(q.is_bend) {
+        calcSingleWithRigidSegmentJacobian(
+                    q.length, q.theta, q.delta, Lr, Jv, Jw);
+    }
+    else {
+        Jv = Eigen::Matrix<kfloat, 3, 2>::Zero();
+        Jw = Eigen::Matrix<kfloat, 3, 2>::Zero();
     }
 }
 
@@ -221,14 +272,21 @@ void calcVariableLengthWithRigidSegmentJacobian(
     Jv.block(0, 0, 3, 2) = Jv1;
     Jw.block(0, 0, 3, 2) = Jw1;
     Jw.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 0);
-    if(abs(theta) <= 1e-5) {
-        Jv.col(2) = Eigen::Vector<kfloat, 3>(0, 0, 1);
+    Jv.col(2) = calcJv2L(theta, delta);
+}
+
+
+void calcVariableLengthWithRigidSegmentJacobian(const ConfigSpc &q, kfloat Lr,
+        Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw)
+{
+    if(q.is_bend) {
+        calcVariableLengthWithRigidSegmentJacobian(
+                    q.length, q.theta, q.delta, Lr, Jv, Jw);
     }
-    else{
-        Jv.col(2) = Eigen::Vector<kfloat, 3>(
-                    cos(delta)*(1 - cos(theta)) / theta,
-                    sin(delta)*(1 - cos(theta)) / theta,
-                    sin(theta) / theta);
+    else {
+        Jv = Eigen::Matrix<kfloat, 3, 3>::Zero();
+        Jv(2, 2) = 1;
+        Jw = Eigen::Matrix<kfloat, 3, 3>::Zero();
     }
 }
 
