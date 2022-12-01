@@ -322,3 +322,96 @@ TEST_CASE("Test continuum pose*=", "[continuum]")
     CHECK(pose1.t[1] == Approx(-1.96283).margin(1e-6));
     CHECK(pose1.t[2] == Approx(28.9654).margin(1e-6));
 }
+
+
+TEST_CASE("Test continuum Jacobian", "[continuum]")
+{
+    float L = 30;
+    float Lr = 10;
+    float theta = mmath::deg2rad(30);
+    float delta = mmath::deg2rad(50);
+
+
+    Eigen::Matrix<float, 3, 3> Jv, Jw;
+    mmath::continuum::calcVariableLengthSegmentJacobian(
+                L, theta, delta, Jv, Jw);
+
+    float val = 0;
+    val = L*cos(delta)*(theta*sin(theta)+cos(theta) - 1) / theta*theta;
+    CHECK(Jv(0, 0) == Approx(val).margin(1e-6));
+
+    val = L*sin(delta)*(cos(theta)-1)/theta;
+    CHECK(Jv(0, 1) == Approx(val).margin(1e-6));
+
+    val = L*sin(delta)*(theta*sin(theta)+cos(theta) - 1)/theta*theta;
+    CHECK(Jv(1, 0) == Approx(val).margin(1e-6));
+    val = -L*cos(delta)*(cos(theta) - 1)/theta;
+    CHECK(Jv(1, 1) == Approx(val).margin(1e-6));
+    val = L*(theta*cos(theta) - sin(theta))/theta*theta;
+    CHECK(Jv(2, 0) == Approx(val).margin(1e-6));
+    CHECK(Jv(2, 1) == Approx(0).margin(1e-6));
+
+
+    mmath::continuum::calcVariableLengthWithRigidSegmentJacobian(
+                L, theta, delta, Lr, Jv, Jw);
+
+    val = L*cos(delta)*(theta*sin(theta)+cos(theta) - 1) / theta*theta +
+            Lr*cos(theta)*cos(delta);
+    CHECK(Jv(0, 0) == Approx(val).margin(1e-6));
+
+    val = L*sin(delta)*(cos(theta)-1)/theta - Lr*sin(theta)*sin(delta);
+    CHECK(Jv(0, 1) == Approx(val).margin(1e-6));
+
+    val = L*sin(delta)*(theta*sin(theta)+cos(theta) - 1)/theta*theta +
+            Lr*cos(theta)*sin(delta);
+    CHECK(Jv(1, 0) == Approx(val).margin(1e-6));
+    val = -L*cos(delta)*(cos(theta) - 1)/theta + Lr*sin(theta)*cos(delta);
+    CHECK(Jv(1, 1) == Approx(val).margin(1e-6));
+    val = L*(theta*cos(theta) - sin(theta))/theta*theta - Lr*sin(theta);
+    CHECK(Jv(2, 0) == Approx(val).margin(1e-6));
+    CHECK(Jv(2, 1) == Approx(0).margin(1e-6));
+
+    CHECK(Jv(0, 2) == Approx(cos(delta)*(1 - cos(theta))/theta).margin(1e-6));
+    CHECK(Jv(1, 2) == Approx(sin(delta)*(1 - cos(theta))/theta).margin(1e-6));
+    CHECK(Jv(2, 2) == Approx(sin(theta)/theta).margin(1e-6));
+
+    CHECK(Jw(0, 0) == Approx(-sin(delta)).margin(1e-6));
+    CHECK(Jw(0, 1) == Approx(-sin(theta)*cos(delta)).margin(1e-6));
+    CHECK(Jw(1, 0) == Approx(cos(delta)).margin(1e-6));
+    CHECK(Jw(1, 1) == Approx(-sin(theta)*sin(delta)).margin(1e-6));
+    CHECK(Jw(2, 0) == Approx(0).margin(1e-6));
+    CHECK(Jw(2, 1) == Approx(1 - cos(theta)).margin(1e-6));
+
+    CHECK(Jw(0, 2) == Approx(0).margin(1e-6));
+    CHECK(Jw(1, 2) == Approx(0).margin(1e-6));
+    CHECK(Jw(2, 2) == Approx(0).margin(1e-6));
+
+
+    theta = 0.f;
+    mmath::continuum::calcVariableLengthSegmentJacobian(
+                L, theta, delta, Jv, Jw);
+
+    val = L*cos(delta)*0.5;
+    CHECK(Jv(0, 0) == Approx(val).margin(1e-6));
+    CHECK(Jv(0, 1) == Approx(0).margin(1e-6));
+    val = L*sin(delta)*0.5;
+    CHECK(Jv(1, 0) == Approx(val).margin(1e-6));
+    CHECK(Jv(1, 1) == Approx(0).margin(1e-6));
+    CHECK(Jv(2, 0) == Approx(0).margin(1e-6));
+    CHECK(Jv(2, 1) == Approx(0).margin(1e-6));
+
+    CHECK(Jv(0, 2) == Approx(0).margin(1e-6));
+    CHECK(Jv(1, 2) == Approx(0).margin(1e-6));
+    CHECK(Jv(2, 2) == Approx(1).margin(1e-6));
+
+    CHECK(Jw(0, 0) == Approx(-sin(delta)).margin(1e-6));
+    CHECK(Jw(0, 1) == Approx(0).margin(1e-6));
+    CHECK(Jw(1, 0) == Approx(cos(delta)).margin(1e-6));
+    CHECK(Jw(1, 1) == Approx(0).margin(1e-6));
+    CHECK(Jw(2, 0) == Approx(0).margin(1e-6));
+    CHECK(Jw(2, 1) == Approx(0).margin(1e-6));
+
+    CHECK(Jw(0, 2) == Approx(0).margin(1e-6));
+    CHECK(Jw(1, 2) == Approx(0).margin(1e-6));
+    CHECK(Jw(2, 2) == Approx(0).margin(1e-6));
+}
