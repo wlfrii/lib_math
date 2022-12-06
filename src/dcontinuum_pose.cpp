@@ -60,7 +60,7 @@ void dSingleSegmentPose2L(kfloat L, kfloat theta, kfloat delta, Pose &dpose)
 {
     Eigen::Matrix<kfloat, 3, 3> R_t1_2_tb =
             rotByZ<kfloat>(-PI / 2 + delta)*rotByY<kfloat>(-PI / 2);
-    dpose.R = Eigen::Matrix3f::Zero();
+    dpose.R = Eigen::Matrix<kfloat, 3, 3>::Zero();
     if (abs(theta) < 1e-5) {
         dpose.t = Eigen::Vector<kfloat, 3>(0, 0, 1);
     }
