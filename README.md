@@ -104,6 +104,12 @@ __NOTE__: The `precision` for calculation of kinemaices related functions is cha
 #include <lib_math/lib_math>
 ```
 
+Or, a more straight forward way is define `LIB_MATH_KINE_DOUBLE` when compile the project, as follws.
+```base
+...
+cmake -DLIB_MATH_KINE_DOUBLE=ON ..
+...
+```
 
 ## Interfaces Manual
 
