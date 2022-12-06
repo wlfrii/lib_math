@@ -104,12 +104,14 @@ __NOTE__: The `precision` for calculation of kinemaices related functions is cha
 #include <lib_math/lib_math>
 ```
 
-Or, a more straight forward way is define `LIB_MATH_KINE_DOUBLE` when compile the project, as follws.
+Or, a more straight forward way is to define `LIB_MATH_KINE_DOUBLE` when compile the project, as follws.
 ```base
 ...
 cmake -DLIB_MATH_KINE_DOUBLE=ON ..
 ...
 ```
+
+In addition, the `Eigen` library is very sensitive to precision (such as `Eigen::Matrixf` can not be assigned to `Eigen::Matrixd` directly). Thus, to avoid compiling errors in your projects, the arguments type for the _kinemaices related functions_ is suggested to use `mmath::kfloat`, which is corresponding to `LIB_MATH_KINE_DOUBLE`.
 
 ## Interfaces Manual
 
