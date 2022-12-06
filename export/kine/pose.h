@@ -191,6 +191,12 @@ public:
 
 
     /**
+     * @brief Unit orthogonalize the rotation matrix. 
+     */
+    void unitOrthogonalize();
+
+
+    /**
      * @brief Add a increment.
      * @param dq  The increment of rotation/orientation
      * @param dt  The increament of translation/position
