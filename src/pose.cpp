@@ -67,10 +67,10 @@ Eigen::Matrix<kfloat, 4, 4> Pose::T() const
 
 Pose Pose::inverse() const
 {
-    Eigen::Matrix<kfloat, 4, 4> T;
-    T.topLeftCorner(3, 3) = R.transpose();
-    T.topRightCorner(3, 1) = -R.transpose()*t;
-    return Pose(T);
+    Pose pose;
+    pose.R = this->R.transpose();
+    pose.t = -this->R.transpose()*this->t;
+    return pose;
 }
 
 
