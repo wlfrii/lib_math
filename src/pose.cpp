@@ -83,11 +83,14 @@ bool Pose::isUnitOrthogonal() const
     auto isEqual = [](float val1, float val2) -> bool {
         return abs(val1 - val2) < 1e-5;
     };
-    return isEqual(RR(0,0), 1) && isEqual(RR(1,1), 1) && isEqual(RR(2,2), 1)
+    bool flag = 
+        isEqual(RR(0,0), 1) && isEqual(RR(1,1), 1) && isEqual(RR(2,2), 1)
         && isEqual(RR(0,1), 0) && isEqual(RR(0,2), 0)
         && isEqual(RR(1,0), 0) && isEqual(RR(1,2), 0) 
         && isEqual(RR(2,0), 0) && isEqual(RR(2,1), 0)
         && isEqual(tt[0], 0) && isEqual(tt[1], 0) && isEqual(tt[2], 0);
+        
+    return flag;
 }
 
 
