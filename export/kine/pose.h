@@ -22,10 +22,11 @@
  * --------------------------------------------------------------------
  * Change History:                
  * 
- * 2022/06/06 Rename the file as pose and templated this class.
+ * 2022/12/06 Add a function check the orthogonalization of rotation matrix.
  * 2022/06/27 Consider the usage of this class are not sensitive to precision,
  * remove the templated-class-type, then controlling the precesion by
  * LIB_MATH_KINE_DOUBLE.
+ * 2022/06/06 Rename the file as pose and templated this class.
  * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_POSE_H_LF
@@ -178,6 +179,15 @@ public:
      * @return Pose object
 	 */
     Pose inverse() const;
+
+
+    /**
+     * @brief Check whether the vector of rotation matrix is unit orthogonal.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool isUnitOrthogonal() const;
 
 
     /**
