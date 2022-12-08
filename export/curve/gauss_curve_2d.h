@@ -69,7 +69,7 @@ struct GaussianCurve
      * @tparam Tp1 
      * @tparam Tp2 
      * @param x  The value of a given position.
-     * @return Eigen::Vector<Tp1, 3>  The Jocabian value for a, mu, and sigma at \param x.
+     * @return Eigen::Vector<Tp1, 3>  The Jocabian value for [a, mu, sigma] at \param x.
      */
     template<typename Tp1 = double, typename Tp2>
     Eigen::Vector<Tp1, 3> JocabianAt(Tp2 x){
