@@ -120,10 +120,21 @@ public:
 
     /**
      * @brief operator =
+     * @tparam Tp1  The type of inputs.
+     * @param Eigen::Matrix4f
+     * @return
+     */
+    template<typename Tp1 = kfloat>
+    Pose& operator= (const Eigen::Matrix<Tp1, 4, 4>& pose);
+
+
+    /**
+     * @brief operator =
      * @param pose
      * @return
      */
     Pose& operator= (const Pose& pose);
+
 
     /**
      * @brief operator *
@@ -286,6 +297,14 @@ Pose::Pose(Tp1 m11, Tp1 m12, Tp1 m13, Tp1 m14,
 {
     this->R << m11, m12, m13, m21, m22, m23, m31, m32, m33;
     this->t = Eigen::Vector<kfloat, 3>(m14, m24, m34);
+}
+
+
+template<typename Tp1>
+Pose& Pose::operator=(const Eigen::Matrix<Tp1, 4, 4>& pose)
+{
+    *this = Pose(pose);
+    return *this;
 }
 
 } // mmath
