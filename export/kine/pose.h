@@ -273,7 +273,7 @@ Pose::Pose(Tp1 tx, Tp1 ty, Tp1 tz)
 
 
 template<typename Tp1>
-Pose::Pose(Tp1 data[], bool is_row_fisrt)
+Pose::Pose(Tp1 data[16], bool is_row_fisrt)
 {
     if (is_row_fisrt) {
         R << data[0], data[1], data[2],
