@@ -141,7 +141,8 @@ public:
      * @param pose
      * @return
      */
-    Pose  operator* (const Pose& pose);
+    Pose  operator* (const Pose& pose) const;
+    
 
     /**
      * @brief operator *=

@@ -11,7 +11,7 @@ Pose& Pose::operator=(const Pose &pose)
 }
 
 
-Pose Pose::operator*(const Pose &pose)
+Pose Pose::operator*(const Pose &pose) const
 {
     Pose ret;
     ret.R = this->R * pose.R;
