@@ -109,8 +109,6 @@ void linspace(double start, double gap, double end, std::vector<T> &output)
 		start += gap;
 	}
 	output.push_back(static_cast<T>(end));
-	
-	return output;
 }
 
 
