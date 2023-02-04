@@ -57,21 +57,19 @@ void linspaceN(double start, double end, int num, std::vector<T> &output)
 	if (num == 1)
 	{
 		output.push_back(static_cast<T>(start));
-		return output;
+		return;
 	}
 	else if (num == 2)
 	{
 		output.push_back(static_cast<T>(start));
 		output.push_back(static_cast<T>(end));
-		return output;
+		return;
 	}
 
 	float step = static_cast<T>(end - start) / static_cast<T>(num - 1);
 	for (int i = 0; i < num-1; ++i)
 		output.push_back(static_cast<T>(start + i * step));
 	output.push_back(static_cast<T>(end));
-
-	return output;
 }
 
 
