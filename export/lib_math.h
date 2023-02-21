@@ -53,6 +53,10 @@
 #include "curve/gauss_curve_2d.h"
 
 
+// Include some useful function for time counting
+#include "timer/timer.h"
+
+
 // Some explicit template class
 namespace mmath {
 

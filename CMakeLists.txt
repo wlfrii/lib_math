@@ -107,6 +107,10 @@ file(GLOB EXPORT_H export/curve/*.h)
 install(FILES ${EXPORT_H}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/curve
 )
+file(GLOB EXPORT_H export/timer/*.h)
+install(FILES ${EXPORT_H}
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/timer
+)
 # 3. Explicitly install the ${PROJECT_NAME}Targets export details.
 install(EXPORT ${PROJECT_NAME}-targets
     # NAMESPACE mylib::
