@@ -88,131 +88,179 @@ $(document).ready(function(){initNavTree('pose_8h_source.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <a href="pose_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef LIB_MATH_POSE_H_LF</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define LIB_MATH_POSE_H_LF</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kine__precision_8h.html">kine_precision.h</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span>mmath{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef LIB_MATH_POSE_H_LF</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define LIB_MATH_POSE_H_LF</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kine__precision_8h.html">kine_precision.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmmath_1_1_pose.html">Pose</a></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 4, 4&gt;&amp; <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>, <span class="keyword">typename</span> Tp2 = k<span class="keywordtype">float</span>&gt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 3, 3&gt;&amp; R =</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            Eigen::Matrix&lt;Tp1, 3, 3&gt;::Identity(),</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  <span class="keyword">const</span> Eigen::Vector&lt;Tp2, 3&gt;&amp; t = {0, 0, 0});</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(Tp1 tx, Tp1 ty, Tp1 tz);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">   92</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">Pose</a>(Tp1 data[16], <span class="keywordtype">bool</span> is_row_fisrt = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">  100</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; <a class="code" href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">operator= </a>(<span class="keyword">const</span> <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; pose);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a97572d64f3b560b02c341f4e10b52854">  107</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a>  <a class="code" href="classmmath_1_1_pose.html#a97572d64f3b560b02c341f4e10b52854">operator* </a>(<span class="keyword">const</span> <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; pose);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">  114</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; <a class="code" href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">operator*= </a>(<span class="keyword">const</span> <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; pose);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">  122</a></span>&#160;    Eigen::Quaternion&lt;kfloat&gt; <a class="code" href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">q</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">  130</a></span>&#160;    Eigen::Matrix&lt;kfloat, 4, 4&gt; <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a99bddcd17b14ca9f8f9855f2c8215d5b">  138</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a> <a class="code" href="classmmath_1_1_pose.html#a99bddcd17b14ca9f8f9855f2c8215d5b">inverse</a>();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">  147</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">increase</a>(<span class="keyword">const</span> Eigen::Quaternion&lt;kfloat&gt;&amp; dq,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                         <span class="keyword">const</span> Eigen::Vector&lt;kfloat, 3&gt;&amp; dt);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">  157</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">decrease</a>(<span class="keyword">const</span> Eigen::Quaternion&lt;kfloat&gt;&amp; dq,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                         <span class="keyword">const</span> Eigen::Vector&lt;kfloat, 3&gt;&amp; dt);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">  166</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">info</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    Eigen::Matrix&lt;kfloat, 3, 3&gt; R; <span class="comment">// The rotation/orientation matrix</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    Eigen::Vector&lt;kfloat, 3&gt;    t; <span class="comment">// The translation/position vector</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;};</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">/* ------------------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">/*                          Pose Implementation                        */</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">/* ------------------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">  179</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 4, 4&gt; &amp;T)</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    : t(Eigen::Vector&lt;<a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3&gt;(T(0, 3), T(1, 3), T(2, 3)))</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    R &lt;&lt; <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(0, 0), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(0, 1), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(0, 2),</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(1, 0), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(1, 1), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(1, 2),</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(2, 0), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(2, 1), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(2, 2);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemmath.html">mmath</a>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmmath_1_1_pose.html">Pose</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 4, 4&gt;&amp; <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>, <span class="keyword">typename</span> Tp2 = k<span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 3, 3&gt;&amp; R =</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            Eigen::Matrix&lt;Tp1, 3, 3&gt;::Identity(),</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  <span class="keyword">const</span> Eigen::Vector&lt;Tp2, 3&gt;&amp; t = {0, 0, 0});</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(Tp1 tx, Tp1 ty, Tp1 tz);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(Tp1 data[16], <span class="keywordtype">bool</span> is_row_fisrt = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(Tp1 m11, Tp1 m12, Tp1 m13, Tp1 m14,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                  Tp1 m21, Tp1 m22, Tp1 m23, Tp1 m24,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                  Tp1 m31, Tp1 m32, Tp1 m33, Tp1 m34);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1 = k<span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; <a class="code" href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">operator= </a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 4, 4&gt;&amp; pose);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">  136</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; <a class="code" href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">operator= </a>(<span class="keyword">const</span> <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; pose);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a9a027dde46008157fc4abf7efe9eac4f">  144</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a>  <a class="code" href="classmmath_1_1_pose.html#a9a027dde46008157fc4abf7efe9eac4f">operator* </a>(<span class="keyword">const</span> <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; pose) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">  152</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; <a class="code" href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">operator*= </a>(<span class="keyword">const</span> <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; pose);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a0c18abfbd56ddc23bbfb1c4c84e5d7d7">  160</a></span>&#160;    Eigen::Vector&lt;kfloat, 3&gt; <a class="code" href="classmmath_1_1_pose.html#a0c18abfbd56ddc23bbfb1c4c84e5d7d7">operator*</a>(<span class="keyword">const</span> Eigen::Vector&lt;kfloat, 3&gt;&amp; p);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a4cce36480a3cc647a721b8e727459156">  169</a></span>&#160;    <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classmmath_1_1_pose.html#a4cce36480a3cc647a721b8e727459156">operator&lt;&lt; </a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; pose);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">  177</a></span>&#160;    Eigen::Quaternion&lt;kfloat&gt; <a class="code" href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">q</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">  185</a></span>&#160;    Eigen::Matrix&lt;kfloat, 4, 4&gt; <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1, <span class="keyword">typename</span> Tp2&gt;</div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#ab61f06be3b16d86a06540a3532b8a825">  189</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 3, 3&gt; &amp;R, <span class="keyword">const</span> Eigen::Vector&lt;Tp2, 3&gt; &amp;t)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    : t(Eigen::Vector&lt;<a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3&gt;(t(0), t(1), t(2)))</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    this-&gt;R &lt;&lt; R(0, 0), R(0, 1), R(0, 2),</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            R(1, 0), R(1, 1), R(1, 2),</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            R(2, 0), R(2, 1), R(2, 2);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
-<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#ab9a2881e540e17946db4c28704bbe61c">  199</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(Tp1 tx, Tp1 ty, Tp1 tz)</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    : R(Eigen::Matrix&lt;<a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3, 3&gt;::Identity())</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    , t(Eigen::Vector&lt;<a class="code" href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3&gt;(tx, ty, tz))</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9">  193</a></span>&#160;    <a class="code" href="classmmath_1_1_pose.html">Pose</a> <a class="code" href="classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9">inverse</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b">  202</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b">isUnitOrthogonal</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(Tp1 data[], <span class="keywordtype">bool</span> is_row_fisrt)</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">if</span> (is_row_fisrt) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        R &lt;&lt; data[0], data[1], data[2],</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                data[4], data[5], data[6],</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                data[8], data[9], data[10];</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        t = Eigen::Vector&lt;kfloat, 3&gt;(data[3], data[7], data[11]);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        R &lt;&lt; data[0], data[4], data[8],</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                data[1], data[5], data[9],</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                data[2], data[6], data[10];</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        t = Eigen::Vector&lt;kfloat, 3&gt;(data[12], data[13], data[14]);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;} <span class="comment">// mmath</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIB_MATH_RT_H_LF</span></div>
-<div class="ttc" id="aclassmmath_1_1_pose_html"><div class="ttname"><a href="classmmath_1_1_pose.html">mmath::Pose</a></div><div class="ttdoc">A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...</div><div class="ttdef"><b>Definition:</b> pose.h:46</div></div>
-<div class="ttc" id="aclassmmath_1_1_pose_html_a379d871b94d6c831e0aec08bc18c0631"><div class="ttname"><a href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">mmath::Pose::Pose</a></div><div class="ttdeci">Pose(const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;T)</div><div class="ttdoc">Construct a new Pose object.</div><div class="ttdef"><b>Definition:</b> pose.h:179</div></div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a945ef6a21698895c0abf629c6168b233">  208</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmmath_1_1_pose.html#a945ef6a21698895c0abf629c6168b233">unitOrthogonalize</a>();</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">  217</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">increase</a>(<span class="keyword">const</span> Eigen::Quaternion&lt;kfloat&gt;&amp; dq,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                         <span class="keyword">const</span> Eigen::Vector&lt;kfloat, 3&gt;&amp; dt);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">  227</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">decrease</a>(<span class="keyword">const</span> Eigen::Quaternion&lt;kfloat&gt;&amp; dq,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                         <span class="keyword">const</span> Eigen::Vector&lt;kfloat, 3&gt;&amp; dt);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">  236</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">info</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    Eigen::Matrix&lt;kfloat, 3, 3&gt; R; <span class="comment">// The rotation/orientation matrix</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    Eigen::Vector&lt;kfloat, 3&gt;    t; <span class="comment">// The translation/position vector</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;};</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">/* ------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">/*                          Pose Implementation                        */</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">/* ------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">  249</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 4, 4&gt; &amp;T)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    : t(Eigen::Vector&lt;<a class="code" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3&gt;(T(0, 3), T(1, 3), T(2, 3)))</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    R &lt;&lt; <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(0, 0), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(0, 1), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(0, 2),</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(1, 0), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(1, 1), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(1, 2),</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(2, 0), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(2, 1), <a class="code" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>(2, 2);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1, <span class="keyword">typename</span> Tp2&gt;</div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#ab61f06be3b16d86a06540a3532b8a825">  259</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 3, 3&gt; &amp;R, <span class="keyword">const</span> Eigen::Vector&lt;Tp2, 3&gt; &amp;t)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    : t(Eigen::Vector&lt;<a class="code" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3&gt;(t(0), t(1), t(2)))</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    this-&gt;R &lt;&lt; R(0, 0), R(0, 1), R(0, 2),</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            R(1, 0), R(1, 1), R(1, 2),</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            R(2, 0), R(2, 1), R(2, 2);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#ab9a2881e540e17946db4c28704bbe61c">  269</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(Tp1 tx, Tp1 ty, Tp1 tz)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    : R(Eigen::Matrix&lt;<a class="code" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3, 3&gt;::Identity())</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    , t(Eigen::Vector&lt;<a class="code" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3&gt;(tx, ty, tz))</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">  277</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(Tp1 data[16], <span class="keywordtype">bool</span> is_row_fisrt)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span> (is_row_fisrt) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        R &lt;&lt; data[0], data[1], data[2],</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                data[4], data[5], data[6],</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                data[8], data[9], data[10];</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        t = Eigen::Vector&lt;kfloat, 3&gt;(data[3], data[7], data[11]);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        R &lt;&lt; data[0], data[4], data[8],</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                data[1], data[5], data[9],</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                data[2], data[6], data[10];</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        t = Eigen::Vector&lt;kfloat, 3&gt;(data[12], data[13], data[14]);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a05d603798baed5f8bb75119397e593c2">  295</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose::Pose</a>(Tp1 m11, Tp1 m12, Tp1 m13, Tp1 m14,</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;           Tp1 m21, Tp1 m22, Tp1 m23, Tp1 m24,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;           Tp1 m31, Tp1 m32, Tp1 m33, Tp1 m34)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    this-&gt;R &lt;&lt; m11, m12, m13, m21, m22, m23, m31, m32, m33;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    this-&gt;t = Eigen::Vector&lt;kfloat, 3&gt;(m14, m24, m34);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tp1&gt;</div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">  305</a></span>&#160;<a class="code" href="classmmath_1_1_pose.html">Pose</a>&amp; <a class="code" href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">Pose::operator=</a>(<span class="keyword">const</span> Eigen::Matrix&lt;Tp1, 4, 4&gt;&amp; pose)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    *<span class="keyword">this</span> = <a class="code" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a>(pose);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;} <span class="comment">// mmath</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIB_MATH_RT_H_LF</span></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html"><div class="ttname"><a href="classmmath_1_1_pose.html">mmath::Pose</a></div><div class="ttdoc">A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...</div><div class="ttdef"><b>Definition:</b> pose.h:49</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_a0c18abfbd56ddc23bbfb1c4c84e5d7d7"><div class="ttname"><a href="classmmath_1_1_pose.html#a0c18abfbd56ddc23bbfb1c4c84e5d7d7">mmath::Pose::operator*</a></div><div class="ttdeci">Eigen::Vector&lt; kfloat, 3 &gt; operator*(const Eigen::Vector&lt; kfloat, 3 &gt; &amp;p)</div><div class="ttdoc">Transform a given point or vector.</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_a29117bd0c95a6499b6c4a99705600c3e"><div class="ttname"><a href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">mmath::Pose::operator=</a></div><div class="ttdeci">Pose &amp; operator=(const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;pose)</div><div class="ttdoc">operator =</div><div class="ttdef"><b>Definition:</b> pose.h:305</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_a379d871b94d6c831e0aec08bc18c0631"><div class="ttname"><a href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">mmath::Pose::Pose</a></div><div class="ttdeci">Pose(const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;T)</div><div class="ttdoc">Construct a new Pose object.</div><div class="ttdef"><b>Definition:</b> pose.h:249</div></div>
 <div class="ttc" id="aclassmmath_1_1_pose_html_a38e02c5633cf6b5433f4e9d7f1c9aa9c"><div class="ttname"><a href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">mmath::Pose::decrease</a></div><div class="ttdeci">void decrease(const Eigen::Quaternion&lt; kfloat &gt; &amp;dq, const Eigen::Vector&lt; kfloat, 3 &gt; &amp;dt)</div><div class="ttdoc">Minus a increment.</div></div>
 <div class="ttc" id="aclassmmath_1_1_pose_html_a47e764356bd808c8bdec3c1f361310b2"><div class="ttname"><a href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">mmath::Pose::operator*=</a></div><div class="ttdeci">Pose &amp; operator*=(const Pose &amp;pose)</div><div class="ttdoc">operator *=</div></div>
-<div class="ttc" id="aclassmmath_1_1_pose_html_a51ea9044da28c6721c29ae9baeb7cba7"><div class="ttname"><a href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">mmath::Pose::Pose</a></div><div class="ttdeci">Pose(Tp1 data[16], bool is_row_fisrt=true)</div><div class="ttdoc">Construct a new Pose object.</div></div>
-<div class="ttc" id="aclassmmath_1_1_pose_html_a94172f6eec60e1747b5a1b8330888c8f"><div class="ttname"><a href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">mmath::Pose::operator=</a></div><div class="ttdeci">Pose &amp; operator=(const Pose &amp;pose)</div><div class="ttdoc">operator =</div></div>
-<div class="ttc" id="aclassmmath_1_1_pose_html_a97572d64f3b560b02c341f4e10b52854"><div class="ttname"><a href="classmmath_1_1_pose.html#a97572d64f3b560b02c341f4e10b52854">mmath::Pose::operator*</a></div><div class="ttdeci">Pose operator*(const Pose &amp;pose)</div><div class="ttdoc">operator *</div></div>
-<div class="ttc" id="aclassmmath_1_1_pose_html_a99bddcd17b14ca9f8f9855f2c8215d5b"><div class="ttname"><a href="classmmath_1_1_pose.html#a99bddcd17b14ca9f8f9855f2c8215d5b">mmath::Pose::inverse</a></div><div class="ttdeci">Pose inverse()</div><div class="ttdoc">Return the inverse of the Pose.</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_a4cce36480a3cc647a721b8e727459156"><div class="ttname"><a href="classmmath_1_1_pose.html#a4cce36480a3cc647a721b8e727459156">mmath::Pose::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Pose &amp;pose)</div><div class="ttdoc">operator &lt;&lt;</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_a61f4163a1f017d6b61504a0bf8ed60c9"><div class="ttname"><a href="classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9">mmath::Pose::inverse</a></div><div class="ttdeci">Pose inverse() const</div><div class="ttdoc">Return the inverse of the Pose.</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_a945ef6a21698895c0abf629c6168b233"><div class="ttname"><a href="classmmath_1_1_pose.html#a945ef6a21698895c0abf629c6168b233">mmath::Pose::unitOrthogonalize</a></div><div class="ttdeci">void unitOrthogonalize()</div><div class="ttdoc">Unit orthogonalize the rotation matrix.</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_a9a027dde46008157fc4abf7efe9eac4f"><div class="ttname"><a href="classmmath_1_1_pose.html#a9a027dde46008157fc4abf7efe9eac4f">mmath::Pose::operator*</a></div><div class="ttdeci">Pose operator*(const Pose &amp;pose) const</div><div class="ttdoc">operator *</div></div>
+<div class="ttc" id="aclassmmath_1_1_pose_html_aa6aae26d58eb333083626aceb2c9795b"><div class="ttname"><a href="classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b">mmath::Pose::isUnitOrthogonal</a></div><div class="ttdeci">bool isUnitOrthogonal() const</div><div class="ttdoc">Check whether the vector of rotation matrix is unit orthogonal.</div></div>
 <div class="ttc" id="aclassmmath_1_1_pose_html_aa811b861c239f8f481ae3f6dfccc1874"><div class="ttname"><a href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">mmath::Pose::increase</a></div><div class="ttdeci">void increase(const Eigen::Quaternion&lt; kfloat &gt; &amp;dq, const Eigen::Vector&lt; kfloat, 3 &gt; &amp;dt)</div><div class="ttdoc">Add a increment.</div></div>
 <div class="ttc" id="aclassmmath_1_1_pose_html_aad58cbcd5aab17e0966c3a9a9b350eb6"><div class="ttname"><a href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">mmath::Pose::T</a></div><div class="ttdeci">Eigen::Matrix&lt; kfloat, 4, 4 &gt; T() const</div><div class="ttdoc">Return transform matrix.</div></div>
 <div class="ttc" id="aclassmmath_1_1_pose_html_ad6ef5d8d0437545ffe52885e06a85bbb"><div class="ttname"><a href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">mmath::Pose::q</a></div><div class="ttdeci">Eigen::Quaternion&lt; kfloat &gt; q() const</div><div class="ttdoc">Return quaterion.</div></div>
 <div class="ttc" id="aclassmmath_1_1_pose_html_af303ab3cb3dee825a230f0fbd8f4ab8c"><div class="ttname"><a href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">mmath::Pose::info</a></div><div class="ttdeci">char * info() const</div><div class="ttdoc">Return the Pose info for print/std::out.</div></div>
 <div class="ttc" id="akine__precision_8h_html"><div class="ttname"><a href="kine__precision_8h.html">kine_precision.h</a></div><div class="ttdoc">Control the precision when kinematics-related interfaces.</div></div>
-<div class="ttc" id="akine__precision_8h_html_a8ed6fc0954396a3d610acf829cfa9724"><div class="ttname"><a href="kine__precision_8h.html#a8ed6fc0954396a3d610acf829cfa9724">mmath::kfloat</a></div><div class="ttdeci">float kfloat</div><div class="ttdoc">To use double precision when using ./kine, define this LIB_MATH_KINE_DOUBLE macro in your preprocessi...</div><div class="ttdef"><b>Definition:</b> kine_precision.h:39</div></div>
+<div class="ttc" id="anamespacemmath_html"><div class="ttname"><a href="namespacemmath.html">mmath</a></div><div class="ttdef"><b>Definition:</b> gauss_curve_2d.h:32</div></div>
+<div class="ttc" id="anamespacemmath_html_a8ed6fc0954396a3d610acf829cfa9724"><div class="ttname"><a href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">mmath::kfloat</a></div><div class="ttdeci">float kfloat</div><div class="ttdoc">To use double precision when using ./kine, define this LIB_MATH_KINE_DOUBLE macro in your preprocessi...</div><div class="ttdef"><b>Definition:</b> kine_precision.h:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

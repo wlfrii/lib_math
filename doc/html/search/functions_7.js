@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operator_2a_99',['operator*',['../classmmath_1_1_pose.html#a97572d64f3b560b02c341f4e10b52854',1,'mmath::Pose']]],
-  ['operator_2a_3d_100',['operator*=',['../classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2',1,'mmath::Pose']]],
-  ['operator_3d_101',['operator=',['../classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f',1,'mmath::Pose']]]
+  ['linspace_136',['linspace',['../namespacemmath.html#a6ce9a37df088e57dba43d204f8b503a8',1,'mmath::linspace(double start, double gap, double end, std::vector&lt; T &gt; &amp;output)'],['../namespacemmath.html#a3bcefaa5f252049ef7e5dac36a6b97de',1,'mmath::linspace(double start, double gap, double end)']]],
+  ['linspacen_137',['linspaceN',['../namespacemmath.html#ac2aefcad71c1634fc5617b6063f5fa5f',1,'mmath::linspaceN(double start, double end, int num, std::vector&lt; T &gt; &amp;output)'],['../namespacemmath.html#a14ec20a351c65a1cf16cb79f3c23ced3',1,'mmath::linspaceN(double start, double end, int num)']]]
 ];

@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['increase_93',['increase',['../classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874',1,'mmath::Pose']]],
-  ['info_94',['info',['../classmmath_1_1continuum_1_1_config_spc.html#a3ecbcddc76edd2ab940609ee905c2607',1,'mmath::continuum::ConfigSpc::info()'],['../classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c',1,'mmath::Pose::info() const']]],
-  ['inverse_95',['inverse',['../classmmath_1_1_pose.html#a99bddcd17b14ca9f8f9855f2c8215d5b',1,'mmath::Pose']]]
+  ['getcurrenttimepoint_125',['getCurrentTimePoint',['../timer_8h.html#a24e411c8797707f3744c44aec22ba149',1,'mmath::timer']]],
+  ['getcurrenttimepointsinceepoch_126',['getCurrentTimePointSinceEpoch',['../timer_8h.html#a380dfeea45945b854158a755484acc03',1,'mmath::timer']]],
+  ['getcurrenttimestr_127',['getCurrentTimeStr',['../timer_8h.html#aa71d3a4259328391df72d137758da353',1,'mmath::timer']]],
+  ['getdurationsince_128',['getDurationSince',['../timer_8h.html#a9e61aed262fb573901743034da3d6191',1,'mmath::timer::getDurationSince(const ::std::chrono::steady_clock::time_point &amp;start_time_point)'],['../timer_8h.html#aa51eb20fe508a8903394edf65ead16b6',1,'mmath::timer::getDurationSince(const Tp &amp;start_time_point)']]],
+  ['guassianfunc_129',['GuassianFunc',['../namespacemmath.html#a03086f4e66bf02214f931713a3ebc9a3',1,'mmath::GuassianFunc(Tp1 a, Tp1 mu, Tp1 sigma, Tp2 x)'],['../namespacemmath.html#a0e1e15622d932d90cb5bcf1fb0f5df13',1,'mmath::GuassianFunc(GaussianCurve&lt; Tp1 &gt; gauss, Tp2 x)']]],
+  ['guassianjocabian_130',['GuassianJocabian',['../namespacemmath.html#afddc574132d71dcc3aca1774d0432cff',1,'mmath']]]
 ];

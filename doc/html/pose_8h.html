@@ -84,7 +84,8 @@ $(document).ready(function(){initNavTree('pose_8h.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">pose.h File Reference</div>  </div>
 </div><!--header-->
@@ -93,6 +94,7 @@ $(document).ready(function(){initNavTree('pose_8h.html',''); initResizable(); })
 <p>Define a description for 3D rigid transformation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Eigen/Dense&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &quot;<a class="el" href="kine__precision_8h_source.html">kine_precision.h</a>&quot;</code><br />
 </div>
 <p><a href="pose_8h_source.html">Go to the source code of this file.</a></p>
@@ -100,7 +102,12 @@ $(document).ready(function(){initNavTree('pose_8h.html',''); initResizable(); })
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html">mmath::Pose</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class designed to describe the transformation (spatial pose). This class can furtherly simplify the calculation of pose-trasform. There are three members include in this class: R &ndash; denotes the rotation or orientation. t &ndash; denotes the translation or position.  <a href="classmmath_1_1_pose.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class designed to describe the transformation (spatial pose). This class can furtherly simplify the calculation of pose-trasform. There are two members include in this class: R &ndash; denotes the rotation or orientation. t &ndash; denotes the translation or position.  <a href="classmmath_1_1_pose.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacemmath"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemmath.html">mmath</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -117,7 +124,7 @@ Data Structures</h2></td></tr>
 <hr  />
 <p> Change History: <br  />
 </p>
-<p>2022/06/06 Rename the file as pose and templated this class. 2022/06/27 Consider the usage of this class are not sensitive to precision, remove the templated-class-type, then controlling the precesion by LIB_MATH_KINE_DOUBLE.</p>
+<p>2022/12/06 Add a function check the orthogonalization of rotation matrix. 2022/06/27 Consider the usage of this class are not sensitive to precision, remove the templated-class-type, then controlling the precesion by LIB_MATH_KINE_DOUBLE. 2022/06/06 Rename the file as pose and templated this class.</p>
 <hr  />
  </div></div><!-- contents -->
 </div><!-- doc-content -->

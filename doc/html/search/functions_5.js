@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['jocabianat_96',['JocabianAt',['../structmmath_1_1_gaussian_curve.html#a58f78a354f0a90adfef708801b45c511',1,'mmath::GaussianCurve']]]
+  ['increase_131',['increase',['../classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874',1,'mmath::Pose']]],
+  ['info_132',['info',['../classmmath_1_1continuum_1_1_config_spc.html#a6217a14dddc131b97e8fd953ec2d2422',1,'mmath::continuum::ConfigSpc::info()'],['../classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c',1,'mmath::Pose::info() const']]],
+  ['inverse_133',['inverse',['../classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9',1,'mmath::Pose']]],
+  ['isunitorthogonal_134',['isUnitOrthogonal',['../classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b',1,'mmath::Pose']]]
 ];

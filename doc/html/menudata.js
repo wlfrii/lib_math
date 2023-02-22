@@ -24,11 +24,38 @@
 */
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
+{text:"Namespaces",url:"namespaces.html",children:[
+{text:"Namespace List",url:"namespaces.html"},
+{text:"Namespace Members",url:"namespacemembers.html",children:[
+{text:"All",url:"namespacemembers.html",children:[
+{text:"a",url:"namespacemembers.html#index_a"},
+{text:"c",url:"namespacemembers.html#index_c"},
+{text:"d",url:"namespacemembers.html#index_d"},
+{text:"f",url:"namespacemembers.html#index_f"},
+{text:"g",url:"namespacemembers.html#index_g"},
+{text:"k",url:"namespacemembers.html#index_k"},
+{text:"l",url:"namespacemembers.html#index_l"},
+{text:"r",url:"namespacemembers.html#index_r"},
+{text:"s",url:"namespacemembers.html#index_s"}]},
+{text:"Functions",url:"namespacemembers_func.html",children:[
+{text:"a",url:"namespacemembers_func.html#index_a"},
+{text:"c",url:"namespacemembers_func.html#index_c"},
+{text:"d",url:"namespacemembers_func.html#index_d"},
+{text:"f",url:"namespacemembers_func.html#index_f"},
+{text:"g",url:"namespacemembers_func.html#index_g"},
+{text:"l",url:"namespacemembers_func.html#index_l"},
+{text:"r",url:"namespacemembers_func.html#index_r"},
+{text:"s",url:"namespacemembers_func.html#index_s"}]},
+{text:"Typedefs",url:"namespacemembers_type.html"}]}]},
 {text:"Data Structures",url:"annotated.html",children:[
 {text:"Data Structures",url:"annotated.html"},
 {text:"Data Structure Index",url:"classes.html"},
 {text:"Data Fields",url:"functions.html",children:[
 {text:"All",url:"functions.html"},
-{text:"Functions",url:"functions_func.html"}]}]},
+{text:"Functions",url:"functions_func.html"},
+{text:"Related Functions",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[
-{text:"File List",url:"files.html"}]}]}
+{text:"File List",url:"files.html"},
+{text:"Globals",url:"globals.html",children:[
+{text:"All",url:"globals.html"},
+{text:"Macros",url:"globals_defs.html"}]}]}]}

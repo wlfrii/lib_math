@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "mmath", null, [
+    [ "mmath", "namespacemmath.html", [
       [ "continuum", null, [
         [ "ConfigSpc", "classmmath_1_1continuum_1_1_config_spc.html", "classmmath_1_1continuum_1_1_config_spc" ]
       ] ],

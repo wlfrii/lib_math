@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['valueat_113',['valueAt',['../structmmath_1_1_gaussian_curve.html#a66298f473be02eb399de233918d3cfec',1,'mmath::GaussianCurve']]]
+  ['t_154',['T',['../classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6',1,'mmath::Pose']]]
 ];
