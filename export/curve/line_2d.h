@@ -15,7 +15,7 @@
  *
  * @date		2022/06/08
  *
- * @license
+ * @license     MIT
  *
  * Copyright (C) 2019-Now Longfei Wang.
  *
