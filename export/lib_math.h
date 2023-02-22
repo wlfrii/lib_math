@@ -53,7 +53,9 @@
 #include "curve/gauss_curve_2d.h"
 
 
-// Include some useful function for time counting
+// Include some useful function for time counting.
+// Although timer counting is not really realted to math, this file contains
+// several pretty useful function for test the time comsumption.
 #include "timer/timer.h"
 
 
