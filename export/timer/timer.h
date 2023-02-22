@@ -142,10 +142,10 @@ inline ::std::string getCurrentTimeStr()
  */
 #define MMATH_TIMER_COUNT_VOID_FUNC_TIME(FUNC, DURATION, FMT, ...) \
 	do{ \
-		  	auto TIME_POINT = mmath::timer::getCurrentTimePoint();\
+		  	auto start = mmath::timer::getCurrentTimePoint();\
 		    FUNC;\
 		    float ms = mmath::timer::getDurationSince(start); \
-			if (ms > DURATION) { printf("[%.4f] ms elapsed:\t " #FMT, ms, ##__VA_ARGS__);} \
+			if (ms > DURATION) { printf("[%.4f ms] elapsed:\t " FMT, ms, ##__VA_ARGS__);} \
 	 } while (0)
 
 
@@ -158,10 +158,10 @@ inline ::std::string getCurrentTimeStr()
  */
 #define MMATH_TIMER_COUNT_NONVOID_FUNC_TIME(FUNC, DURATION, RET, FMT, ...)  \
 	do{  \
-		  	auto TIME_POINT = mmath::timer::getCurrentTimePoint();\
+		  	auto start = mmath::timer::getCurrentTimePoint();\
 		    RET = FUNC;\
 		    float ms = mmath::timer::getDurationSince(start); \
-			if (ms > DURATION) { printf("[%.4f] ms elapsed:\t " #FMT, ms, ##__VA_ARGS__);} \
+			if (ms > DURATION) { printf("[%.4f ms] elapsed:\t " FMT, ms, ##__VA_ARGS__);} \
 	 } while (0)
 
 
