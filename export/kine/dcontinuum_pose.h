@@ -1,24 +1,24 @@
 /**--------------------------------------------------------------------
  *
- *   				   Mathematics extension library
+ *                     Mathematics extension library
  *
  * Description:
  * This file is part of lib_math. You can redistribute it and or modify
  * it to construct your own project. It is wellcome to use this library
  * in your scientific research work.
  *
- * @file 		dcontinuum_pose.h
+ * @file 	dcontinuum_pose.h
  *
- * @brief 		Interfaces for derivatives of continuum segment kinematics,
+ * @brief 	Interfaces for derivatives of continuum segment kinematics,
  *              which known as Jacobian.
  *
- * @author		Longfei Wang
+ * @author	Longfei Wang
  *
- * @date		2022/06/27
+ * @date	2022/06/27
  *
- * @license
+ * @license     MIT
  *
- * Copyright (C) 2019 Longfei Wang.
+ * Copyright (C) 2019-Now Longfei Wang.
  *
  * --------------------------------------------------------------------
  * Change History:

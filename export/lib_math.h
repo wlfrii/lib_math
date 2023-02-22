@@ -15,9 +15,9 @@
  * 
  * @date		2020/07/04
  * 
- * @license		
+ * @license		MIT
  * 
- * Copyright (C) 2019 Longfei Wang.
+ * Copyright (C) 2019-Now Longfei Wang.
  * 
  * --------------------------------------------------------------------
  * Change History:                        
