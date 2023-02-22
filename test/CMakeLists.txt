@@ -11,7 +11,6 @@ find_package(lib_math REQUIRED)
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_SRC)
 add_executable(${PROJECT_NAME}
-    # main.cpp
     ${SRC_SRC}
 )
 
