@@ -13,8 +13,6 @@
  * 
  * @author		Longfei Wang
  * 
- * @version		1.2.0
- * 
  * @date		2020/07/04
  * 
  * @license		
@@ -26,6 +24,7 @@
  * 
  * #v1.1 Complete kinematics related utilities.
  * #v1.2 Templated most of the interfaces.
+ * #v1.3 Fixed several bug and integrate timer.
  * 
  * -------------------------------------------------------------------*/
 #ifndef LIB_MATH_LIB_LF
