@@ -54,7 +54,7 @@ inline std::chrono::steady_clock::time_point getCurrentTimePoint()
 
 
 /**
- * @brief Get the duration since the start time point
+ * @brief Get the duration since the start time point, evaluated by milliseconds
  * 
  * @param start_time_point The start time point returned by getCurrentTimePoint()
  * @return The time duration represented by std::chrono::milliseconds
