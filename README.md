@@ -95,7 +95,7 @@ int main()
 }
 ```
 
-Some other usage that could be the reference can be found in [lib_math/examples](https://github.com/wlfrii/lib_math/tree/main/examples) folder.
+The specific application examples can be found in [lib_math/examples](https://github.com/wlfrii/lib_math/tree/main/examples) folder. More detailed functions about this library is suggested to referring [Intergfaces Mannul](https://github.com/wlfrii/lib_math#interfaces-manual).
 
 
 __NOTE__: The `precision` for calculation of kinemaices related functions is change to `float`, which is generally enough for most of application. To enable `double` precision, define `LIB_MATH_KINE_DOUBLE` before include this library, as follows.
