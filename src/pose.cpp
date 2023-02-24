@@ -1,4 +1,4 @@
-#include "../export/kine/pose.h"
+#include "../export/lib_math/kine/pose.h"
 #include <iomanip>
 
 namespace mmath{

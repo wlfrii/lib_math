@@ -1,4 +1,4 @@
-#include "../export/kine/dcontinuum_pose.h"
+#include "../export/lib_math/kine/dcontinuum_pose.h"
 
 namespace mmath{
 namespace continuum{

@@ -27,7 +27,7 @@
 #define LIB_MATH_CONTINUUM_CONFIGSPC_H_LF
 #include <cstdint>
 #include <cstdio>
-#include "kine_precision.h"
+#include "../math_precision.h"
 
 namespace mmath{
 namespace continuum{

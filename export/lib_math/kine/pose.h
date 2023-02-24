@@ -33,7 +33,7 @@
 #define LIB_MATH_POSE_H_LF
 #include <Eigen/Dense>
 #include <iostream>
-#include "kine_precision.h"
+#include "../math_precision.h"
 
 
 namespace mmath{
