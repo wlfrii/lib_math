@@ -3,11 +3,12 @@ var indexSectionsWithContent =
   0: "acdfgijklmopqrstuv",
   1: "cglp",
   2: "m",
-  3: "cdgklprst",
+  3: "cdglprst",
   4: "acdfgijlopqrstuv",
-  5: "k",
-  6: "o",
-  7: "m"
+  5: "cft",
+  6: "ik",
+  7: "o",
+  8: "m"
 };
 
 var indexSectionNames =
@@ -17,9 +18,10 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "typedefs",
-  6: "related",
-  7: "defines"
+  5: "variables",
+  6: "typedefs",
+  7: "related",
+  8: "defines"
 };
 
 var indexSectionLabels =
@@ -29,8 +31,9 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Files",
   4: "Functions",
-  5: "Typedefs",
-  6: "Friends",
-  7: "Macros"
+  5: "Variables",
+  6: "Typedefs",
+  7: "Friends",
+  8: "Macros"
 };
 

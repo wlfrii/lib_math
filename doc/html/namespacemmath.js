@@ -1,5 +1,10 @@
 var namespacemmath =
 [
+    [ "cam", "namespacemmath_1_1cam.html", [
+      [ "ID", "namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26", null ],
+      [ "LEFT", "namespacemmath_1_1cam.html#ae9aedb9fea72f59005fa54482113645f", null ],
+      [ "RIGHT", "namespacemmath_1_1cam.html#a49af471ef003def320fbf68cad47d88b", null ]
+    ] ],
     [ "continuum", null, [
       [ "ConfigSpc", "classmmath_1_1continuum_1_1_config_spc.html", "classmmath_1_1continuum_1_1_config_spc" ],
       [ "calcSingleSegmentJacobian", "dcontinuum__pose_8h.html#a2ee2c1fbdc29b7511c7aefe2696b1bfd", null ],
@@ -38,6 +43,7 @@ var namespacemmath =
       [ "getDurationSince", "timer_8h.html#a9e61aed262fb573901743034da3d6191", null ],
       [ "getDurationSince", "timer_8h.html#aa51eb20fe508a8903394edf65ead16b6", null ]
     ] ],
+    [ "CameraProjector", "classmmath_1_1_camera_projector.html", "classmmath_1_1_camera_projector" ],
     [ "GaussianCurve", "structmmath_1_1_gaussian_curve.html", "structmmath_1_1_gaussian_curve" ],
     [ "Line", "structmmath_1_1_line.html", "structmmath_1_1_line" ],
     [ "Pose", "classmmath_1_1_pose.html", "classmmath_1_1_pose" ],

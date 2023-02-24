@@ -39,6 +39,7 @@ var NAVTREE =
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -54,7 +55,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-""
+"angle_8h_source.html",
+"timer_8h.html#a380dfeea45945b854158a755484acc03"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
