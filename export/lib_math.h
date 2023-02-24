@@ -30,33 +30,38 @@
 #ifndef LIB_MATH_LIB_LF
 #define LIB_MATH_LIB_LF
 
+// Precision
+#include "lib_math/math_precision.h"
+
 // Tiny utilities
-#include "util/angle.h"
-#include "util/linspace.h"
+#include "lib_math/util/angle.h"
+#include "lib_math/util/linspace.h"
 
 // Matrix related utilities
-#include "matrix/mat.h"
-#include "matrix/rotation.h"
-#include "matrix/skew.h"
-#include "matrix/drotation.h"
+#include "lib_math/matrix/mat.h"
+#include "lib_math/matrix/rotation.h"
+#include "lib_math/matrix/skew.h"
+#include "lib_math/matrix/drotation.h"
 
 // Kinematics related utilities
-#include "kine/kine_precision.h"
-#include "kine/pose.h"
-#include "kine/continuum_configspc.h"
-#include "kine/continuum_pose.h"
-#include "kine/dcontinuum_pose.h"
+#include "lib_math/lib_math/kine/pose.h"
+#include "lib_math/kine/continuum_configspc.h"
+#include "lib_math/kine/continuum_pose.h"
+#include "lib_math/kine/dcontinuum_pose.h"
 
 // Curve related utilities
-#include "curve/line_2d.h"
-#include "curve/gauss_curve_2d.h"
+#include "lib_math/curve/line_2d.h"
+#include "lib_math/curve/gauss_curve_2d.h"
 
 
 // Include some useful function for time counting.
 // Although timer counting is not really realted to math, this file contains
 // several pretty useful function for test the time comsumption.
-#include "timer/timer.h"
+#include "lib_math/timer/timer.h"
 
+
+// Camera projection
+#include "lib_math/cam/camera_projector.h"
 
 // Some explicit template class
 namespace mmath {
