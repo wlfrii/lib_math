@@ -58,7 +58,7 @@ public:
      * @param cy  The y coordinta of camera optical axis
      * @param t   The distance between stereo cameras
      */
-    CameraProjector(kfloat fxy, kfloat kcx, kfloat cy, kfloat t = 0);
+    CameraProjector(kfloat fxy, kfloat cx, kfloat cy, kfloat t = 0);
     ~CameraProjector();
 
 
