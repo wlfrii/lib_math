@@ -39,20 +39,20 @@ include(GNUInstallDirs)
 # --------------------------------------------------------------------
 #                   Create target and set properties
 # --------------------------------------------------------------------
-file(GLOB_RECURSE SRCS src/*.cpp)
-add_library(${PROJECT_NAME}
-    ${SRCS}
-)
-
 # Specifies include directories to use when compiling a given target.  
 # The target name must have been created by a command such as  
 # add_excutable() or add_library().
-find_package(Eigen3 REQUIRED)
-if(${Eigen3_FOUND})
-    message(STATUS "Found Eigen: ${EIGEN3_INCLUDE_DIRS}")
-else(${Eigen3_FOUND})
-    message(ERROR "Cannot find Eigen")
-endif(${Eigen3_FOUND})
+find_package(Eigen3 REQUIRED CONFIG)
+if(TARGET Eigen3::Eigen)
+    message(STATUS "Eigen3 v${EIGEN3_VERSION_STRING} found in ${EIGEN3_INCLUDE_DIR}")
+else()
+    message(ERROR "Cannot find Eigen3")
+endif()
+
+file(GLOB_RECURSE SRCS src/*.cpp)
+add_library(${PROJECT_NAME} STATIC
+    ${SRCS}
+)
 
 # We need to tell CMake that we want to use different include 
 # directories depending on if we are building the library or using it 
@@ -61,11 +61,15 @@ endif(${Eigen3_FOUND})
 # current build directory and will not be valid for other projects.
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        $<BUILD_INTERFACE:${EIGEN3_INCLUDE_DIRS}>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/export>
+        ${EIGEN3_INCLUDE_DIR}
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
+
+target_link_libraries(${PROJECT_NAME}
+    PUBLIC
+        Eigen3::Eigen
 )
 
 # --------------------------------------------------------------------

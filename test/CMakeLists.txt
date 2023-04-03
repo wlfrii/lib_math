@@ -3,8 +3,6 @@ project(lib_math_test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Eigen3 REQUIRED)
-
 set(CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../buildtarget/)
 message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 find_package(lib_math REQUIRED)
@@ -19,7 +17,6 @@ set(CATCH_INCLUDE_DIR /usr/local/Cellar/catch2/2.13.9/include/)
 target_include_directories(${PROJECT_NAME}
     PUBLIC
         $<BUILD_INTERFACE:${CATCH_INCLUDE_DIR}>
-        $<BUILD_INTERFACE:${EIGEN3_INCLUDE_DIRS}>
         $<BUILD_INTERFACE:${lib_math_INCLUDE_DIRS}>
     PRIVATE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
