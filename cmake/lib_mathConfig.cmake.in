@@ -20,4 +20,4 @@ endif()
 
 
 set(${BINARY}_LIBRARIES ${BINARY})
-set(${BINARY}_INCLUDE_DIRS ${${BINARY}_CONFIG_DIR}/../../../include/)
+set(${BINARY}_INCLUDE_DIRS ${${BINARY}_CONFIG_DIR}/../../../include/${BINARY})

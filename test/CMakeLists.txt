@@ -6,6 +6,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../buildtarget/)
 message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 find_package(lib_math REQUIRED)
+if(${lib_math_FOUND})
+    message(STATUS "lib_math found")
+    message(STATUS "  include path: ${lib_math_INCLUDE_DIRS}")
+else()
+    message(ERROR "Cannot find lib_math")
+endif()
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_SRC)
 add_executable(${PROJECT_NAME}
