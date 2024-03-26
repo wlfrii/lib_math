@@ -3,11 +3,11 @@
 
 TEST_CASE("Test cam", "[projector]")
 {
-    Eigen::Vector2f pt2D;
-    Eigen::Vector3f pt3D;
+    Eigen::Vector<mmath::kfloat, 2> pt2D;
+    Eigen::Vector<mmath::kfloat, 3> pt3D;
 
     // Binocular
-    float fxy = 1100, cx = 960, cy = 540, t = 4;
+    mmath::kfloat fxy = 1100, cx = 960, cy = 540, t = 4;
     mmath::CameraProjector camproj(fxy, cx, cy, t);
 
     // Global point
@@ -26,7 +26,7 @@ TEST_CASE("Test cam", "[projector]")
 
     // To left imaging plane
     pt2D = camproj.cvt3Dto2D(
-        Eigen::Vector3f(x, y, z), mmath::cam::LEFT);
+        Eigen::Vector<mmath::kfloat, 3>(x, y, z), mmath::cam::LEFT);
     u = ((x + t / 2) / z) * fxy + cx;
     CHECK(pt2D[0] == Approx(u).margin(1e-7));
     v = (y / z) * fxy + cy;
@@ -39,7 +39,7 @@ TEST_CASE("Test cam", "[projector]")
 
     // To right imaging plane
     pt2D = camproj.cvt3Dto2D(
-        Eigen::Vector3f(x, y, z), mmath::cam::RIGHT);
+        Eigen::Vector<mmath::kfloat, 3>(x, y, z), mmath::cam::RIGHT);
     u = ((x - t / 2) / z) * fxy + cx;
     CHECK(pt2D[0] == Approx(u).margin(1e-7));
     v = (y / z) * fxy + cy;
@@ -67,7 +67,8 @@ TEST_CASE("Test cam", "[projector]")
     CHECK(pt2D[1] == Approx(v).margin(1e-7));
 
     // Assume (u, v) belongs to left, to global camera frame
-    pt3D = camproj.cvt2Dto3D(Eigen::Vector2f(u, v), d, mmath::cam::LEFT);
+    pt3D = camproj.cvt2Dto3D(Eigen::Vector<mmath::kfloat, 2>(u, v), 
+                             d, mmath::cam::LEFT);
     val = (u - cx) / fxy * d - t / 2;
     CHECK(pt3D[0] == Approx(val).margin(1e-7));
     val = (v - cy) / fxy * d;
@@ -79,7 +80,8 @@ TEST_CASE("Test cam", "[projector]")
     CHECK(pt2D[1] == Approx(v).margin(1e-7));
 
     // Assume (u, v) belongs to right, to global camera frame
-    pt3D = camproj.cvt2Dto3D(Eigen::Vector2f(u, v), d, mmath::cam::RIGHT);
+    pt3D = camproj.cvt2Dto3D(Eigen::Vector<mmath::kfloat, 2>(u, v), 
+                             d, mmath::cam::RIGHT);
     val = (u - cx) / fxy * d + t / 2;
     CHECK(pt3D[0] == Approx(val).margin(1e-7));
     val = (v - cy) / fxy * d;
@@ -101,7 +103,7 @@ TEST_CASE("Test cam", "[projector]")
 
     // To (fake) left imaging plane
     pt2D = mono_camproj.cvt3Dto2D(
-        Eigen::Vector3f(x, y, z), mmath::cam::LEFT);
+        Eigen::Vector<mmath::kfloat, 3>(x, y, z), mmath::cam::LEFT);
     val = (x / z) * fxy + cx;
     CHECK(pt2D[0] == Approx(val).margin(1e-7));
     val = (y / z) * fxy + cy;
@@ -109,14 +111,10 @@ TEST_CASE("Test cam", "[projector]")
 
     // To (fake) right imaging plane
     pt2D = mono_camproj.cvt3Dto2D(
-        Eigen::Vector3f(x, y, z), mmath::cam::LEFT);
+        Eigen::Vector<mmath::kfloat, 3>(x, y, z), mmath::cam::LEFT);
     val = (x / z) * fxy + cx;
     CHECK(pt2D[0] == Approx(val).margin(1e-7));
     val = (y / z) * fxy + cy;
     CHECK(pt2D[1] == Approx(val).margin(1e-7));   
-
-
-    
-
 }
 

@@ -190,7 +190,7 @@ TEST_CASE("Test continuum dpose2L", "[continuum]")
     CHECK(pose.R(2,1) == Approx(-pose.R(1,2)).margin(1e-6));
     CHECK(pose.R(2,2) == Approx(0).margin(1e-6));
 
-    float val = 1.0 / theta * cos(delta) * (1 - cos(theta));
+    mmath::kfloat val = 1.0 / theta * cos(delta) * (1 - cos(theta));
     CHECK(pose.t[0] == Approx(val).margin(1e-6));
     val = 1.0 / theta * sin(delta) * (1 - cos(theta));
     CHECK(pose.t[1] == Approx(val).margin(1e-6));
@@ -208,7 +208,8 @@ TEST_CASE("Test continuum dpose2delta with Lr", "[continuum]")
     mmath::Pose pose = mmath::continuum::dSingleWithRigidSegmentPose2delta(
                 L, theta, delta, Lr);
 
-    float val = 2*cos(delta)*(-sin(delta))*cos(theta) + 2*sin(delta)*cos(delta);
+    mmath::kfloat val = 2*cos(delta)*(-sin(delta))*cos(theta) + 
+                        2*sin(delta)*cos(delta);
     CHECK(pose.R(0,0) == Approx(val).margin(1e-6));
     val = (cos(delta)*cos(delta) - sin(delta)*sin(delta) )*(cos(theta) - 1);
     CHECK(pose.R(0,1) == Approx(val).margin(1e-6));
@@ -235,10 +236,10 @@ TEST_CASE("Test continuum dpose2delta with Lr", "[continuum]")
 
 TEST_CASE("Test continuum dpose2L with Lr", "[continuum]")
 {
-    float L = 30;
-    float Lr = 10;
-    float theta = mmath::deg2rad(30);
-    float delta = mmath::deg2rad(50);
+    mmath::kfloat L = 30;
+    mmath::kfloat Lr = 10;
+    mmath::kfloat theta = mmath::deg2rad(30);
+    mmath::kfloat delta = mmath::deg2rad(50);
     mmath::Pose pose = mmath::continuum::dSingleWithRigidSegmentPose2L(
                 L, theta, delta, Lr);
 
@@ -254,7 +255,8 @@ TEST_CASE("Test continuum dpose2L with Lr", "[continuum]")
     CHECK(pose.R(2,1) == Approx(-pose.R(1,2)).margin(1e-6));
     CHECK(pose.R(2,2) == Approx(0).margin(1e-6));
 
-    float val = 1.0 / theta * cos(delta) * (1 - cos(theta)) + Lr * cos(delta)*sin(theta);
+    mmath::kfloat val = 1.0 / theta * cos(delta) * (1 - cos(theta)) + 
+                        Lr * cos(delta)*sin(theta);
     CHECK(pose.t[0] == Approx(val).margin(1e-6));
     val = 1.0 / theta * sin(delta) * (1 - cos(theta)) + Lr * sin(delta)*sin(theta);
     CHECK(pose.t[1] == Approx(val).margin(1e-6));
@@ -265,8 +267,8 @@ TEST_CASE("Test continuum dpose2L with Lr", "[continuum]")
 
 TEST_CASE("Test continuum pose*=", "[continuum]")
 {
-    float phi = -0.284696;
-    float L = 1.08657;
+    mmath::kfloat phi = -0.284696;
+    mmath::kfloat L = 1.08657;
     mmath::continuum::ConfigSpc config1(0, phi, L, false);
     auto pose1 = mmath::continuum::calcSingleSegmentPose(config1);
     CHECK(pose1.R(0,0) == Approx(0.959747).margin(1e-6));
@@ -276,9 +278,9 @@ TEST_CASE("Test continuum pose*=", "[continuum]")
     CHECK(pose1.R(2,2) == Approx(1).margin(1e-6));
     CHECK(pose1.t[2] == Approx(L).margin(1e-6));
 
-    float theta = 0.169437;
-    float delta = -1.879464;
-    float length = 28.012699;
+    mmath::kfloat theta = 0.169437;
+    mmath::kfloat delta = -1.879464;
+    mmath::kfloat length = 28.012699;
     mmath::continuum::ConfigSpc config2(theta, delta, length, true);
     auto pose2 = mmath::continuum::calcSingleSegmentPose(config2);
     CHECK(pose2.R(0,0) == Approx(0.998678).margin(1e-6));
@@ -332,11 +334,11 @@ TEST_CASE("Test continuum Jacobian", "[continuum]")
     float delta = mmath::deg2rad(50);
 
 
-    Eigen::Matrix<float, 3, 3> Jv, Jw;
+    Eigen::Matrix<mmath::kfloat, 3, 3> Jv, Jw;
     mmath::continuum::calcVariableLengthSegmentJacobian(
                 L, theta, delta, Jv, Jw);
 
-    float val = 0;
+    mmath::kfloat val = 0;
     val = L*cos(delta)*(theta*sin(theta)+cos(theta) - 1) / (theta*theta);
     CHECK(Jv(0, 0) == Approx(val).margin(1e-6));
 
@@ -463,7 +465,7 @@ TEST_CASE("Test continuum Jacobian", "[continuum]")
     CHECK(Jw(2, 2) == Approx(0).margin(1e-6));
 
     q = mmath::continuum::ConfigSpc(1.237475, 0.113694, 19.4, 1);
-    Eigen::Matrix<float, 3, 2> Jv2, Jw2;
+    Eigen::Matrix<mmath::kfloat, 3, 2> Jv2, Jw2;
     mmath::continuum::calcSingleWithRigidSegmentJacobian(q, 5.71, Jv2, Jw2);
     CHECK(Jv2(0, 0) == Approx(8.10612376841146).margin(1e-6));
     CHECK(Jv2(0, 1) == Approx(-1.80878099695414).margin(1e-6));
