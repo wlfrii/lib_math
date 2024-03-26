@@ -27,9 +27,9 @@ if(SPECIFY_INSTALL_PATH)
 endif()
 message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 
-option(LIB_MATH_KINE_DOUBLE "Use double precision in kinematics" OFF)
-if(LIB_MATH_KINE_DOUBLE)
-    add_definitions(-DLIB_MATH_KINE_DOUBLE)
+option(LIB_MATH_USE_DOUBLE "Use double precision in kinematics" OFF)
+if(LIB_MATH_USE_DOUBLE)
+    add_definitions(-DLIB_MATH_USE_DOUBLE)
     message(STATUS "Use double precision in kinematics")
 endif()
 

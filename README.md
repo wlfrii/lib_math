@@ -98,20 +98,20 @@ int main()
 The specific application examples can be found in [lib_math/examples](https://github.com/wlfrii/lib_math/tree/main/examples) folder. More detailed functions about this library is suggested to referring [Intergfaces Mannul](https://github.com/wlfrii/lib_math#interfaces-manual).
 
 
-__NOTE__: The `precision` for calculation of kinemaices related functions is change to `float`, which is generally enough for most of application. To enable `double` precision, define `LIB_MATH_KINE_DOUBLE` before include this library, as follows.
+__NOTE__: The `precision` for calculation of kinemaices related functions is change to `float`, which is generally enough for most of application. To enable `double` precision, define `LIB_MATH_USE_DOUBLE` before include this library, as follows.
 ```c++
-#define LIB_MATH_KINE_DOUBLE
+#define LIB_MATH_USE_DOUBLE
 #include <lib_math/lib_math>
 ```
 
-Or, a more straight forward way is to define `LIB_MATH_KINE_DOUBLE` when compile the project, as follws.
+Or, a more straight forward way is to define `LIB_MATH_USE_DOUBLE` when compile the project, as follws.
 ```base
 ...
-cmake -DLIB_MATH_KINE_DOUBLE=ON ..
+cmake -LIB_MATH_USE_DOUBLE=ON ..
 ...
 ```
 
-In addition, the `Eigen` library is very sensitive to precision (such as `Eigen::Matrixf` can not be assigned to `Eigen::Matrixd` directly). Thus, to avoid compiling errors in your projects, the arguments type for the _kinemaices related functions_ is suggested to use `mmath::kfloat`, which is corresponding to `LIB_MATH_KINE_DOUBLE`.
+In addition, the `Eigen` library is very sensitive to precision (such as `Eigen::Matrixf` can not be assigned to `Eigen::Matrixd` directly). Thus, to avoid compiling errors in your projects, the arguments type for the _kinemaices related functions_ is suggested to use `mmath::kfloat`, which is corresponding to `LIB_MATH_USE_DOUBLE`.
 
 ## Interfaces Manual
 

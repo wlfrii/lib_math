@@ -23,8 +23,8 @@
  * Change History:
  *
  * -------------------------------------------------------------------*/
-#ifndef LIB_MATH_KINE_PRECISION_H_LF
-#define LIB_MATH_KINE_PRECISION_H_LF
+#ifndef LIB_MATH_PRECISION_H_LF
+#define LIB_MATH_PRECISION_H_LF
 
 namespace mmath{
 
@@ -33,7 +33,7 @@ namespace mmath{
  * LIB_MATH_KINE_DOUBLE
  * macro in your preprocessing list before include <lib_math/lib_math.h>.
  */
-#ifdef LIB_MATH_KINE_DOUBLE
+#ifdef LIB_MATH_USE_DOUBLE
 using kfloat = double;
 #else
 using kfloat = float;
