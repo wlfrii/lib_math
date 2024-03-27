@@ -35,79 +35,146 @@ namespace mmath{
 namespace continuum{
 
 /**
- * @brief Calculating the partial of rotation and position of the end 
- * frame of single continuum segment, to delta.
+ * @brief Calculating the partial of the pose of the end frame of a single 
+ * continuum segment, to delta.
  * 
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param dpose  The derivatives of pose to theta.
+ * @remark This is the base of overloaded functions.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [out] dpose The derivatives of pose to theta.
+ * 
+ * @see mmath::Pose.
  */
 void dSingleSegmentPose2theta(kfloat L, kfloat theta, kfloat delta, Pose &dpose);
 
+
 /**
- * @brief Override based on 'void dSingleSegmentPose2theta()'
+ * @brief Calculating the partial of the pose of the end frame of a single 
+ * continuum segment, to delta.
  * 
- * @sa dSingleSegmentPose2theta
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * 
+ * @return The derivatives of pose to theta.
+ * 
+ * @see mmath::Pose.
  */
 Pose dSingleSegmentPose2theta(kfloat L, kfloat theta, kfloat delta);
 
 
 /**
- * @brief Calculating the partial of rotation and position of the end 
- * frame of single continuum segment, to delta.
+ * @brief Calculating the partial of the pose of the end frame of a single 
+ * continuum segment, to delta.
  * 
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param dpose  The derivatives of pose to delta.
+ * @remark This is the base of overloaded functions.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [out] dpose The derivatives of pose to delta.
+ * 
+ * @see mmath::Pose.
  */
 void dSingleSegmentPose2delta(kfloat L, kfloat theta, kfloat delta, Pose &dpose);
 
+
 /**
- * @brief Override based on 'void dSingleSegmentPose2delta()'
+ * @brief Calculating the partial of the pose of the end frame of a single 
+ * continuum segment, to delta.
  * 
- * @sa dSingleSegmentPose2delta
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * 
+ * @return The derivatives of pose to delta.
  */
 Pose dSingleSegmentPose2delta(kfloat L, kfloat theta, kfloat delta);
 
 
 /**
  * @brief Calculating the partial of rotation and position of the end 
- * frame of single continuum segment, to L.
+ * frame of a single continuum segment, to L.
  * 
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param dpose  The derivatives of pose to theta.
+ * @remark This is the base of overloaded functions.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [out] dpose The derivatives of pose to L.
+ * 
+ * @see mmath::Pose.
  */
 void dSingleSegmentPose2L(kfloat L, kfloat theta, kfloat delta, Pose &dpose);
 
+
 /**
- * @brief Override based on 'void dSingleSegmentPose2L()'
+ * @brief Calculating the partial of rotation and position of the end 
+ * frame of a single continuum segment, to L.
  * 
- * @sa dSingleSegmentPose2theta
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * 
+ * @return The derivatives of pose to L.
+ * 
+ * @see mmath::Pose.
  */
 Pose dSingleSegmentPose2L(kfloat L, kfloat theta, kfloat delta);
 
 
 /**
  * @brief Calculating the partial of rotation and position of the end 
- * frame of single continuum segment with a rigid segment, to theta.
+ * frame of a single continuum segment with a rigid segment, to theta.
  * 
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Lr     The length of the rigid segment.
- * @param dpose  The derivatives of pose to theta.
+ * @remark This is the base of overloaded functions.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] dpose The derivatives of pose to theta.
+ * 
+ * @see mmath::Pose.
  */
 void dSingleWithRigidSegmentPose2theta(kfloat L, kfloat theta, kfloat delta,
                                        kfloat Lr, Pose &dpose);
 
+
 /**
- * @brief Override based on 'void dSingleWithRigidSegmentPose2theta()'
+ * @brief Calculating the partial of rotation and position of the end 
+ * frame of a single continuum segment with a rigid segment, to theta.
  * 
- * @sa dSingleWithRigidSegmentPose2theta
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * 
+ * @return The derivatives of pose to theta.
+ * 
+ * @see mmath::Pose.
  */
 Pose dSingleWithRigidSegmentPose2theta(kfloat L, kfloat theta, kfloat delta,
                                        kfloat Lr);
@@ -115,21 +182,39 @@ Pose dSingleWithRigidSegmentPose2theta(kfloat L, kfloat theta, kfloat delta,
 
 /**
  * @brief Calculating the partial of rotation and position of the end 
- * frame of single continuum segment with a rigid segment, to delta.
+ * frame of a single continuum segment with a rigid segment, to delta.
  * 
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Lr     The length of the rigid segment.
- * @param dpose  The derivatives of pose to delta.
+ * @remark This is the base of overloaded functions.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] dpose The derivatives of pose to delta.
+ * 
+ * @see mmath::Pose.
  */
 void dSingleWithRigidSegmentPose2delta(kfloat L, kfloat theta, kfloat delta,
                                        kfloat Lr, Pose &dpose);
 
+
 /**
- * @brief Override based on 'void dSingleWithRigidSegmentPose2delta()'
+ * @brief Calculating the partial of rotation and position of the end 
+ * frame of a single continuum segment with a rigid segment, to delta.
  * 
- * @sa dSingleWithRigidSegmentPose2delta
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * 
+ * @return The derivatives of pose to delta.
+ * 
+ * @see mmath::Pose.
  */
 Pose dSingleWithRigidSegmentPose2delta(kfloat L, kfloat theta, kfloat delta,
                                        kfloat Lr);
@@ -137,21 +222,39 @@ Pose dSingleWithRigidSegmentPose2delta(kfloat L, kfloat theta, kfloat delta,
 
 /**
  * @brief Calculating the partial of rotation and position of the end 
- * frame of single continuum segment with a rigid segment, to L.
+ * frame of a single continuum segment with a rigid segment, to L.
  * 
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Lr     The length of the rigid segment.
- * @param dpose  The derivatives of pose to theta.
+ * @remark This is the base of overloaded functions.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] dpose The derivatives of pose to L.
+ * 
+ * @see mmath::Pose.
  */
 void dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
                                    kfloat Lr, Pose &dpose);
 
+
 /**
- * @brief Override based on 'void dSingleWithRigidSegmentPose2theta()'
+ * @brief Calculating the partial of rotation and position of the end 
+ * frame of a single continuum segment with a rigid segment, to L.
  * 
- * @sa dSingleWithRigidSegmentPose2L
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * 
+ * @return The derivatives of pose to L.
+ * 
+ * @see mmath::Pose.
  */
 Pose dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
                                    kfloat Lr);
@@ -166,13 +269,13 @@ Pose dSingleWithRigidSegmentPose2L(kfloat L, kfloat theta, kfloat delta,
  * @brief Calculate the Jabobian of a single segment w.r.t Velocity and Angular
  *        -Velocity.
  *
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Jv     The returned Jacobian w.r.t Velocity, with 
- *               [Jv_theta(:), Jv_delta(:)]
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
- *               [Jw_theta(:), Jw_delta(:)]
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [out] Jv    The returned Jacobian w.r.t Velocity, with 
+ *                    [Jv_theta(:), Jv_delta(:)].
+ * @param [out] Jw    The returned Jacobian w.r.t Angular-Velocity, with 
+ *                    [Jw_theta(:), Jw_delta(:)].
  */
 void calcSingleSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta,
@@ -182,8 +285,12 @@ void calcSingleSegmentJacobian(
 /**
  * @brief Calculate the Jabobian of a single segment w.r.t Velocity and Angular
  *        -Velocity.
- * 
- * @param q  The ConfigSpc object
+ *
+ * @param [in]  q   A ConfiSpc object.
+ * @param [out] Jv  The returned Jacobian w.r.t Velocity, with 
+ *                  [Jv_theta(:), Jv_delta(:)].
+ * @param [out] Jw  The returned Jacobian w.r.t Angular-Velocity, with 
+ *                  [Jw_theta(:), Jw_delta(:)].
  */
 void calcSingleSegmentJacobian(const ConfigSpc &q,
         Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw);
@@ -193,13 +300,13 @@ void calcSingleSegmentJacobian(const ConfigSpc &q,
  * @brief Calculate the Jabobian of a single segment tha has a variable length
  *        w.r.t Velocity and Angular-Velocity.
  *
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Jv     The returned Jacobian w.r.t Velocity, with 
- *               [Jv_theta(:), Jv_delta(:), Jv_L(:)]
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
- *               [Jw_theta(:), Jw_delta(:), Jw_L(:)]
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [out] Jv    The returned Jacobian w.r.t Velocity, with 
+ *                    [Jv_theta(:), Jv_delta(:), Jv_L(:)].
+ * @param [out] Jw    The returned Jacobian w.r.t Angular-Velocity, with 
+ *                    [Jw_theta(:), Jw_delta(:), Jw_L(:)].
  */
 void calcVariableLengthSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta,
@@ -210,7 +317,11 @@ void calcVariableLengthSegmentJacobian(
  * @brief Calculate the Jabobian of a single segment tha has a variable length
  *        w.r.t Velocity and Angular-Velocity.
  * 
- * @param q  The ConfigSpc object
+ * @param [in]  q     A ConfiSpc object.
+ * @param [out] Jv    The returned Jacobian w.r.t Velocity, with 
+ *                    [Jv_theta(:), Jv_delta(:), Jv_L(:)].
+ * @param [out] Jw    The returned Jacobian w.r.t Angular-Velocity, with 
+ *                    [Jw_theta(:), Jw_delta(:), Jw_L(:)].
  */
 void calcVariableLengthSegmentJacobian(const ConfigSpc &q,
         Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw);
@@ -220,14 +331,14 @@ void calcVariableLengthSegmentJacobian(const ConfigSpc &q,
  * @brief Calculate the Jabobian of a single segment with a rigid segment w.r.t
  *        Velocity and Angular-Velocity.
  *
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Lr     The length of the rigid segment.
- * @param Jv     The returned Jacobian w.r.t Velocity, with 
- *               [Jv_theta(:), Jv_delta(:)]
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
- *               [Jw_theta(:), Jw_delta(:)]
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] Jv    The returned Jacobian w.r.t Velocity, with 
+ *                    [Jv_theta(:), Jv_delta(:)].
+ * @param [out] Jw    The returned Jacobian w.r.t Angular-Velocity, with 
+ *                    [Jw_theta(:), Jw_delta(:)].
  */
 void calcSingleWithRigidSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta, kfloat Lr,
@@ -238,7 +349,12 @@ void calcSingleWithRigidSegmentJacobian(
  * @brief Calculate the Jabobian of a single segment with a rigid segment w.r.t
  *        Velocity and Angular-Velocity.
  * 
- * @param q  The ConfigSpc object
+ * @param [in] q      A ConfiSpc object.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] Jv    The returned Jacobian w.r.t Velocity, with 
+ *                    [Jv_theta(:), Jv_delta(:)].
+ * @param [out] Jw    The returned Jacobian w.r.t Angular-Velocity, with 
+ *                    [Jw_theta(:), Jw_delta(:)].
  */
 void calcSingleWithRigidSegmentJacobian(const ConfigSpc &q, kfloat Lr,
         Eigen::Matrix<kfloat, 3, 2>& Jv, Eigen::Matrix<kfloat, 3, 2>& Jw);
@@ -248,14 +364,14 @@ void calcSingleWithRigidSegmentJacobian(const ConfigSpc &q, kfloat Lr,
  * @brief Calculate the Jabobian of a single segment tha has a variable length
  *        and followed by a rigid segment, w.r.t Velocity and Angular-Velocity.
  *
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Lr     The length of the rigid segment.
- * @param Jv     The returned Jacobian w.r.t Velocity, with 
- *               [Jv_theta(:), Jv_delta(:), Jv_L(:)]
- * @param Jw     The returned Jacobian w.r.t Angular-Velocity, with 
- *               [Jw_theta(:), Jw_delta(:), Jw_L(:)]
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] Jv    The returned Jacobian w.r.t Velocity, with 
+ *                    [Jv_theta(:), Jv_delta(:), Jv_L(:)].
+ * @param [out] Jw    The returned Jacobian w.r.t Angular-Velocity, with 
+ *                    [Jw_theta(:), Jw_delta(:), Jw_L(:)].
  */
 void calcVariableLengthWithRigidSegmentJacobian(
         kfloat L, kfloat theta, kfloat delta, kfloat Lr,
@@ -266,7 +382,12 @@ void calcVariableLengthWithRigidSegmentJacobian(
  * @brief Calculate the Jabobian of a single segment tha has a variable length
  *        and followed by a rigid segment, w.r.t Velocity and Angular-Velocity.
  * 
- * @param q  The ConfigSpc object
+ * @param [in] q      A ConfiSpc object.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] Jv    The returned Jacobian w.r.t Velocity, with 
+ *                    [Jv_theta(:), Jv_delta(:), Jv_L(:)].
+ * @param [out] Jw    The returned Jacobian w.r.t Angular-Velocity, with 
+ *                    [Jw_theta(:), Jw_delta(:), Jw_L(:)].
  */
 void calcVariableLengthWithRigidSegmentJacobian(const ConfigSpc &q, kfloat Lr,
         Eigen::Matrix<kfloat, 3, 3>& Jv, Eigen::Matrix<kfloat, 3, 3>& Jw);

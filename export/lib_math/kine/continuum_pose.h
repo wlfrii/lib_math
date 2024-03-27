@@ -34,65 +34,156 @@ namespace mmath{
 namespace continuum{
 
 /** 
- * @brief Calculating the rotation and position of the end frame of single 
+ * @brief Calculating the rotation and position of the end frame of a single 
  * continuum segment with respect to its base frame.
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @return The rotation and position matrix of single continuum segment with
- * respect to its base frame.
+ * 
+ * @remark This is the base of overloaded functions.
+ *
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [out] pose  The end pose of a single continuum segment w.r.t its base 
+ * frame. 
+ * 
+ * @see mmath::Pose.
  */
 void calcSingleSegmentPose(kfloat L, kfloat theta, kfloat delta, Pose &pose);
 
 
 /**
- * @brief Override based on 'void calcSingleSegmentPose()'
+ * @brief Calculating the rotation and position of the end frame of a single 
+ * continuum segment with respect to its base frame.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * 
+ * @return The end pose of a single continuum segment w.r.t its base frame.
+ * 
+ * @see mmath::Pose.
  */
 Pose calcSingleSegmentPose(kfloat L, kfloat theta, kfloat delta);
 
 
 /**
- * @brief Override based on 'void calcSingleSegmentPose()'
+ * @brief Calculating the rotation and position of the end frame of a single 
+ * continuum segment with respect to its base frame.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] q A ConfiSpc object
+ * @param [out] pose  The end pose of a single continuum segment w.r.t its base 
+ * frame.
+ * 
+ * @see mmath::Pose, mmath::continuum::ConfigSpc
  */
 void calcSingleSegmentPose(const ConfigSpc &q, Pose &pose);
 
 
 /**
- * @brief Override based on 'void calcSingleSegmentPose()'
+ * @brief Calculating the rotation and position of the end frame of a single 
+ * continuum segment with respect to its base frame.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] q A ConfiSpc object
+ * 
+ * @return The end pose of a single continuum segment w.r.t its base frame.
+ * 
+ * @see mmath::Pose, mmath::continuum::ConfigSpc
  */
 Pose calcSingleSegmentPose(const ConfigSpc& q);
 
 
 
 /** 
- * @brief Calculating the rotation and position of the end frame of single 
+ * @brief Calculating the rotation and position of the end frame of a single 
  * continuum segment with a rigid segment, with respect to its base frame.
- * @param L      The length of the segment.
- * @param theta  The bending angle of the segment.
- * @param delta  The bending direction of the segment.
- * @param Lr     The length of the rigid segment.
- * @return The rotation and position matrix of single continuum segment with
- * respect to its base frame.
+ * 
+ * @remark This is the base of overloaded functions.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * @param [out] pose  The end pose of a single continuum segment that with a 
+ * rigid segment w.r.t its base frame.
+ * 
+ * @see mmath::Pose
  */
 void calcSingleWithRigidSegmentPose(kfloat L, kfloat theta, kfloat delta,
                                     kfloat Lr, Pose &pose);
 
 
-/**
- * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
+/** 
+ * @brief Calculating the rotation and position of the end frame of a single 
+ * continuum segment with a rigid segment, with respect to its base frame.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] L      The length of the segment.
+ * @param [in] theta  The bending angle of the segment.
+ * @param [in] delta  The bending direction of the segment.
+ * @param [in] Lr     The length of the rigid segment.
+ * 
+ * @return The end pose of a single continuum segment that with a rigid segment 
+ * w.r.t its base frame.
+ * 
+ * @see mmath::Pose
  */
 Pose calcSingleWithRigidSegmentPose(kfloat L, kfloat theta, kfloat delta,
                                     kfloat Lr);
 
 
-/**
- * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
+/** 
+ * @brief Calculating the rotation and position of the end frame of a single 
+ * continuum segment with a rigid segment, with respect to its base frame.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] q  A ConfiSpc object
+ * @param [in] Lr The length of the rigid segment.
+ * @param [out] pose The end pose of a single continuum segment that with a 
+ * rigid segment w.r.t its base frame.
+ * 
+ * @see mmath::Pose, mmath::continuum::ConfigSpc
  */
 void calcSingleWithRigidSegmentPose(const ConfigSpc &q, kfloat Lr, Pose &pose);
 
 
 /**
- * @brief Override based on 'void calcSingleWithRigidSegmentPose()'
+ * @brief Calculating the rotation and position of the end frame of a single 
+ * continuum segment with a rigid segment, with respect to its base frame.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @param [in] q  A ConfiSpc object
+ * @param [in] Lr The length of the rigid segment.
+ * 
+ * @return The end pose of a single continuum segment that with a rigid segment
+ * w.r.t its base frame.
+ * 
+ * @see mmath::Pose, mmath::continuum::ConfigSpc
  */
 Pose calcSingleWithRigidSegmentPose(const ConfigSpc &q, kfloat Lr);
 
