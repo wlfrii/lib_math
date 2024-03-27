@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classmmath_1_1_camera_projector.html',
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="classmmath_1_1_camera_projector.html" title="The CameraProjector class designed to the conversion between 3D point w.r.t Camera frame and the 2D p...">CameraProjector</a> class designed to the conversion between 3D point w.r.t Camera frame and the 2D point w.r.t image frame.  
+<p>The <a class="el" href="classmmath_1_1_camera_projector.html" title="The CameraProjector class is designed for the conversion between 3D point w.r.t Camera frame and the ...">CameraProjector</a> class is designed for the conversion between 3D point w.r.t Camera frame and the 2D point w.r.t image frame.  
  <a href="classmmath_1_1_camera_projector.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="camera__projector_8h_source.html">camera_projector.h</a>&gt;</code></p>
@@ -101,29 +101,53 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3556ba4466e81da5ee0d772f2a44d499"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a3556ba4466e81da5ee0d772f2a44d499">CameraProjector</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> <a class="el" href="classmmath_1_1_camera_projector.html#a7a3b684974b3c0b54e6b558e0b6afec9">fxy</a>, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> <a class="el" href="classmmath_1_1_camera_projector.html#a6fb97a25976d0ef6dbfc159b5f1dae45">cx</a>, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> <a class="el" href="classmmath_1_1_camera_projector.html#a4269cbe7af64e3e61861088972804e6b">cy</a>, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> <a class="el" href="classmmath_1_1_camera_projector.html#af0e48d78ca6a78a0d982d7f4cb0397d9">t</a>=0)</td></tr>
 <tr class="memdesc:a3556ba4466e81da5ee0d772f2a44d499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Camera Projector object.  <a href="classmmath_1_1_camera_projector.html#a3556ba4466e81da5ee0d772f2a44d499">More...</a><br /></td></tr>
 <tr class="separator:a3556ba4466e81da5ee0d772f2a44d499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac91a9c7bf63b6c136cb0fba754e32a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#aac91a9c7bf63b6c136cb0fba754e32a8">cvt3Dto2D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> x, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> y, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> z, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D) const</td></tr>
+<tr class="memdesc:aac91a9c7bf63b6c136cb0fba754e32a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t GLOBAL imaging frame.  <a href="classmmath_1_1_camera_projector.html#aac91a9c7bf63b6c136cb0fba754e32a8">More...</a><br /></td></tr>
+<tr class="separator:aac91a9c7bf63b6c136cb0fba754e32a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a373e834850183bc31aba88fac22df33e"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a373e834850183bc31aba88fac22df33e">cvt3Dto2D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> x, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> y, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> z) const</td></tr>
 <tr class="memdesc:a373e834850183bc31aba88fac22df33e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t GLOBAL imaging frame.  <a href="classmmath_1_1_camera_projector.html#a373e834850183bc31aba88fac22df33e">More...</a><br /></td></tr>
 <tr class="separator:a373e834850183bc31aba88fac22df33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6d552ff2c4b4178ec2bcb8edc15510"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a1d6d552ff2c4b4178ec2bcb8edc15510">cvt3Dto2D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D) const</td></tr>
+<tr class="memdesc:a1d6d552ff2c4b4178ec2bcb8edc15510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t GLOBAL imaging frame.  <a href="classmmath_1_1_camera_projector.html#a1d6d552ff2c4b4178ec2bcb8edc15510">More...</a><br /></td></tr>
+<tr class="separator:a1d6d552ff2c4b4178ec2bcb8edc15510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a307c3dfb70d19fb4610351126eec83d1"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a307c3dfb70d19fb4610351126eec83d1">cvt3Dto2D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D) const</td></tr>
 <tr class="memdesc:a307c3dfb70d19fb4610351126eec83d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t GLOBAL imaging frame.  <a href="classmmath_1_1_camera_projector.html#a307c3dfb70d19fb4610351126eec83d1">More...</a><br /></td></tr>
 <tr class="separator:a307c3dfb70d19fb4610351126eec83d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a007b44153385fa8ebf1cd39e8015c8a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a007b44153385fa8ebf1cd39e8015c8a7">cvt3Dto2D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> x, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> y, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> z, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D) const</td></tr>
+<tr class="memdesc:a007b44153385fa8ebf1cd39e8015c8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t SPECIFIED imaging frame.  <a href="classmmath_1_1_camera_projector.html#a007b44153385fa8ebf1cd39e8015c8a7">More...</a><br /></td></tr>
+<tr class="separator:a007b44153385fa8ebf1cd39e8015c8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0057d903e9c545c48ea91214116a57b5"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a0057d903e9c545c48ea91214116a57b5">cvt3Dto2D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> x, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> y, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> z, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id) const</td></tr>
 <tr class="memdesc:a0057d903e9c545c48ea91214116a57b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t SPECIFIED imaging frame.  <a href="classmmath_1_1_camera_projector.html#a0057d903e9c545c48ea91214116a57b5">More...</a><br /></td></tr>
 <tr class="separator:a0057d903e9c545c48ea91214116a57b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c23e6f0fb2b26c27d86288323bfb97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a22c23e6f0fb2b26c27d86288323bfb97">cvt3Dto2D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D) const</td></tr>
+<tr class="memdesc:a22c23e6f0fb2b26c27d86288323bfb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t SPECIFIED imaging frame.  <a href="classmmath_1_1_camera_projector.html#a22c23e6f0fb2b26c27d86288323bfb97">More...</a><br /></td></tr>
+<tr class="separator:a22c23e6f0fb2b26c27d86288323bfb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba38c9544cc5b14625b448e2c347e43"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a7ba38c9544cc5b14625b448e2c347e43">cvt3Dto2D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id) const</td></tr>
 <tr class="memdesc:a7ba38c9544cc5b14625b448e2c347e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projecting 3D point to 2D w.r.t SPECIFIED imaging frame.  <a href="classmmath_1_1_camera_projector.html#a7ba38c9544cc5b14625b448e2c347e43">More...</a><br /></td></tr>
 <tr class="separator:a7ba38c9544cc5b14625b448e2c347e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd0eff70db2f4e854d965bf564d5645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a9bd0eff70db2f4e854d965bf564d5645">cvt2Dto3D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> u, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> v, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D) const</td></tr>
+<tr class="memdesc:a9bd0eff70db2f4e854d965bf564d5645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t GLOBAL imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#a9bd0eff70db2f4e854d965bf564d5645">More...</a><br /></td></tr>
+<tr class="separator:a9bd0eff70db2f4e854d965bf564d5645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9480b2eb6384b6f0403b45b37543d45"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#ad9480b2eb6384b6f0403b45b37543d45">cvt2Dto3D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> u, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> v, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth) const</td></tr>
-<tr class="memdesc:ad9480b2eb6384b6f0403b45b37543d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">lifting 2D point that w.r.t GLOBAL camera frame to 3D  <a href="classmmath_1_1_camera_projector.html#ad9480b2eb6384b6f0403b45b37543d45">More...</a><br /></td></tr>
+<tr class="memdesc:ad9480b2eb6384b6f0403b45b37543d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t GLOBAL imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#ad9480b2eb6384b6f0403b45b37543d45">More...</a><br /></td></tr>
 <tr class="separator:ad9480b2eb6384b6f0403b45b37543d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5090d70ebe783b1186574944364aabf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a5090d70ebe783b1186574944364aabf9">cvt2Dto3D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D) const</td></tr>
+<tr class="memdesc:a5090d70ebe783b1186574944364aabf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t GLOBAL imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#a5090d70ebe783b1186574944364aabf9">More...</a><br /></td></tr>
+<tr class="separator:a5090d70ebe783b1186574944364aabf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ea36532d8c17b3d952ec86d880b31b3"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a8ea36532d8c17b3d952ec86d880b31b3">cvt2Dto3D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth) const</td></tr>
-<tr class="memdesc:a8ea36532d8c17b3d952ec86d880b31b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">lifting 2D point that w.r.t GLOBAL camera frame to 3D  <a href="classmmath_1_1_camera_projector.html#a8ea36532d8c17b3d952ec86d880b31b3">More...</a><br /></td></tr>
+<tr class="memdesc:a8ea36532d8c17b3d952ec86d880b31b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t GLOBAL imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#a8ea36532d8c17b3d952ec86d880b31b3">More...</a><br /></td></tr>
 <tr class="separator:a8ea36532d8c17b3d952ec86d880b31b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3160a26759ab69235f97a27af6d02c59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a3160a26759ab69235f97a27af6d02c59">cvt2Dto3D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> u, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> v, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D) const</td></tr>
+<tr class="memdesc:a3160a26759ab69235f97a27af6d02c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#a3160a26759ab69235f97a27af6d02c59">More...</a><br /></td></tr>
+<tr class="separator:a3160a26759ab69235f97a27af6d02c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab14ff5f12064ecfef242795150e7f70c"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#ab14ff5f12064ecfef242795150e7f70c">cvt2Dto3D</a> (<a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> u, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> v, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id) const</td></tr>
-<tr class="memdesc:ab14ff5f12064ecfef242795150e7f70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">lifting 2D point that w.r.t SPECIFIED camera frame to 3D  <a href="classmmath_1_1_camera_projector.html#ab14ff5f12064ecfef242795150e7f70c">More...</a><br /></td></tr>
+<tr class="memdesc:ab14ff5f12064ecfef242795150e7f70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#ab14ff5f12064ecfef242795150e7f70c">More...</a><br /></td></tr>
 <tr class="separator:ab14ff5f12064ecfef242795150e7f70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a854a6e5ba0d8bc23bfd793546bdea424"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a854a6e5ba0d8bc23bfd793546bdea424">cvt2Dto3D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id, Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;pt3D) const</td></tr>
+<tr class="memdesc:a854a6e5ba0d8bc23bfd793546bdea424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#a854a6e5ba0d8bc23bfd793546bdea424">More...</a><br /></td></tr>
+<tr class="separator:a854a6e5ba0d8bc23bfd793546bdea424"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82b1ad2eaadaffbb5468b12e15bf8868"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_camera_projector.html#a82b1ad2eaadaffbb5468b12e15bf8868">cvt2Dto3D</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;pt2D, <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> depth, <a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a> id) const</td></tr>
-<tr class="memdesc:a82b1ad2eaadaffbb5468b12e15bf8868"><td class="mdescLeft">&#160;</td><td class="mdescRight">lifting 2D point that w.r.t SPECIFIED camera frame to 3D  <a href="classmmath_1_1_camera_projector.html#a82b1ad2eaadaffbb5468b12e15bf8868">More...</a><br /></td></tr>
+<tr class="memdesc:a82b1ad2eaadaffbb5468b12e15bf8868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D.  <a href="classmmath_1_1_camera_projector.html#a82b1ad2eaadaffbb5468b12e15bf8868">More...</a><br /></td></tr>
 <tr class="separator:a82b1ad2eaadaffbb5468b12e15bf8868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -146,7 +170,16 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="separator:af0e48d78ca6a78a0d982d7f4cb0397d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="classmmath_1_1_camera_projector.html" title="The CameraProjector class designed to the conversion between 3D point w.r.t Camera frame and the 2D p...">CameraProjector</a> class designed to the conversion between 3D point w.r.t Camera frame and the 2D point w.r.t image frame. </p>
+<div class="textblock"><p>The <a class="el" href="classmmath_1_1_camera_projector.html" title="The CameraProjector class is designed for the conversion between 3D point w.r.t Camera frame and the ...">CameraProjector</a> class is designed for the conversion between 3D point w.r.t Camera frame and the 2D point w.r.t image frame. </p>
+<dl class="section note"><dt>Note</dt><dd>There are several definitions should be clarified first.<ul>
+<li>GLOBAL camera frame: equals to camera frame for monocular, or indicates the frame in the middle between left and right cameras for binocular.</li>
+<li>GLOBAL imaging frame: equals to image frame for monocular, or indicates the frame in the middle between left and right imaging for binocular.</li>
+<li>SPECIFIED camera frame: equals to camera frame for monocular, or indicates <br  />
+ the left or right camera frame for binocular.</li>
+<li>SPECIFIED imaging frame: equals to image frame for monocular, or indicates <br  />
+ the left or right image frame for binocular. </li>
+</ul>
+</dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3556ba4466e81da5ee0d772f2a44d499"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3556ba4466e81da5ee0d772f2a44d499">&#9670;&nbsp;</a></span>CameraProjector()</h2>
@@ -189,10 +222,10 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>Construct a new Camera Projector object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fxy</td><td>The focal length of camera. For binocular, this value should be the stereo-rectified focal length value. </td></tr>
-    <tr><td class="paramname">cx</td><td>The x coordinta of camera optical axis </td></tr>
-    <tr><td class="paramname">cy</td><td>The y coordinta of camera optical axis </td></tr>
-    <tr><td class="paramname">t</td><td>The distance between stereo cameras </td></tr>
+    <tr><td class="paramname">fxy</td><td>The focal length of camera. For binocular, this value should be the stereo-rectified value. </td></tr>
+    <tr><td class="paramname">cx</td><td>The x coordinta of camera optical axis. For binocular, this value should be the stereo-rectified value. </td></tr>
+    <tr><td class="paramname">cy</td><td>The y coordinta of camera optical axis. For binocular, this value should be the stereo-rectified value. </td></tr>
+    <tr><td class="paramname">t</td><td>The distance between stereo cameras. When no distance or zero value is given, the camera is supposed to be a monocular. </td></tr>
   </table>
   </dd>
 </dl>
@@ -201,7 +234,7 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8ea36532d8c17b3d952ec86d880b31b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ea36532d8c17b3d952ec86d880b31b3">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea36532d8c17b3d952ec86d880b31b3">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,20 +259,21 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
       </table>
 </div><div class="memdoc">
 
-<p>lifting 2D point that w.r.t GLOBAL camera frame to 3D </p>
+<p>Lifting 2D point that w.r.t GLOBAL imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pt2D</td><td>2D Points w.r.t specifed camera </td></tr>
-    <tr><td class="paramname">depth</td><td>Depth of the given 2D point </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t GLOBAL imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>3D point w.r.t GLOBAL camera frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 3D point w.r.t GLOBAL camera frame. </dd></dl>
 
 </div>
 </div>
 <a id="a82b1ad2eaadaffbb5468b12e15bf8868"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82b1ad2eaadaffbb5468b12e15bf8868">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b1ad2eaadaffbb5468b12e15bf8868">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,21 +304,119 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
       </table>
 </div><div class="memdoc">
 
-<p>lifting 2D point that w.r.t SPECIFIED camera frame to 3D </p>
+<p>Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pt2D</td><td>2D Points w.r.t specifed camera </td></tr>
-    <tr><td class="paramname">depth</td><td>Depth of the given 2D point </td></tr>
-    <tr><td class="paramname">id</td><td>Specify the camera index for binocular </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>3D point w.r.t SPECIFIED camera frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 3D point w.r.t GLOBAL camera frame </dd></dl>
+
+</div>
+</div>
+<a id="a854a6e5ba0d8bc23bfd793546bdea424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a854a6e5ba0d8bc23bfd793546bdea424">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt2Dto3D </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt2D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt3D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5090d70ebe783b1186574944364aabf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5090d70ebe783b1186574944364aabf9">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt2Dto3D </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt2D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt3D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lifting 2D point that w.r.t GLOBAL imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t GLOBAL imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="ad9480b2eb6384b6f0403b45b37543d45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9480b2eb6384b6f0403b45b37543d45">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9480b2eb6384b6f0403b45b37543d45">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,21 +447,22 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
       </table>
 </div><div class="memdoc">
 
-<p>lifting 2D point that w.r.t GLOBAL camera frame to 3D </p>
+<p>Lifting 2D point that w.r.t GLOBAL imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u</td><td>U coordinate of the 2D point </td></tr>
-    <tr><td class="paramname">v</td><td>V coordinate of the 2D point </td></tr>
-    <tr><td class="paramname">depth</td><td>Depth of the given 2D point </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>U coordinate of the 2D point w.r.t GLOBAL imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>V coordinate of the 2D point w.r.t GLOBAL imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>3D point w.r.t GLOBAL camera frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 3D point w.r.t GLOBAL camera frame </dd></dl>
 
 </div>
 </div>
 <a id="ab14ff5f12064ecfef242795150e7f70c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab14ff5f12064ecfef242795150e7f70c">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14ff5f12064ecfef242795150e7f70c">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,22 +499,134 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
       </table>
 </div><div class="memdoc">
 
-<p>lifting 2D point that w.r.t SPECIFIED camera frame to 3D </p>
+<p>Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u</td><td>U coordinate of the 2D point </td></tr>
-    <tr><td class="paramname">v</td><td>V coordinate of the 2D point </td></tr>
-    <tr><td class="paramname">depth</td><td>Depth of the given 2D point </td></tr>
-    <tr><td class="paramname">id</td><td>Specify the camera index for binocular </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>U coordinate of the 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>V coordinate of the 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>3D point w.r.t SPECIFIED camera frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 3D point w.r.t GLOBAL camera frame. </dd></dl>
+
+</div>
+</div>
+<a id="a3160a26759ab69235f97a27af6d02c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3160a26759ab69235f97a27af6d02c59">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt2Dto3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt3D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lifting 2D point that w.r.t SPECIFIED imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is the base of overloaded member functions.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>U coordinate of the 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>V coordinate of the 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9bd0eff70db2f4e854d965bf564d5645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd0eff70db2f4e854d965bf564d5645">&#9670;&nbsp;</a></span>cvt2Dto3D() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt2Dto3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt3D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lifting 2D point that w.r.t GLOBAL imaging frame to 3D. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is the base of overloaded member functions.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>U coordinate of the 2D point w.r.t GLOBAL imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>V coordinate of the 2D point w.r.t GLOBAL imaging frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>Depth of the given 2D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="a307c3dfb70d19fb4610351126eec83d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a307c3dfb70d19fb4610351126eec83d1">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a307c3dfb70d19fb4610351126eec83d1">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,19 +642,19 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div><div class="memdoc">
 
 <p>Projecting 3D point to 2D w.r.t GLOBAL imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pt3D</td><td></td></tr>
-    <tr><td class="paramname">id</td><td>Specify the camera index for binocular </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>2D point w.r.t GLOBAL imaging frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 2D point w.r.t GLOBAL imaging frame. </dd></dl>
 
 </div>
 </div>
 <a id="a7ba38c9544cc5b14625b448e2c347e43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ba38c9544cc5b14625b448e2c347e43">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba38c9544cc5b14625b448e2c347e43">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -435,19 +680,103 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div><div class="memdoc">
 
 <p>Projecting 3D point to 2D w.r.t SPECIFIED imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pt3D</td><td></td></tr>
-    <tr><td class="paramname">id</td><td>Specify the camera index for binocular </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>2D point w.r.t SPECIFIED imaging frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 2D point w.r.t SPECIFIED imaging frame. </dd></dl>
+
+</div>
+</div>
+<a id="a22c23e6f0fb2b26c27d86288323bfb97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c23e6f0fb2b26c27d86288323bfb97">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt3Dto2D </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt2D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Projecting 3D point to 2D w.r.t SPECIFIED imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d6d552ff2c4b4178ec2bcb8edc15510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6d552ff2c4b4178ec2bcb8edc15510">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt3Dto2D </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt3D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt2D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Projecting 3D point to 2D w.r.t GLOBAL imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pt3D</td><td>A 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t GLOBAL imaging frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="a373e834850183bc31aba88fac22df33e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a373e834850183bc31aba88fac22df33e">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a373e834850183bc31aba88fac22df33e">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -479,20 +808,21 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div><div class="memdoc">
 
 <p>Projecting 3D point to 2D w.r.t GLOBAL imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>X coordinate of the 3D point </td></tr>
-    <tr><td class="paramname">y</td><td>Y coordinate of the 3D point </td></tr>
-    <tr><td class="paramname">z</td><td>Z coordinate of the 3D point </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>Z coordinate of the 3D point w.r.t GLOBAL camera frame.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>2D point w.r.t GLOBAL imaging frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 2D point w.r.t GLOBAL imaging frame. </dd></dl>
 
 </div>
 </div>
 <a id="a0057d903e9c545c48ea91214116a57b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0057d903e9c545c48ea91214116a57b5">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0057d903e9c545c48ea91214116a57b5">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -530,16 +860,128 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div><div class="memdoc">
 
 <p>Projecting 3D point to 2D w.r.t SPECIFIED imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded member function, provided for convenience. It differs from the base function only in what argument(s) it accepts and the returned value. To improve efficiency, the member function with the void-returned value is suggested.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>X coordinate of the 3D point </td></tr>
-    <tr><td class="paramname">y</td><td>Y coordinate of the 3D point </td></tr>
-    <tr><td class="paramname">z</td><td>Z coordinate of the 3D point </td></tr>
-    <tr><td class="paramname">id</td><td>Specify the camera index for binocular </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>Z coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>2D point w.r.t SPECIFIED imaging frame </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 2D point w.r.t SPECIFIED imaging frame. </dd></dl>
+
+</div>
+</div>
+<a id="a007b44153385fa8ebf1cd39e8015c8a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a007b44153385fa8ebf1cd39e8015c8a7">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt3Dto2D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26">cam::ID</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt2D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Projecting 3D point to 2D w.r.t SPECIFIED imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is the base of overloaded member functions.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>Z coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Specify the camera index for binocular. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t SPECIFIED imaging frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aac91a9c7bf63b6c136cb0fba754e32a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac91a9c7bf63b6c136cb0fba754e32a8">&#9670;&nbsp;</a></span>cvt3Dto2D() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::CameraProjector::cvt3Dto2D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pt2D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Projecting 3D point to 2D w.r.t GLOBAL imaging frame. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is the base of overloaded member functions.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>Z coordinate of the 3D point w.r.t GLOBAL camera frame. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pt2D</td><td>A 2D point w.r.t GLOBAL imaging frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

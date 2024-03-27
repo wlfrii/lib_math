@@ -92,73 +92,72 @@ $(document).ready(function(){initNavTree('classmmath_1_1_pose.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p>A class designed to describe the transformation (spatial pose). This class can furtherly simplify the calculation of pose-trasform. There are two members include in this class: R &ndash; denotes the rotation or orientation. t &ndash; denotes the translation or position.  
+<p>A class designed to describe the transformation (spatial pose).  
  <a href="classmmath_1_1_pose.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="pose_8h_source.html">pose.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a379d871b94d6c831e0aec08bc18c0631"><td class="memTemplParams" colspan="2">template&lt;typename Tp1  = kfloat&gt; </td></tr>
-<tr class="memitem:a379d871b94d6c831e0aec08bc18c0631"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a> (const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;<a class="el" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>)</td></tr>
-<tr class="memdesc:a379d871b94d6c831e0aec08bc18c0631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object.  <a href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">More...</a><br /></td></tr>
-<tr class="separator:a379d871b94d6c831e0aec08bc18c0631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab61f06be3b16d86a06540a3532b8a825"><td class="memTemplParams" colspan="2">template&lt;typename Tp1  = kfloat, typename Tp2  = kfloat&gt; </td></tr>
 <tr class="memitem:ab61f06be3b16d86a06540a3532b8a825"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#ab61f06be3b16d86a06540a3532b8a825">Pose</a> (const Eigen::Matrix&lt; Tp1, 3, 3 &gt; &amp;<a class="el" href="classmmath_1_1_pose.html#a8d1daa55e9ee2887a307d6962f437f73">R</a>=Eigen::Matrix&lt; Tp1, 3, 3 &gt;::Identity(), const Eigen::Vector&lt; Tp2, 3 &gt; &amp;<a class="el" href="classmmath_1_1_pose.html#a9db13a15599153a28ad8dd8ab27450d3">t</a>={0, 0, 0})</td></tr>
-<tr class="memdesc:ab61f06be3b16d86a06540a3532b8a825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object.  <a href="classmmath_1_1_pose.html#ab61f06be3b16d86a06540a3532b8a825">More...</a><br /></td></tr>
+<tr class="memdesc:ab61f06be3b16d86a06540a3532b8a825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.  <a href="classmmath_1_1_pose.html#ab61f06be3b16d86a06540a3532b8a825">More...</a><br /></td></tr>
 <tr class="separator:ab61f06be3b16d86a06540a3532b8a825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379d871b94d6c831e0aec08bc18c0631"><td class="memTemplParams" colspan="2">template&lt;typename Tp1  = kfloat&gt; </td></tr>
+<tr class="memitem:a379d871b94d6c831e0aec08bc18c0631"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">Pose</a> (const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;<a class="el" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a>)</td></tr>
+<tr class="memdesc:a379d871b94d6c831e0aec08bc18c0631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.  <a href="classmmath_1_1_pose.html#a379d871b94d6c831e0aec08bc18c0631">More...</a><br /></td></tr>
+<tr class="separator:a379d871b94d6c831e0aec08bc18c0631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a2881e540e17946db4c28704bbe61c"><td class="memTemplParams" colspan="2">template&lt;typename Tp1  = kfloat&gt; </td></tr>
 <tr class="memitem:ab9a2881e540e17946db4c28704bbe61c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#ab9a2881e540e17946db4c28704bbe61c">Pose</a> (Tp1 tx, Tp1 ty, Tp1 tz)</td></tr>
-<tr class="memdesc:ab9a2881e540e17946db4c28704bbe61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object.  <a href="classmmath_1_1_pose.html#ab9a2881e540e17946db4c28704bbe61c">More...</a><br /></td></tr>
+<tr class="memdesc:ab9a2881e540e17946db4c28704bbe61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.  <a href="classmmath_1_1_pose.html#ab9a2881e540e17946db4c28704bbe61c">More...</a><br /></td></tr>
 <tr class="separator:ab9a2881e540e17946db4c28704bbe61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51ea9044da28c6721c29ae9baeb7cba7"><td class="memTemplParams" colspan="2">template&lt;typename Tp1  = kfloat&gt; </td></tr>
 <tr class="memitem:a51ea9044da28c6721c29ae9baeb7cba7"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">Pose</a> (Tp1 data[16], bool is_row_fisrt=true)</td></tr>
-<tr class="memdesc:a51ea9044da28c6721c29ae9baeb7cba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object.  <a href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">More...</a><br /></td></tr>
+<tr class="memdesc:a51ea9044da28c6721c29ae9baeb7cba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.  <a href="classmmath_1_1_pose.html#a51ea9044da28c6721c29ae9baeb7cba7">More...</a><br /></td></tr>
 <tr class="separator:a51ea9044da28c6721c29ae9baeb7cba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05d603798baed5f8bb75119397e593c2"><td class="memTemplParams" colspan="2">template&lt;typename Tp1  = kfloat&gt; </td></tr>
 <tr class="memitem:a05d603798baed5f8bb75119397e593c2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a05d603798baed5f8bb75119397e593c2">Pose</a> (Tp1 m11, Tp1 m12, Tp1 m13, Tp1 m14, Tp1 m21, Tp1 m22, Tp1 m23, Tp1 m24, Tp1 m31, Tp1 m32, Tp1 m33, Tp1 m34)</td></tr>
-<tr class="memdesc:a05d603798baed5f8bb75119397e593c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object.  <a href="classmmath_1_1_pose.html#a05d603798baed5f8bb75119397e593c2">More...</a><br /></td></tr>
+<tr class="memdesc:a05d603798baed5f8bb75119397e593c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.  <a href="classmmath_1_1_pose.html#a05d603798baed5f8bb75119397e593c2">More...</a><br /></td></tr>
 <tr class="separator:a05d603798baed5f8bb75119397e593c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29117bd0c95a6499b6c4a99705600c3e"><td class="memTemplParams" colspan="2">template&lt;typename Tp1  = kfloat&gt; </td></tr>
 <tr class="memitem:a29117bd0c95a6499b6c4a99705600c3e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">operator=</a> (const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;pose)</td></tr>
-<tr class="memdesc:a29117bd0c95a6499b6c4a99705600c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator =  <a href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">More...</a><br /></td></tr>
+<tr class="memdesc:a29117bd0c95a6499b6c4a99705600c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a pose from 4x4 matrix.  <a href="classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e">More...</a><br /></td></tr>
 <tr class="separator:a29117bd0c95a6499b6c4a99705600c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94172f6eec60e1747b5a1b8330888c8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">operator=</a> (const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;pose)</td></tr>
-<tr class="memdesc:a94172f6eec60e1747b5a1b8330888c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator =  <a href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">More...</a><br /></td></tr>
+<tr class="memdesc:a94172f6eec60e1747b5a1b8330888c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a pose from another <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.  <a href="classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f">More...</a><br /></td></tr>
 <tr class="separator:a94172f6eec60e1747b5a1b8330888c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a027dde46008157fc4abf7efe9eac4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a9a027dde46008157fc4abf7efe9eac4f">operator*</a> (const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;pose) const</td></tr>
-<tr class="memdesc:a9a027dde46008157fc4abf7efe9eac4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *  <a href="classmmath_1_1_pose.html#a9a027dde46008157fc4abf7efe9eac4f">More...</a><br /></td></tr>
+<tr class="memdesc:a9a027dde46008157fc4abf7efe9eac4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication with another pose.  <a href="classmmath_1_1_pose.html#a9a027dde46008157fc4abf7efe9eac4f">More...</a><br /></td></tr>
 <tr class="separator:a9a027dde46008157fc4abf7efe9eac4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47e764356bd808c8bdec3c1f361310b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">operator*=</a> (const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;pose)</td></tr>
-<tr class="memdesc:a47e764356bd808c8bdec3c1f361310b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *=  <a href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">More...</a><br /></td></tr>
+<tr class="memdesc:a47e764356bd808c8bdec3c1f361310b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication with another pose.  <a href="classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2">More...</a><br /></td></tr>
 <tr class="separator:a47e764356bd808c8bdec3c1f361310b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c18abfbd56ddc23bbfb1c4c84e5d7d7"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a0c18abfbd56ddc23bbfb1c4c84e5d7d7">operator*</a> (const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;p)</td></tr>
 <tr class="memdesc:a0c18abfbd56ddc23bbfb1c4c84e5d7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a given point or vector.  <a href="classmmath_1_1_pose.html#a0c18abfbd56ddc23bbfb1c4c84e5d7d7">More...</a><br /></td></tr>
 <tr class="separator:a0c18abfbd56ddc23bbfb1c4c84e5d7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ef5d8d0437545ffe52885e06a85bbb"><td class="memItemLeft" align="right" valign="top">Eigen::Quaternion&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">q</a> () const</td></tr>
-<tr class="memdesc:ad6ef5d8d0437545ffe52885e06a85bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return quaterion.  <a href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">More...</a><br /></td></tr>
+<tr class="memdesc:ad6ef5d8d0437545ffe52885e06a85bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a rotation represented by a quaternion.  <a href="classmmath_1_1_pose.html#ad6ef5d8d0437545ffe52885e06a85bbb">More...</a><br /></td></tr>
 <tr class="separator:ad6ef5d8d0437545ffe52885e06a85bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad58cbcd5aab17e0966c3a9a9b350eb6"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 4, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">T</a> () const</td></tr>
-<tr class="memdesc:aad58cbcd5aab17e0966c3a9a9b350eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return transform matrix.  <a href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">More...</a><br /></td></tr>
+<tr class="memdesc:aad58cbcd5aab17e0966c3a9a9b350eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the transform matrix.  <a href="classmmath_1_1_pose.html#aad58cbcd5aab17e0966c3a9a9b350eb6">More...</a><br /></td></tr>
 <tr class="separator:aad58cbcd5aab17e0966c3a9a9b350eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61f4163a1f017d6b61504a0bf8ed60c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmmath_1_1_pose.html">Pose</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9">inverse</a> () const</td></tr>
-<tr class="memdesc:a61f4163a1f017d6b61504a0bf8ed60c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the inverse of the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a>.  <a href="classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9">More...</a><br /></td></tr>
+<tr class="memdesc:a61f4163a1f017d6b61504a0bf8ed60c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the inverse of the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a>.  <a href="classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9">More...</a><br /></td></tr>
 <tr class="separator:a61f4163a1f017d6b61504a0bf8ed60c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6aae26d58eb333083626aceb2c9795b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b">isUnitOrthogonal</a> () const</td></tr>
 <tr class="memdesc:aa6aae26d58eb333083626aceb2c9795b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the vector of rotation matrix is unit orthogonal.  <a href="classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b">More...</a><br /></td></tr>
 <tr class="separator:aa6aae26d58eb333083626aceb2c9795b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a945ef6a21698895c0abf629c6168b233"><td class="memItemLeft" align="right" valign="top"><a id="a945ef6a21698895c0abf629c6168b233"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a945ef6a21698895c0abf629c6168b233">unitOrthogonalize</a> ()</td></tr>
-<tr class="memdesc:a945ef6a21698895c0abf629c6168b233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit orthogonalize the rotation matrix. <br /></td></tr>
+<tr class="memitem:a945ef6a21698895c0abf629c6168b233"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a945ef6a21698895c0abf629c6168b233">unitOrthogonalize</a> ()</td></tr>
+<tr class="memdesc:a945ef6a21698895c0abf629c6168b233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit orthogonalize the rotation matrix.  <a href="classmmath_1_1_pose.html#a945ef6a21698895c0abf629c6168b233">More...</a><br /></td></tr>
 <tr class="separator:a945ef6a21698895c0abf629c6168b233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa811b861c239f8f481ae3f6dfccc1874"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">increase</a> (const Eigen::Quaternion&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> &gt; &amp;dq, const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;dt)</td></tr>
-<tr class="memdesc:aa811b861c239f8f481ae3f6dfccc1874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a increment.  <a href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">More...</a><br /></td></tr>
+<tr class="memdesc:aa811b861c239f8f481ae3f6dfccc1874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a increment to current pose object.  <a href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874">More...</a><br /></td></tr>
 <tr class="separator:aa811b861c239f8f481ae3f6dfccc1874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38e02c5633cf6b5433f4e9d7f1c9aa9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">decrease</a> (const Eigen::Quaternion&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a> &gt; &amp;dq, const Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724">kfloat</a>, 3 &gt; &amp;dt)</td></tr>
-<tr class="memdesc:a38e02c5633cf6b5433f4e9d7f1c9aa9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minus a increment.  <a href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">More...</a><br /></td></tr>
+<tr class="memdesc:a38e02c5633cf6b5433f4e9d7f1c9aa9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minus a increment to current pose object.  <a href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c">More...</a><br /></td></tr>
 <tr class="separator:a38e02c5633cf6b5433f4e9d7f1c9aa9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af303ab3cb3dee825a230f0fbd8f4ab8c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">info</a> () const</td></tr>
-<tr class="memdesc:af303ab3cb3dee825a230f0fbd8f4ab8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> info for print/std::out.  <a href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">More...</a><br /></td></tr>
+<tr class="memdesc:af303ab3cb3dee825a230f0fbd8f4ab8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> info for print/std::out.  <a href="classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c">More...</a><br /></td></tr>
 <tr class="separator:af303ab3cb3dee825a230f0fbd8f4ab8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -175,56 +174,15 @@ Eigen::Vector&lt; <a class="el" href="namespacemmath.html#a8ed6fc0954396a3d610ac
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a4cce36480a3cc647a721b8e727459156"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmmath_1_1_pose.html#a4cce36480a3cc647a721b8e727459156">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classmmath_1_1_pose.html">Pose</a> &amp;pose)</td></tr>
-<tr class="memdesc:a4cce36480a3cc647a721b8e727459156"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;&lt;  <a href="classmmath_1_1_pose.html#a4cce36480a3cc647a721b8e727459156">More...</a><br /></td></tr>
+<tr class="memdesc:a4cce36480a3cc647a721b8e727459156"><td class="mdescLeft">&#160;</td><td class="mdescRight">For std::cout operation to print the member information.  <a href="classmmath_1_1_pose.html#a4cce36480a3cc647a721b8e727459156">More...</a><br /></td></tr>
 <tr class="separator:a4cce36480a3cc647a721b8e727459156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class designed to describe the transformation (spatial pose). This class can furtherly simplify the calculation of pose-trasform. There are two members include in this class: R &ndash; denotes the rotation or orientation. t &ndash; denotes the translation or position. </p>
+<div class="textblock"><p>A class designed to describe the transformation (spatial pose). </p>
+<p>This class can furtherly simplify the calculation of pose-trasform. There are two members include in this class: R &ndash; denotes the rotation or orientation. t &ndash; denotes the translation or position. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a379d871b94d6c831e0aec08bc18c0631"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a379d871b94d6c831e0aec08bc18c0631">&#9670;&nbsp;</a></span>Pose() <span class="overload">[1/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Tp1 &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mmath::Pose::Pose </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>T</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Tp1</td><td>The type of input matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">T</td><td>The transform matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ab61f06be3b16d86a06540a3532b8a825"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab61f06be3b16d86a06540a3532b8a825">&#9670;&nbsp;</a></span>Pose() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab61f06be3b16d86a06540a3532b8a825">&#9670;&nbsp;</a></span>Pose() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,11 +217,11 @@ template&lt;typename Tp1 , typename Tp2 &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object. </p>
+<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tp1</td><td>The type of rotation matrix. </td></tr>
-    <tr><td class="paramname">Tp2</td><td>The type of translation vector. </td></tr>
+    <tr><td class="paramname">Tp1</td><td>The arithmetic class type of rotation matrix. </td></tr>
+    <tr><td class="paramname">Tp2</td><td>The arithmetic class type of translation vector. </td></tr>
   </table>
   </dd>
 </dl>
@@ -271,6 +229,49 @@ template&lt;typename Tp1 , typename Tp2 &gt; </div>
   <table class="params">
     <tr><td class="paramname">R</td><td>The rotation matrix. </td></tr>
     <tr><td class="paramname">t</td><td>The translation vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a379d871b94d6c831e0aec08bc18c0631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a379d871b94d6c831e0aec08bc18c0631">&#9670;&nbsp;</a></span>Pose() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Tp1 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mmath::Pose::Pose </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded construction functions.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Tp1</td><td>The arithmetic class type of input matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>The transformation matrix. </td></tr>
   </table>
   </dd>
 </dl>
@@ -319,10 +320,11 @@ template&lt;typename Tp1 &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object. </p>
+<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded construction functions.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tp1</td><td>The type of inputs. </td></tr>
+    <tr><td class="paramname">Tp1</td><td>The arithmetic class type of inputs. </td></tr>
   </table>
   </dd>
 </dl>
@@ -373,17 +375,18 @@ template&lt;typename Tp1 &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object. </p>
+<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded construction functions.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tp1</td><td>The type of input array. </td></tr>
+    <tr><td class="paramname">Tp1</td><td>The arithmetic class type of input array. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The input array[16] </td></tr>
-    <tr><td class="paramname">is_row_fisrt</td><td>Flag of row first/column first. </td></tr>
+    <tr><td class="paramname">is_row_fisrt</td><td>The flag to specified whether the given data is row first/column first array, where true/1 specifies row first arrar whereas false/0 specifies column first. </td></tr>
   </table>
   </dd>
 </dl>
@@ -486,30 +489,32 @@ template&lt;typename Tp1 &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object. </p>
+<p>Construct a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded construction functions.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tp1</td><td></td></tr>
+    <tr><td class="paramname">Tp1</td><td>The arithmetic class type of input array. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">m11</td><td></td></tr>
-    <tr><td class="paramname">m12</td><td></td></tr>
-    <tr><td class="paramname">m13</td><td></td></tr>
-    <tr><td class="paramname">m14</td><td></td></tr>
-    <tr><td class="paramname">m21</td><td></td></tr>
-    <tr><td class="paramname">m22</td><td></td></tr>
-    <tr><td class="paramname">m23</td><td></td></tr>
-    <tr><td class="paramname">m24</td><td></td></tr>
-    <tr><td class="paramname">m31</td><td></td></tr>
-    <tr><td class="paramname">m32</td><td></td></tr>
-    <tr><td class="paramname">m33</td><td></td></tr>
-    <tr><td class="paramname">m34</td><td></td></tr>
+    <tr><td class="paramname">m11</td><td>T(1,1), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m12</td><td>T(1,2), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m13</td><td>T(1,3), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m14</td><td>T(1,4), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m21</td><td>T(2,1), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m22</td><td>T(2,2), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m23</td><td>T(2,3), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m24</td><td>T(2,4), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m31</td><td>T(3,1), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m32</td><td>T(3,2), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m33</td><td>T(3,3), where T denote a 4x4 transformation matrix. </td></tr>
+    <tr><td class="paramname">m34</td><td>T(3,4), where T denote a 4x4 transformation matrix.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>The last row of an transformation matrix is no needed, since it is always a [0, 0, 0, 1] row-vector for a transformation matrix. </dd></dl>
 
 </div>
 </div>
@@ -540,15 +545,15 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Minus a increment. </p>
+<p>Minus a increment to current pose object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dq</td><td>The increment of rotation/orientation </td></tr>
-    <tr><td class="paramname">dt</td><td>The increament of translation/position </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dq</td><td>The increment of rotation/orientation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>The increament of translation/position.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874" title="Add a increment.">increase()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874" title="Add a increment to current pose object.">mmath::Pose::increase()</a>. </dd></dl>
 
 </div>
 </div>
@@ -578,15 +583,15 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Add a increment. </p>
+<p>Add a increment to current pose object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dq</td><td>The increment of rotation/orientation </td></tr>
-    <tr><td class="paramname">dt</td><td>The increament of translation/position </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dq</td><td>The increment of rotation/orientation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>The increament of translation/position.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c" title="Minus a increment.">decrease()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmmath_1_1_pose.html#a38e02c5633cf6b5433f4e9d7f1c9aa9c" title="Minus a increment to current pose object.">mmath::Pose::decrease()</a>. </dd></dl>
 
 </div>
 </div>
@@ -605,8 +610,8 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> info for print/std::out. </p>
-<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
+<p>Return the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> info for print/std::out. </p>
+<dl class="section return"><dt>Returns</dt><dd>A character array that stores current member function. </dd></dl>
 
 </div>
 </div>
@@ -625,8 +630,8 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return the inverse of the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose). This class can furtherly simplify the...">Pose</a> object </dd></dl>
+<p>Return the inverse of the <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </dd></dl>
 
 </div>
 </div>
@@ -646,9 +651,14 @@ template&lt;typename Tp1 &gt; </div>
 </div><div class="memdoc">
 
 <p>Check whether the vector of rotation matrix is unit orthogonal. </p>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Return whether current rotation matric is orthogonal </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>The rotation matric is orthogonal </td></tr>
+    <tr><td class="paramname">false</td><td>The rotation matric is not orthogonal </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -669,13 +679,14 @@ false </dd></dl>
 </div><div class="memdoc">
 
 <p>Transform a given point or vector. </p>
+<p>This is a "matrix * vection" multiplication, which is "ret = this-&gt;R * p + this.t".</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Eigen::Vector&lt;kfloat, 3&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A new point/vector, an object of class Eigen::Vector&lt;kfloat, 3&gt;. </dd></dl>
 
 </div>
 </div>
@@ -695,14 +706,15 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>operator * </p>
+<p>Multiplication with another pose. </p>
+<p>This is a right multiplication and with return a new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object, which is "new_pose = (*this) * pose".</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pose</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pose</td><td>The another <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </dd></dl>
 
 </div>
 </div>
@@ -722,14 +734,15 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>operator *= </p>
+<p>Multiplication with another pose. </p>
+<p>This is a right multiplication, which is "(*this) = (*this) * pose".</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pose</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pose</td><td>The another <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This object. </dd></dl>
 
 </div>
 </div>
@@ -751,20 +764,20 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>operator = </p>
+<p>Copy a pose from 4x4 matrix. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tp1</td><td>The type of inputs. </td></tr>
+    <tr><td class="paramname">Tp1</td><td>The arithmetic class type of inputs. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Eigen::Matrix4f</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pose</td><td>The pose with class Eigen::Matrix&lt;Tp1, 4, 4&gt;.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This object. </dd></dl>
 
 </div>
 </div>
@@ -784,14 +797,14 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>operator = </p>
+<p>Copy a pose from another <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pose</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pose</td><td>The another <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This object. </dd></dl>
 
 </div>
 </div>
@@ -810,8 +823,8 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return quaterion. </p>
-<dl class="section return"><dt>Returns</dt><dd>Eigen::Quaternion&lt;kfloat&gt; </dd></dl>
+<p>Return a rotation represented by a quaternion. </p>
+<dl class="section return"><dt>Returns</dt><dd>A quaternion, an object of class Eigen::Quaternion&lt;kfloat&gt;. </dd></dl>
 
 </div>
 </div>
@@ -830,8 +843,28 @@ template&lt;typename Tp1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return transform matrix. </p>
-<dl class="section return"><dt>Returns</dt><dd>Eigen::Matrix&lt;kfloat, 4, 4&gt; </dd></dl>
+<p>Return the transform matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>A transform, an object of class Eigen::Matrix&lt;kfloat, 4, 4&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a945ef6a21698895c0abf629c6168b233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945ef6a21698895c0abf629c6168b233">&#9670;&nbsp;</a></span>unitOrthogonalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmath::Pose::unitOrthogonalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unit orthogonalize the rotation matrix. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b" title="Check whether the vector of rotation matrix is unit orthogonal.">mmath::Pose::isUnitOrthogonal()</a> for checking the orthogonality. </dd></dl>
 
 </div>
 </div>
@@ -870,15 +903,16 @@ template&lt;typename Tp1 &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>operator &lt;&lt; </p>
+<p>For std::cout operation to print the member information. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is a friend function of class <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">os</td><td></td></tr>
-    <tr><td class="paramname">pose</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">os</td><td>The std::ostream object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pose</td><td>The <a class="el" href="classmmath_1_1_pose.html" title="A class designed to describe the transformation (spatial pose).">Pose</a> opject.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The std::ostream object. </dd></dl>
 
 </div>
 </div>

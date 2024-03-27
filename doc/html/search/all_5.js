@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['id_47',['ID',['../namespacemmath_1_1cam.html#ac88f44ab71cab1acfef8ea5265eb3a26',1,'mmath::cam']]],
-  ['increase_48',['increase',['../classmmath_1_1_pose.html#aa811b861c239f8f481ae3f6dfccc1874',1,'mmath::Pose']]],
-  ['info_49',['info',['../classmmath_1_1continuum_1_1_config_spc.html#a6217a14dddc131b97e8fd953ec2d2422',1,'mmath::continuum::ConfigSpc::info()'],['../classmmath_1_1_pose.html#af303ab3cb3dee825a230f0fbd8f4ab8c',1,'mmath::Pose::info() const']]],
-  ['inverse_50',['inverse',['../classmmath_1_1_pose.html#a61f4163a1f017d6b61504a0bf8ed60c9',1,'mmath::Pose']]],
-  ['isunitorthogonal_51',['isUnitOrthogonal',['../classmmath_1_1_pose.html#aa6aae26d58eb333083626aceb2c9795b',1,'mmath::Pose']]]
+  ['gauss_5fcurve_5f2d_2eh_41',['gauss_curve_2d.h',['../gauss__curve__2d_8h.html',1,'']]],
+  ['gaussiancurve_42',['GaussianCurve',['../structmmath_1_1_gaussian_curve.html',1,'mmath']]],
+  ['getcurrenttimepoint_43',['getCurrentTimePoint',['../timer_8h.html#a24e411c8797707f3744c44aec22ba149',1,'mmath::timer']]],
+  ['getcurrenttimepointsinceepoch_44',['getCurrentTimePointSinceEpoch',['../timer_8h.html#a380dfeea45945b854158a755484acc03',1,'mmath::timer']]],
+  ['getcurrenttimestr_45',['getCurrentTimeStr',['../timer_8h.html#aa71d3a4259328391df72d137758da353',1,'mmath::timer']]],
+  ['getdurationsince_46',['getDurationSince',['../timer_8h.html#a9e61aed262fb573901743034da3d6191',1,'mmath::timer::getDurationSince(const ::std::chrono::steady_clock::time_point &amp;start_time_point)'],['../timer_8h.html#aa51eb20fe508a8903394edf65ead16b6',1,'mmath::timer::getDurationSince(const Tp &amp;start_time_point)']]]
 ];

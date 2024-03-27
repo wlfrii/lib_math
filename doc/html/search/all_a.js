@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['operator_2a_64',['operator*',['../classmmath_1_1_pose.html#a9a027dde46008157fc4abf7efe9eac4f',1,'mmath::Pose::operator*(const Pose &amp;pose) const'],['../classmmath_1_1_pose.html#a0c18abfbd56ddc23bbfb1c4c84e5d7d7',1,'mmath::Pose::operator*(const Eigen::Vector&lt; kfloat, 3 &gt; &amp;p)']]],
-  ['operator_2a_3d_65',['operator*=',['../classmmath_1_1_pose.html#a47e764356bd808c8bdec3c1f361310b2',1,'mmath::Pose']]],
-  ['operator_3c_3c_66',['operator&lt;&lt;',['../classmmath_1_1_pose.html#a4cce36480a3cc647a721b8e727459156',1,'mmath::Pose']]],
-  ['operator_3d_67',['operator=',['../classmmath_1_1_pose.html#a29117bd0c95a6499b6c4a99705600c3e',1,'mmath::Pose::operator=(const Eigen::Matrix&lt; Tp1, 4, 4 &gt; &amp;pose)'],['../classmmath_1_1_pose.html#a94172f6eec60e1747b5a1b8330888c8f',1,'mmath::Pose::operator=(const Pose &amp;pose)']]]
+  ['cam_61',['cam',['../namespacemmath_1_1cam.html',1,'mmath']]],
+  ['mmath_62',['mmath',['../namespacemmath.html',1,'']]],
+  ['mmath_5ftimer_5fcount_5fnonvoid_5ffunc_5ftime_63',['MMATH_TIMER_COUNT_NONVOID_FUNC_TIME',['../timer_8h.html#a8955d25482ba1055b597c8130ad9498f',1,'timer.h']]],
+  ['mmath_5ftimer_5fcount_5fvoid_5ffunc_5ftime_64',['MMATH_TIMER_COUNT_VOID_FUNC_TIME',['../timer_8h.html#a8bd797d58f825f2d9da2c509bd1da8af',1,'timer.h']]],
+  ['mu_65',['mu',['../structmmath_1_1_gaussian_curve.html#a85cf126715047cd0742ba8ab7f6ef9e9',1,'mmath::GaussianCurve']]]
 ];

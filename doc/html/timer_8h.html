@@ -109,29 +109,30 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a8bd797d58f825f2d9da2c509bd1da8af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a8bd797d58f825f2d9da2c509bd1da8af">MMATH_TIMER_COUNT_VOID_FUNC_TIME</a>(FUNC,  DURATION,  FMT, ...)</td></tr>
+<tr class="memdesc:a8bd797d58f825f2d9da2c509bd1da8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A macro for counting function time comsumption.  <a href="timer_8h.html#a8bd797d58f825f2d9da2c509bd1da8af">More...</a><br /></td></tr>
 <tr class="separator:a8bd797d58f825f2d9da2c509bd1da8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8955d25482ba1055b597c8130ad9498f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a8955d25482ba1055b597c8130ad9498f">MMATH_TIMER_COUNT_NONVOID_FUNC_TIME</a>(FUNC,  DURATION,  RET,  FMT, ...)</td></tr>
+<tr class="memdesc:a8955d25482ba1055b597c8130ad9498f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A macro for counting function time comsumption.  <a href="timer_8h.html#a8955d25482ba1055b597c8130ad9498f">More...</a><br /></td></tr>
 <tr class="separator:a8955d25482ba1055b597c8130ad9498f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a24e411c8797707f3744c44aec22ba149"><td class="memItemLeft" align="right" valign="top"><a id="a24e411c8797707f3744c44aec22ba149"></a>
-std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149">mmath::timer::getCurrentTimePoint</a> ()</td></tr>
-<tr class="memdesc:a24e411c8797707f3744c44aec22ba149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current time point Class std::chrono::steady_clock represents a monotonic clock. The time points of this clock cannot decrease as physical time moves forward and the time between ticks of this clock is constant. This clock is not related to wall clock time (for example, it can be time since last reboot), and is most suitable for measuring intervals. <br /></td></tr>
+<tr class="memitem:a24e411c8797707f3744c44aec22ba149"><td class="memItemLeft" align="right" valign="top">std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149">mmath::timer::getCurrentTimePoint</a> ()</td></tr>
+<tr class="memdesc:a24e411c8797707f3744c44aec22ba149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return current time point.  <a href="timer_8h.html#a24e411c8797707f3744c44aec22ba149">More...</a><br /></td></tr>
 <tr class="separator:a24e411c8797707f3744c44aec22ba149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e61aed262fb573901743034da3d6191"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a9e61aed262fb573901743034da3d6191">mmath::timer::getDurationSince</a> (const ::std::chrono::steady_clock::time_point &amp;start_time_point)</td></tr>
-<tr class="memdesc:a9e61aed262fb573901743034da3d6191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the duration since the start time point, evaluated by milliseconds.  <a href="timer_8h.html#a9e61aed262fb573901743034da3d6191">More...</a><br /></td></tr>
+<tr class="memdesc:a9e61aed262fb573901743034da3d6191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the duration since the start time point, in milliseconds.  <a href="timer_8h.html#a9e61aed262fb573901743034da3d6191">More...</a><br /></td></tr>
 <tr class="separator:a9e61aed262fb573901743034da3d6191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a380dfeea45945b854158a755484acc03"><td class="memTemplParams" colspan="2">template&lt;typename Tp  = std::chrono::milliseconds&gt; </td></tr>
 <tr class="memitem:a380dfeea45945b854158a755484acc03"><td class="memTemplItemLeft" align="right" valign="top">Tp&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="timer_8h.html#a380dfeea45945b854158a755484acc03">mmath::timer::getCurrentTimePointSinceEpoch</a> ()</td></tr>
-<tr class="memdesc:a380dfeea45945b854158a755484acc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get tcurrent time point since epoch. This time counter is not stable than steady clock. Thus, <a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149" title="Return current time point Class std::chrono::steady_clock represents a monotonic clock....">getCurrentTimePoint()</a> is recommended.  <a href="timer_8h.html#a380dfeea45945b854158a755484acc03">More...</a><br /></td></tr>
+<tr class="memdesc:a380dfeea45945b854158a755484acc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current time point since epoch.  <a href="timer_8h.html#a380dfeea45945b854158a755484acc03">More...</a><br /></td></tr>
 <tr class="separator:a380dfeea45945b854158a755484acc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa51eb20fe508a8903394edf65ead16b6"><td class="memTemplParams" colspan="2">template&lt;typename Tp  = std::chrono::milliseconds&gt; </td></tr>
 <tr class="memitem:aa51eb20fe508a8903394edf65ead16b6"><td class="memTemplItemLeft" align="right" valign="top">float&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="timer_8h.html#aa51eb20fe508a8903394edf65ead16b6">mmath::timer::getDurationSince</a> (const Tp &amp;start_time_point)</td></tr>
-<tr class="memdesc:aa51eb20fe508a8903394edf65ead16b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the duration since a start time point returned by <a class="el" href="timer_8h.html#a380dfeea45945b854158a755484acc03" title="Get tcurrent time point since epoch. This time counter is not stable than steady clock....">getCurrentTimePointSinceEpoch()</a>  <a href="timer_8h.html#aa51eb20fe508a8903394edf65ead16b6">More...</a><br /></td></tr>
+<tr class="memdesc:aa51eb20fe508a8903394edf65ead16b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the duration since a start time point since epoch.  <a href="timer_8h.html#aa51eb20fe508a8903394edf65ead16b6">More...</a><br /></td></tr>
 <tr class="separator:aa51eb20fe508a8903394edf65ead16b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa71d3a4259328391df72d137758da353"><td class="memItemLeft" align="right" valign="top">inline ::std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#aa71d3a4259328391df72d137758da353">mmath::timer::getCurrentTimeStr</a> ()</td></tr>
-<tr class="memdesc:aa71d3a4259328391df72d137758da353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current time string, as "YYmmdd_HHMMSS" format.  <a href="timer_8h.html#aa71d3a4259328391df72d137758da353">More...</a><br /></td></tr>
+<tr class="memdesc:aa71d3a4259328391df72d137758da353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current time information in "YYmmdd_HHMMSS" string format.  <a href="timer_8h.html#aa71d3a4259328391df72d137758da353">More...</a><br /></td></tr>
 <tr class="separator:aa71d3a4259328391df72d137758da353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -198,14 +199,16 @@ std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign=
 <div class="line">            float ms = <a class="code" href="timer_8h.html#a9e61aed262fb573901743034da3d6191">mmath::timer::getDurationSince</a>(start); \</div>
 <div class="line">            if (ms &gt; DURATION) { printf(<span class="stringliteral">&quot;[%.4f ms] elapsed:\t &quot;</span> FMT, ms, ##__VA_ARGS__);} \</div>
 <div class="line">     } <span class="keywordflow">while</span> (0)</div>
-<div class="ttc" id="atimer_8h_html_a24e411c8797707f3744c44aec22ba149"><div class="ttname"><a href="timer_8h.html#a24e411c8797707f3744c44aec22ba149">mmath::timer::getCurrentTimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point getCurrentTimePoint()</div><div class="ttdoc">Return current time point Class std::chrono::steady_clock represents a monotonic clock....</div><div class="ttdef"><b>Definition:</b> timer.h:50</div></div>
-<div class="ttc" id="atimer_8h_html_a9e61aed262fb573901743034da3d6191"><div class="ttname"><a href="timer_8h.html#a9e61aed262fb573901743034da3d6191">mmath::timer::getDurationSince</a></div><div class="ttdeci">float getDurationSince(const ::std::chrono::steady_clock::time_point &amp;start_time_point)</div><div class="ttdoc">Get the duration since the start time point, evaluated by milliseconds.</div><div class="ttdef"><b>Definition:</b> timer.h:62</div></div>
-</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<div class="ttc" id="atimer_8h_html_a24e411c8797707f3744c44aec22ba149"><div class="ttname"><a href="timer_8h.html#a24e411c8797707f3744c44aec22ba149">mmath::timer::getCurrentTimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point getCurrentTimePoint()</div><div class="ttdoc">Return current time point.</div><div class="ttdef"><b>Definition:</b> timer.h:51</div></div>
+<div class="ttc" id="atimer_8h_html_a9e61aed262fb573901743034da3d6191"><div class="ttname"><a href="timer_8h.html#a9e61aed262fb573901743034da3d6191">mmath::timer::getDurationSince</a></div><div class="ttdeci">float getDurationSince(const ::std::chrono::steady_clock::time_point &amp;start_time_point)</div><div class="ttdoc">Get the duration since the start time point, in milliseconds.</div><div class="ttdef"><b>Definition:</b> timer.h:69</div></div>
+</div><!-- fragment -->
+<p>A macro for counting function time comsumption. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">FUNC</td><td>The function to be timed </td></tr>
     <tr><td class="paramname">DURATION</td><td>The time duration tolerance </td></tr>
     <tr><td class="paramname">RET</td><td>The returned value from FUNC </td></tr>
-    <tr><td class="paramname">FMT,...</td><td>The message to be printed if the time comsumption greate than the DURATION </td></tr>
+    <tr><td class="paramname">FMT,...</td><td>The message to be printed if the time comsumption greater than the DURATION </td></tr>
   </table>
   </dd>
 </dl>
@@ -255,11 +258,13 @@ std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign=
 <div class="line">            float ms = <a class="code" href="timer_8h.html#a9e61aed262fb573901743034da3d6191">mmath::timer::getDurationSince</a>(start); \</div>
 <div class="line">            if (ms &gt; DURATION) { printf(<span class="stringliteral">&quot;[%.4f ms] elapsed:\t &quot;</span> FMT, ms, ##__VA_ARGS__);} \</div>
 <div class="line">     } <span class="keywordflow">while</span> (0)</div>
-</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+</div><!-- fragment -->
+<p>A macro for counting function time comsumption. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">FUNC</td><td>The function to be timed </td></tr>
     <tr><td class="paramname">DURATION</td><td>The time duration tolerance </td></tr>
-    <tr><td class="paramname">FMT,...</td><td>The message to be printed if the time comsumption greate than the DURATION </td></tr>
+    <tr><td class="paramname">FMT,...</td><td>The message to be printed if the time comsumption greater than the DURATION </td></tr>
   </table>
   </dd>
 </dl>
@@ -267,6 +272,34 @@ std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign=
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a24e411c8797707f3744c44aec22ba149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e411c8797707f3744c44aec22ba149">&#9670;&nbsp;</a></span>getCurrentTimePoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::steady_clock::time_point mmath::timer::getCurrentTimePoint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return current time point. </p>
+<dl class="section note"><dt>Note</dt><dd>Class std::chrono::steady_clock represents a monotonic clock. The time points of this clock cannot decrease as physical time moves forward and the time between ticks of this clock is constant. This clock is not related to wall clock time (for example, it can be time since last reboot), and is most suitable for measuring intervals. </dd></dl>
+
+</div>
+</div>
 <a id="a380dfeea45945b854158a755484acc03"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a380dfeea45945b854158a755484acc03">&#9670;&nbsp;</a></span>getCurrentTimePointSinceEpoch()</h2>
 
@@ -284,14 +317,15 @@ template&lt;typename Tp  = std::chrono::milliseconds&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Get tcurrent time point since epoch. This time counter is not stable than steady clock. Thus, <a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149" title="Return current time point Class std::chrono::steady_clock represents a monotonic clock....">getCurrentTimePoint()</a> is recommended. </p>
+<p>Get current time point since epoch. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This time counter is not stable than steady clock. Thus, <a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149" title="Return current time point.">mmath::timer::getCurrentTimePoint()</a> is recommended.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tp</td><td>The unit of the time, default is std::chrono::milliseconds </td></tr>
+    <tr><td class="paramname">Tp</td><td>The unit of the time, default unit is std::chrono::milliseconds.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The time duration represented by Tp </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The time duration represented by Tp. </dd></dl>
 
 </div>
 </div>
@@ -310,8 +344,8 @@ template&lt;typename Tp  = std::chrono::milliseconds&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the current time string, as "YYmmdd_HHMMSS" format. </p>
-<dl class="section return"><dt>Returns</dt><dd>::std::string </dd></dl>
+<p>Get the current time information in "YYmmdd_HHMMSS" string format. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current time information in std::string. </dd></dl>
 
 </div>
 </div>
@@ -339,14 +373,16 @@ template&lt;typename Tp  = std::chrono::milliseconds&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the duration since the start time point, evaluated by milliseconds. </p>
+<p>Get the duration since the start time point, in milliseconds. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded function, provided for convenience. It differs from the other functions only in what argument(s) it accepts.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">start_time_point</td><td>The start time point returned by <a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149" title="Return current time point Class std::chrono::steady_clock represents a monotonic clock....">getCurrentTimePoint()</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start_time_point</td><td>The start time point returned by <a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149" title="Return current time point.">mmath::timer::getCurrentTimePoint()</a>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The time duration represented by std::chrono::milliseconds </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The time duration represented by std::chrono::milliseconds</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer_8h.html#a24e411c8797707f3744c44aec22ba149" title="Return current time point.">mmath::timer::getCurrentTimePoint()</a>. </dd></dl>
 
 </div>
 </div>
@@ -368,21 +404,22 @@ template&lt;typename Tp  = std::chrono::milliseconds&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the duration since a start time point returned by <a class="el" href="timer_8h.html#a380dfeea45945b854158a755484acc03" title="Get tcurrent time point since epoch. This time counter is not stable than steady clock....">getCurrentTimePointSinceEpoch()</a> </p>
+<p>Get the duration since a start time point since epoch. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is an overloaded function, provided for convenience. It differs from the other functions only in what argument(s) it accepts.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Tp</td><td>The unit of the time, default is std::chrono::milliseconds, and only should be one of [nanoseconds, microseconds, milliseconds, seconds, minutes] for now </td></tr>
+    <tr><td class="paramname">Tp</td><td>The unit of the time, default unit is std::chrono::milliseconds, and only should be one of [nanoseconds, microseconds, milliseconds, seconds, minutes] for now. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">start_time_point</td><td>The start time point returned by <a class="el" href="timer_8h.html#a380dfeea45945b854158a755484acc03" title="Get tcurrent time point since epoch. This time counter is not stable than steady clock....">getCurrentTimePointSinceEpoch()</a> </td></tr>
-    <tr><td class="paramname">unit</td><td>The time evaluated unit, default is std::chrono::milliseconds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start_time_point</td><td>The start time point returned by <a class="el" href="timer_8h.html#a380dfeea45945b854158a755484acc03" title="Get current time point since epoch.">mmath::timer::getCurrentTimePointSinceEpoch()</a>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>float The time duration represented by milliseconds </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The time duration represented by Tp.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer_8h.html#a380dfeea45945b854158a755484acc03" title="Get current time point since epoch.">mmath::timer::getCurrentTimePointSinceEpoch()</a>. </dd></dl>
 
 </div>
 </div>

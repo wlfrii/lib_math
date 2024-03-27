@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kfloat_53',['kfloat',['../namespacemmath.html#a8ed6fc0954396a3d610acf829cfa9724',1,'mmath']]]
+  ['jocabianat_52',['JocabianAt',['../structmmath_1_1_gaussian_curve.html#a58f78a354f0a90adfef708801b45c511',1,'mmath::GaussianCurve']]]
 ];

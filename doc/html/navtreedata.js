@@ -55,7 +55,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"angle_8h_source.html",
+"",
 "timer_8h.html#a380dfeea45945b854158a755484acc03"
 ];
 
