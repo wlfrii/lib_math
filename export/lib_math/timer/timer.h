@@ -37,62 +37,80 @@
 
 
 namespace mmath{
-namespace timer
-{
+namespace timer{
 
 /**
- * @brief Return current time point
- * Class std::chrono::steady_clock represents a monotonic clock. The time points of 
- * this clock cannot decrease as physical time moves forward and the time between ticks 
- * of this clock is constant. This clock is not related to wall clock time (for example,
- * it can be time since last reboot), and is most suitable for measuring intervals.
+ * @brief Return current time point.
+ * 
+ * @note Class std::chrono::steady_clock represents a monotonic clock. The time 
+ * points of this clock cannot decrease as physical time moves forward and the 
+ * time between ticks of this clock is constant. This clock is not related to 
+ * wall clock time (for example, it can be time since last reboot), and is most
+ * suitable for measuring intervals.
  */
-inline std::chrono::steady_clock::time_point getCurrentTimePoint()
-{
+inline std::chrono::steady_clock::time_point getCurrentTimePoint() {
 	return std::chrono::steady_clock::now();
 }
 
 
 /**
- * @brief Get the duration since the start time point, evaluated by milliseconds
+ * @brief Get the duration since the start time point, in milliseconds.
  * 
- * @param start_time_point The start time point returned by getCurrentTimePoint()
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the other functions only in what argument(s) it accepts.
+ * 
+ * @param [in] start_time_point The start time point returned by 
+ * 						        mmath::timer::getCurrentTimePoint().
+ * 
  * @return The time duration represented by std::chrono::milliseconds
+ * 
+ * @see mmath::timer::getCurrentTimePoint().
  */
-inline float getDurationSince(const ::std::chrono::steady_clock::time_point &start_time_point)
-{
+inline float getDurationSince(
+	const ::std::chrono::steady_clock::time_point &start_time_point) {
 	std::chrono::steady_clock::time_point now = getCurrentTimePoint();
-	long long ms = std::chrono::duration_cast<std::chrono::microseconds>(now - start_time_point).count();
+	long long ms = std::chrono::duration_cast<std::chrono::microseconds>(
+											now - start_time_point).count();
 	return ms / 1000.f;
 }
 
 
 /**
- * @brief Get tcurrent time point since epoch. This time counter is not stable than steady clock.
- * Thus, getCurrentTimePoint() is recommended.
+ * @brief Get current time point since epoch. 
  * 
- * @tparam Tp  The unit of the time, default is std::chrono::milliseconds
- * @return  The time duration represented by Tp
+ * @remark This time counter is not stable than steady clock.
+ * Thus, mmath::timer::getCurrentTimePoint() is recommended.
+ * 
+ * @tparam Tp The unit of the time, default unit is std::chrono::milliseconds.
+ * 
+ * @return  The time duration represented by Tp.
+ * 
  */
 template<typename Tp = std::chrono::milliseconds>
-Tp getCurrentTimePointSinceEpoch()
-{
-	return ::std::chrono::duration_cast<Tp>(::std::chrono::system_clock::now().time_since_epoch());
+Tp getCurrentTimePointSinceEpoch() {
+	return std::chrono::duration_cast<Tp>(
+		std::chrono::system_clock::now().time_since_epoch());
 }
 
 
 /**
- * @brief Get the duration since a start time point returned by getCurrentTimePointSinceEpoch()
+ * @brief Get the duration since a start time point since epoch.
  * 
- * @tparam Tp  The unit of the time, default is std::chrono::milliseconds, and only should be 
- *             one of [nanoseconds, microseconds, milliseconds, seconds, minutes] for now
- * @param start_time_point  The start time point returned by getCurrentTimePointSinceEpoch()
- * @param unit  The time evaluated unit, default is std::chrono::milliseconds
- * @return float  The time duration represented by milliseconds
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the other functions only in what argument(s) it accepts.
+ * 
+ * @tparam Tp  The unit of the time, default unit is std::chrono::milliseconds,
+ *             and only should be one of [nanoseconds, microseconds, 
+ * 			   milliseconds, seconds, minutes] for now.
+ * @param [in] start_time_point  The start time point returned by 
+ *                               mmath::timer::getCurrentTimePointSinceEpoch().
+ * 
+ * @return The time duration represented by Tp.
+ * 
+ * @see mmath::timer::getCurrentTimePointSinceEpoch().
  */
 template<typename Tp = std::chrono::milliseconds>
-float getDurationSince(const Tp &start_time_point)
-{
+float getDurationSince(const Tp &start_time_point) {
 	auto current_time_point = getCurrentTimePointSinceEpoch();
 
 	float k = 1;
@@ -116,12 +134,11 @@ float getDurationSince(const Tp &start_time_point)
 
 
 /**
- * @brief Get the current time string, as "YYmmdd_HHMMSS" format.
+ * @brief Get the current time information in "YYmmdd_HHMMSS" string format.
  * 
- * @return ::std::string 
+ * @return Current time information in std::string.
  */
-inline ::std::string getCurrentTimeStr()
-{
+inline ::std::string getCurrentTimeStr() {
 	time_t timep;
 	time(&timep);
 	char tmp[64];
@@ -135,10 +152,11 @@ inline ::std::string getCurrentTimeStr()
 
 
 /**
- * @brief 
+ * @brief A macro for counting function time comsumption.
  * \param FUNC  The function to be timed
  * \param DURATION  The time duration tolerance
- * \param FMT, ...  The message to be printed if the time comsumption greate than the DURATION
+ * \param FMT, ...  The message to be printed if the time comsumption greater
+ *                  than the DURATION
  */
 #define MMATH_TIMER_COUNT_VOID_FUNC_TIME(FUNC, DURATION, FMT, ...) \
 	do{ \
@@ -150,11 +168,12 @@ inline ::std::string getCurrentTimeStr()
 
 
 /**
- * @brief 
+ * @brief A macro for counting function time comsumption.
  * \param FUNC  The function to be timed
  * \param DURATION  The time duration tolerance
  * \param RET  The returned value from FUNC
- * \param FMT, ...  The message to be printed if the time comsumption greate than the DURATION
+ * \param FMT, ...  The message to be printed if the time comsumption greater
+ *                  than the DURATION
  */
 #define MMATH_TIMER_COUNT_NONVOID_FUNC_TIME(FUNC, DURATION, RET, FMT, ...)  \
 	do{  \
