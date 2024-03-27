@@ -32,70 +32,79 @@
 namespace mmath {
 
 /**
- * @brief A structure to represent a line.
+ * @brief A class to represent a 2D line.
  * 
  * @tparam Tp 
+ * 
+ * @see mmath::fitLine(), mmath::ransacFitLineBias().
  */
 template <typename Tp = double>
 struct Line
 {
-    Line(Tp k = 0, Tp b = 0) : k(k), b(b) {}
+public:
+    /**
+     * @brief Construct a new Line object
+     * 
+     * @param k The slope of a 2D line.
+     * @param b The bias of a 2D line.
+     */
+    explicit Line(Tp k = 0, Tp b = 0) : k(k), b(b) {}
 
+    /**
+     * @brief Calculate the distance from a given point to this line.
+     * 
+     * @remark This is an overloaded member functions.
+     * 
+     * @tparam Tp1 Should be arithmetic class type.
+     * @tparam Tp2 Should be arithmetic class type.
+     * @param [in] pt The given point.
+     * 
+     * @return The distance between 'pt' and this line object.
+     */
     template<typename Tp1 = double, typename Tp2>
     Tp1 distanceTo(const Eigen::Vector<Tp2, 2>& pt){
         return static_cast<Tp1>((k * pt[0] - pt[1] + b) / sqrt(k*k + 1));
     }
 
-    Tp k;
-    Tp b;
+    /**
+     * @brief Calculate the distance from a given point to this line.
+     * 
+     * @remark This is an overloaded member functions.
+     * 
+     * @tparam Tp1 Should be arithmetic class type.
+     * @tparam Tp2 Should be arithmetic class type.
+     * @param [in] x The given point's x coordinate.
+     * @param [in] y The given point's y coordinate.
+     * 
+     * @return The distance between '(x, y)' and this line object.
+     */
+    template<typename Tp1 = double, typename Tp2>
+    Tp1 distanceTo(Tp2 x, Tp2 y){
+        return static_cast<Tp1>((k * x - y + b) / sqrt(k*k + 1));
+    }
+
+
+    Tp k; ///< The slope of the 2D line.
+    Tp b; ///< The bias of the 2D line.
 };
-
-
-/**
- * @brief  Calculate the distance between an 2D point and a given Line.
- *
- * @tparam Tp1
- * @tparam Tp2
- * @tparam Tp3
- * @param x     x coordinate of 2D point.
- * @param y     y coordinate of 2D point.
- * @param kb    A line object
- * @return Tp1  Distance between the given 2D point and the given line
- */
-template<typename Tp1 = double, typename Tp2, typename Tp3>
-Tp1 disFromPt2Line(Tp2 x, Tp2 y, const Line<Tp3>& l)
-{
-    return static_cast<Tp1>((l.k * x - y + l.b) / sqrt(l.k*l.k + 1));
-}
-
-
-/**
- * @brief Calculate the distance between an 2D point and a given Line.
- *
- * @param pts   The coordinate of a 2D point
- * @param kb    The given Line object
- *
- * @sa disFromPt2Line
- */
-template<typename Tp1 = double, typename Tp2, typename Tp3>
-Tp1 disFromPt2Line(const Eigen::Vector<Tp2, 2> &pts, const Line<Tp3>& l)
-{
-    return static_cast<Tp1>((l.k * pts[0] - pts[1] + l.b) / sqrt(l.k*l.k + 1));
-}
 
 
 /**
  * @brief  Fit 2D line based on 2D points.
  * 
- * @tparam Tp1 
- * @tparam Tp2 
- * @param xs   A set of x coordinates of 2D points.
- * @param ys   A set of y coordinates of 2D points.
- * @return Line<Tp1> 
+ * @remark This is an overloaded functions.
+ * 
+ * @tparam Tp1 Should be arithmetic class type.
+ * @tparam Tp2 Should be arithmetic class type.
+ * @param [in] xs A set of x coordinate of 2D points.
+ * @param [in] ys A set of y coordinate of 2D points.
+ * 
+ * @return A Line<Tp1> object.
+ * 
+ * @see mmath::Line. 
  */
 template<typename Tp1 = double, typename Tp2>
-Line<Tp1> fitLine(const std::vector<Tp2>& xs, const std::vector<Tp2>& ys)
-{
+Line<Tp1> fitLine(const std::vector<Tp2>& xs, const std::vector<Tp2>& ys) {
     if(xs.size() != ys.size()) std::abort();
 
     Eigen::MatrixXd A;
@@ -116,13 +125,18 @@ Line<Tp1> fitLine(const std::vector<Tp2>& xs, const std::vector<Tp2>& ys)
 /**
  * @brief  Fit 2D line based on 2D points.
  * 
- * @param pts A set of coordinate of a 2D point
+ * @remark This is an overloaded functions.
  * 
- * @sa fitLine
+ * @tparam Tp1 Should be arithmetic class type.
+ * @tparam Tp2 Should be arithmetic class type.
+ * @param [in] pts A set of 2D points.
+ * 
+ * @return A Line<Tp1> object.
+ * 
+ * @see mmath::Line. 
  */
 template<typename Tp1 = double, typename Tp2>
-Line<Tp1> fitLine(const std::vector<Eigen::Vector<Tp2, 2>>& pts)
-{
+Line<Tp1> fitLine(const std::vector<Eigen::Vector<Tp2, 2>>& pts) {
     Eigen::MatrixXd A;
     A.resize(pts.size(), 2);
     Eigen::VectorXd B;
@@ -139,36 +153,40 @@ Line<Tp1> fitLine(const std::vector<Eigen::Vector<Tp2, 2>>& pts)
 
 
 /**
- * @brief  Fit bias of 2D line based on 2D points.
+ * @brief  Fit the bias of a 2D line based on 2D points with a specified slope.
  * 
- * @tparam Tp1 
- * @tparam Tp2 
- * @param k     The specified slope of 2D Line.
- * @param xs    A set of x coordinates.
- * @param ys    A set of y coordinates.
- * @param iterations  The max iteration times, with default value 100.
- * @param thresh  The threshold to exclude outlier 2D points, with default 
- * value 2.
- * @return Tp1 
+ * @remark This is the base of overloaded functions.
+ * 
+ * @tparam Tp1  Should be arithmetic class type.
+ * @tparam Tp2  Should be arithmetic class type.
+ * @param [in] k  The specified slope of 2D Line.
+ * @param [in] xs A set of x coordinate of 2D points.
+ * @param [in] ys A set of y coordinate of 2D points.
+ * @param [in] iterations The max iteration times, with default value 100.
+ * @param [in] thresh The threshold to exclude outlier 2D points, with default 
+ *                    value 2.
+ * 
+ * @return The bias of a 2D line.
  */
 template<typename Tp1 = double, typename Tp2>
-Tp1 ransacFitLineBias(Tp1 k, const std::vector<Tp2>& xs, const std::vector<Tp2>& ys,
-                      uint16_t iterations = 100, float thresh = 2)
-{
+Tp1 ransacFitLineBias(Tp1 k, const std::vector<Tp2>& xs, 
+                      const std::vector<Tp2>& ys,
+                      uint16_t iterations = 100, float thresh = 2) {
     if(xs.size() != ys.size()) std::abort();
 
     int max_inlier_num = 0;
     Tp1 b = 0;
+    Line<Tp1> line(k, b);
 
     for(uint16_t i = 0; i < iterations; i++){
         uint16_t idx = rand() % xs.size();
 
         Tp1 x = xs[idx];
         Tp1 y = ys[idx];
-        Tp1 b_random = y - k*x;
+        line.b = y - k*x;
         int count = 0;
         for(size_t j = 0; j < xs.size(); j++){
-            float dis = disFromPt2Line(xs[j], ys[j], Line<Tp1>(k, b_random));
+            float dis = line.distanceTo(xs[j], ys[j]);
             if(abs(dis) < thresh) {
                 count++;
             }
@@ -176,7 +194,7 @@ Tp1 ransacFitLineBias(Tp1 k, const std::vector<Tp2>& xs, const std::vector<Tp2>&
 
         if(count > max_inlier_num){
             max_inlier_num = count;
-            b = b_random;
+            b = line.b;
         }
     }
 
@@ -185,11 +203,19 @@ Tp1 ransacFitLineBias(Tp1 k, const std::vector<Tp2>& xs, const std::vector<Tp2>&
 
 
 /**
- * @brief Fit bias of 2D line based on 2D points.
+ * @brief  Fit the bias of a 2D line based on 2D points with a specified slope.
  * 
- * @param pts A set of coordinate of a 2D point.
+ * @remark This is the base of overloaded functions.
  * 
- * @sa ransacFitLineBias
+ * @tparam Tp1  Should be arithmetic class type.
+ * @tparam Tp2  Should be arithmetic class type.
+ * @param [in] k  The specified slope of 2D Line.
+ * @param [in] pts A set of 2D points.
+ * @param [in] iterations The max iteration times, with default value 100.
+ * @param [in] thresh The threshold to exclude outlier 2D points, with default 
+ *                    value 2.
+ * 
+ * @return The bias of a 2D line.
  */
 template<typename Tp1 = double, typename Tp2>
 Tp1 ransacFitLineBias(Tp1 k, const std::vector<Eigen::Vector<Tp2, 2>>& pts,
@@ -197,16 +223,17 @@ Tp1 ransacFitLineBias(Tp1 k, const std::vector<Eigen::Vector<Tp2, 2>>& pts,
 {
     int max_inlier_num = 0;
     Tp1 b = 0;
+    Line<Tp1> line(k, b);
 
     for(uint16_t i = 0; i < iterations; i++){
         uint16_t idx = rand() % pts.size();
 
         Tp1 x = pts[idx][0];
         Tp1 y = pts[idx][1];
-        Tp1 b_random = y - k*x;
+        line.b = y - k*x;
         int count = 0;
         for(size_t j = 0; j < pts.size(); j++){
-            float dis = disFromPt2Line(pts[j], Line<Tp1>(k, b_random));
+            float dis = line.distanceTo(pts[j]);
             if(abs(dis) < thresh) {
                 count++;
             }
@@ -214,7 +241,7 @@ Tp1 ransacFitLineBias(Tp1 k, const std::vector<Eigen::Vector<Tp2, 2>>& pts,
 
         if(count > max_inlier_num){
             max_inlier_num = count;
-            b = b_random;
+            b = line.b;
         }
     }
 
