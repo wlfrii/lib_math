@@ -7,9 +7,9 @@
  * it to construct your own project. It is wellcome to use this library
  * in your scientific research work.
  *
- * @file 		kine_precision.h
+ * @file 		math_precision.h
  *
- * @brief 		Control the precision when kinematics-related interfaces.
+ * @brief 		Control the precision for kinematics-related interfaces.
  *
  * @author		Longfei Wang
  *

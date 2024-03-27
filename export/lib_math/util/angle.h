@@ -7,7 +7,7 @@
  * it to construct your own project. It is wellcome to use this library
  * in your scientific research work.
  * 
- * @file 		math_angle_radian.h 
+ * @file 		angle.h 
  * 
  * @brief 		Design some interfaces for angle and radian conversion.
  * 

@@ -7,7 +7,7 @@
  * it to construct your own project. It is wellcome to use this library
  * in your scientific research work.
  * 
- * @file 		skew.h 
+ * @file 		mat.h 
  * 
  * @brief 		Design some interfaces for matrix/vector operation.
  * 
