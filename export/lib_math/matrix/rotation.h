@@ -36,19 +36,19 @@
 namespace mmath{
 
 /**
- * @brief Return a rotation matrix with rotated by x-axis by radian.
+ * @brief Return a rotation matrix that rotated by x-axis by radian.
  * 
- * @tparam T     Type of return matrix.
- * @tparam T1    Type of input value. 
- * @param radian The angle value described by radian.
+ * @tparam T     The arithmetic class type of return matrix.
+ * @tparam T1    The arithmetic class type of input value. 
+ * @param [in] radian The angle value described by radian.
+ * 
  * @return  A rotation matrix.
  */
 template<typename T = double, typename T1 = double>
-Eigen::Matrix<T, 3, 3> rotByX(const T1 radian)
-{
-	if (!std::is_arithmetic<T1>::value)
+Eigen::Matrix<T, 3, 3> rotByX(const T1 radian) {
+	if (!std::is_arithmetic<T1>::value){
 		std::abort();
-
+	}
 	Eigen::Matrix<T, 3, 3> rot;
 	rot << static_cast<T>(1), static_cast<T>(0), static_cast<T>(0),
 		static_cast<T>(0), static_cast<T>(cos(radian)), static_cast<T>(-sin(radian)),
@@ -58,34 +58,37 @@ Eigen::Matrix<T, 3, 3> rotByX(const T1 radian)
 
 
 /**
- * @brief Return a rotation matrix with rotated by x-axis by radian.
+ * @brief Return a rotation matrix that rotated by x-axis by radian.
  * 
- * @tparam T     Type of return matrix.
- * @tparam T1    Type of input value. 
- * @param radian The angle value described by radian.
+ * @remark This is a partial explicity function of mmath::rotByX().
+ * 
+ * @tparam T1    The arithmetic class type of input value. 
+ * @param [in] radian The angle value described by radian.
+ * 
  * @return  A rotation matrix.
+ * 
+ * @see mmath::rotByX().
  */
 template<typename T1 = double>
-Eigen::Matrix3f rotByXf(const T1 radian)
-{
+Eigen::Matrix3f rotByXf(const T1 radian) {
     return rotByX<float, T1>(radian);
 }
 
 
 /**
- * @brief Return a rotation matrix with rotated by y-axis by radian.
+ * @brief Return a rotation matrix that rotated by y-axis by radian.
  * 
- * @tparam T     Type of return matrix.
- * @tparam T1    Type of input value. 
- * @param radian The angle value described by radian.
+ * @tparam T     The arithmetic class type of return matrix.
+ * @tparam T1    The arithmetic class type of input value. 
+ * @param [in] radian The angle value described by radian.
+ * 
  * @return  A rotation matrix.
  */
 template<typename T = double, typename T1 = double>
-Eigen::Matrix<T, 3, 3> rotByY(const T1 radian)
-{
-	if (!std::is_arithmetic<T1>::value)
+Eigen::Matrix<T, 3, 3> rotByY(const T1 radian) {
+	if (!std::is_arithmetic<T1>::value){
 		std::abort();
-
+	}
 	Eigen::Matrix<T, 3, 3> rot;
 	rot << static_cast<T>(cos(radian)), static_cast<T>(0), static_cast<T>(sin(radian)),
 		static_cast<T>(0), static_cast<T>(1), static_cast<T>(0),
@@ -95,34 +98,37 @@ Eigen::Matrix<T, 3, 3> rotByY(const T1 radian)
 
 
 /**
- * @brief Return a rotation matrix with rotated by y-axis by radian.
+ * @brief Return a rotation matrix that rotated by y-axis by radian.
  * 
- * @tparam T     Type of return matrix.
- * @tparam T1    Type of input value. 
- * @param radian The angle value described by radian.
+ * @remark This is a partial explicity function of mmath::rotByY().
+ * 
+ * @tparam T1    The arithmetic class type of input value. 
+ * @param [in] radian The angle value described by radian.
+ * 
  * @return  A rotation matrix.
+ * 
+ * @see mmath::rotByY().
  */
 template<typename T1 = double>
-Eigen::Matrix3f rotByYf(const T1 radian)
-{
+Eigen::Matrix3f rotByYf(const T1 radian) {
     return rotByY<float, T1>(radian);
 }
 
 
 /**
- * @brief Return a rotation matrix with rotated by z-axis by radian.
+ * @brief Return a rotation matrix that rotated by z-axis by radian.
  * 
- * @tparam T     Type of return matrix.
- * @tparam T1    Type of input value. 
- * @param radian The angle value described by radian.
+ * @tparam T     The arithmetic class type of return matrix.
+ * @tparam T1    The arithmetic class type of input value. 
+ * @param [in] radian The angle value described by radian.
+ * 
  * @return  A rotation matrix.
  */
 template<typename T = double, typename T1 = double>
-Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian)
-{
-	if (!std::is_arithmetic<T1>::value)
+Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian) {
+	if (!std::is_arithmetic<T1>::value){
 		std::abort();
-
+	}
 	Eigen::Matrix<T, 3, 3> rot;
 	rot << static_cast<T>(cos(radian)), static_cast<T>(-sin(radian)), static_cast<T>(0),
 		static_cast<T>(sin(radian)), static_cast<T>(cos(radian)), static_cast<T>(0),
@@ -132,30 +138,36 @@ Eigen::Matrix<T, 3, 3> rotByZ(const T1 radian)
 
 
 /**
- * @brief Return a rotation matrix with rotated by z-axis by radian.
+ * @brief Return a rotation matrix that rotated by z-axis by radian.
  * 
- * @tparam T1    Type of input value. 
- * @param radian The angle value described by radian.
+ * @remark This is a partial explicity function of mmath::rotByZ().
+ * 
+ * @tparam T1    The arithmetic class type of input value. 
+ * @param [in] radian The angle value described by radian.
+ * 
  * @return  A rotation matrix.
+ * 
+ * @see mmath::rotByZ().
  */
 template<typename T1 = double>
-Eigen::Matrix3f rotByZf(const T1 radian)
-{
+Eigen::Matrix3f rotByZf(const T1 radian) {
     return rotByZ<float, T1>(radian);
 }
 
 
 /**
- * @brief Create a Rotation Matrix By Vector-Z
+ * @brief Create a rotation matrix by a 3D vector that be the z-axis.
  * 
- * @tparam T     Type of return matrix.
- * @tparam T1    Type of input value. 
- * @param vec_z The vector denotes z-axis
+ * @note A x-axis [1, 0, 0] is supposed to composed the rotation matrix.
+ * 
+ * @tparam T     The arithmetic class type of return matrix.
+ * @tparam T1    The arithmetic class type of input value. 
+ * @param [in] vec_z The 3D vector denotes z-axis
+ * 
  * @return  A rotation matrix.
  */
 template<typename T = double, typename T1 = double>
-Eigen::Matrix<T, 3, 3> createRotMatByVecZ(Eigen::Vector<T1, 3> vec_z)
-{
+Eigen::Matrix<T, 3, 3> createRotMatByVecZ(const Eigen::Vector<T1, 3>& vec_z) {
 	Eigen::Vector<T, 3> z(vec_z[0], vec_z[1], vec_z[2]);
 	z /= z.norm();
 

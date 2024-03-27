@@ -33,17 +33,17 @@
 namespace mmath{
 
 /**
- * @brief Return the absoluted Matrix.
+ * @brief Return the absoluted matrix.
  * 
- * @tparam T The type of the matrix, e.g, float, double
+ * @tparam T The arithmetic class type of the matrix, e.g, float, double
  * @tparam M Represents the row of the matrix.
  * @tparam N Represents the column of the matrix.
- * @param mat 
- * @return Eigen::Matrix<T, M, N> 
+ * @param [in] mat A matrix;
+ * 
+ * @return An absoluted matrix, i.e., matrix without negative values.
  */
 template<typename T, int M, int N>
-Eigen::Matrix<T, M, N> absMat(const Eigen::Matrix<T, M, N>& mat)
-{
+Eigen::Matrix<T, M, N> absMat(const Eigen::Matrix<T, M, N>& mat) {
 	Eigen::Matrix<T, M, N> abs_mat = mat;
 	for (int i = 0; i < M; i++) {
 		for (int j = 0; j < N; j++) {
