@@ -1,4 +1,4 @@
-#include "../export/lib_math/cam/camera_projector.h"
+#include "../include/lib_math/cam/camera_projector.h"
 
 namespace mmath{
 
