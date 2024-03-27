@@ -111,7 +111,7 @@ cmake -DLIB_MATH_USE_DOUBLE=ON ..
 ...
 ```
 
-In addition, the `Eigen` library is very sensitive to precision (such as `Eigen::Matrixf` can not be assigned to `Eigen::Matrixd` directly). Thus, to avoid compiling errors in your projects, the arguments type for the _kinemaices related functions_ is suggested to use `mmath::kfloat`.
+In addition, the `Eigen` library is very sensitive to precision (such as `Eigen::Matrixf` can not be assigned to `Eigen::Matrixd` directly). Thus, to avoid compiling errors in your projects, the arguments type for the functions in this library,  _kinemaices related functions_ is suggested to use `mmath::kfloat`.
 
 ## Interfaces Manual
 

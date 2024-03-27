@@ -3,9 +3,6 @@ project(lib_math_test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_definitions(-DLIB_MATH_KINE_DOUBLE)
-message(STATUS "Use double precision in kinematics")
-
 set(CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../buildtarget/)
 message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 find_package(lib_math REQUIRED)

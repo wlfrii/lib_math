@@ -77,7 +77,7 @@ void CameraProjector::cvt3Dto2D(const Eigen::Vector<kfloat, 3>& pt3D,
 Eigen::Vector<kfloat, 2> CameraProjector::cvt3Dto2D(
         const Eigen::Vector<kfloat, 3> &pt3D, cam::ID id) const {
     Eigen::Vector<kfloat, 2> pt2D;
-    cvt3Dto2D(pt3D, id), pt2D;
+    cvt3Dto2D(pt3D, id, pt2D);
     return pt2D;
 }
 

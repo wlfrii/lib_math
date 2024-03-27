@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(lib_math 
-    VERSION 1.3.0
+    VERSION 1.4.0
     DESCRIPTION "A extended library for matrix mathematics"
     LANGUAGES CXX)
 message(STATUS "Project: ${PROJECT_NAME}")
