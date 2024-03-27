@@ -38,6 +38,8 @@ namespace mmath{
  *  g(x) = a*exp(-1/2 * ((x-mu)/sigma)^2).
  * 
  * @tparam Tp The arithmetic class type.
+ * 
+ * @seet mmath::fitGuassianCurve();
  */
 template <typename Tp = double>
 struct GaussianCurve
