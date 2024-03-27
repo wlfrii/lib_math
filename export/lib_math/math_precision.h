@@ -28,9 +28,8 @@
 
 namespace mmath{
 
-/**
- * @brief To use double precision when using ./kine, define this
- * LIB_MATH_KINE_DOUBLE
+/** To use double precision when using ./kine, define this
+ * LIB_MATH_USE_DOUBLE
  * macro in your preprocessing list before include <lib_math/lib_math.h>.
  */
 #ifdef LIB_MATH_USE_DOUBLE
