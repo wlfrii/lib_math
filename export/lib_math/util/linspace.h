@@ -38,47 +38,61 @@ namespace mmath{
 /**
  * @brief Return a vector contain 'num' numeral between 'start' and 'end'.
  * 
- * @tparam T     The type of value stored in returned vector.
- * @param start  The start value.
- * @param end  	 The end value.
- * @param num 	 The number of values in the range [start, end].
- * @param output The output values, start <= values <= end.
- * @return  A vector stores linspaced values. 
+ * @remark This is the base of overloaded functions.
+ * 
+ * @tparam T     The type of value stored in returned vector, should be the 
+ *               arithmatic class.
+ * @param [in] start The start value.
+ * @param [in] end   The end value.
+ * @param [in] num 	 The number of values in the range [start, end].
+ * @param [out] output A vector stores the linspaced values, where the values
+ * meet the condition, start <= values <= end.
  */
 template<typename T = double>
-void linspaceN(double start, double end, int num, std::vector<T> &output)
-{
+void linspaceN(double start, double end, int num, std::vector<T> &output) {
 	if (!std::is_arithmetic<T>::value){
 		std::abort();
 	}
 	assert(start < end);
 	output.clear();
 
-	if (num == 1)
-	{
+	if (num == 1) {
 		output.push_back(static_cast<T>(start));
 		return;
 	}
-	else if (num == 2)
-	{
+	else if (num == 2) {
 		output.push_back(static_cast<T>(start));
 		output.push_back(static_cast<T>(end));
 		return;
 	}
 
 	float step = static_cast<T>(end - start) / static_cast<T>(num - 1);
-	for (int i = 0; i < num-1; ++i)
+	for (int i = 0; i < num-1; ++i) {
 		output.push_back(static_cast<T>(start + i * step));
+	}
 	output.push_back(static_cast<T>(end));
 }
 
 
 /**
- * @brief Override based on "void linspceN()"
+ * @brief Return a vector contain 'num' numeral between 'start' and 'end'.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @tparam T     The type of value stored in returned vector, should be the 
+ *               arithmatic class.
+ * @param [in] start The start value.
+ * @param [in] end   The end value.
+ * @param [in] num 	 The number of values in the range [start, end].
+ * 
+ * @return A vector stores the linspaced values, where the values
+ * meet the condition, start <= values <= end.
  */
 template<typename T = double>
-std::vector<T> linspaceN(double start, double end, int num)
-{
+std::vector<T> linspaceN(double start, double end, int num) {
 	std::vector<T> output;
 	linspaceN(start, end, num, output);
 	return output;
@@ -86,14 +100,16 @@ std::vector<T> linspaceN(double start, double end, int num)
 
 
 /**
- * @brief Return a vector that the difference between each adjacent values is 'gap'
+ * @brief Return an arithmetic sequence vector with a difference of 'gap'.
  * 
- * @tparam T     The type of value stored in returned vector.
- * @param start  The start value.
- * @param gap  	 The gap between adjacent values.
- * @param end  	 The end value.
- * @param output The output values, start : gap : end.
- * @return  A vector stores linspaced values. 
+ * @remark This is the base of overloaded functions.
+ * 
+ * @tparam T     The type of value stored in returned vector, should be the 
+ *               arithmatic class.
+ * @param [in] start  The start value.
+ * @param [in] gap    The gap between adjacent values.
+ * @param [in] end    The end value.
+ * @param [out] output A vector stores the linspaced values = start : gap : end.
  */
 template<typename T = double>
 void linspace(double start, double gap, double end, std::vector<T> &output)
@@ -113,7 +129,20 @@ void linspace(double start, double gap, double end, std::vector<T> &output)
 
 
 /**
- * @brief Override based on "void linspce()"
+ * @brief Return an arithmetic sequence vector with a difference of 'gap'.
+ * 
+ * @remark This is an overloaded function, provided for convenience. It differs 
+ * from the base function only in what argument(s) it accepts and the returned
+ * value. To improve efficiency, the function with the void-returned value is 
+ * suggested.
+ * 
+ * @tparam T     The type of value stored in returned vector, should be the 
+ *               arithmatic class.
+ * @param [in] start  The start value.
+ * @param [in] gap    The gap between adjacent values.
+ * @param [in] end    The end value.
+ * 
+ * @return output A vector stores the linspaced values = start : gap : end.
  */
 template<typename T = double>
 std::vector<T> linspace(double start, double gap, double end)
