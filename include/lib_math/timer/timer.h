@@ -147,6 +147,58 @@ inline ::std::string getCurrentTimeStr() {
 	return std::string(tmp);
 }
 
+
+/**
+ * @brief Get the current time information in "YYmmdd_HHMM" string format.
+ * 
+ * @return Current time information in std::string.
+ */
+inline ::std::string getCurrentMinuteStr() {
+    time_t timep;
+    time(&timep);
+    char tmp[64];
+    strftime(tmp, sizeof(tmp), "%Y%m%d_%H%M", localtime(&timep));
+
+    return std::string(tmp);
+}
+
+
+/**
+ * @brief Get the current time information in "YYmmdd" string format.
+ * 
+ * @return Current time information in std::string.
+ */
+inline ::std::string getCurrentDateStr() {
+    time_t timep;
+    time(&timep);
+    char tmp[64];
+    strftime(tmp, sizeof(tmp), "%Y%m%d", localtime(&timep));
+
+    return std::string(tmp);
+}
+
+
+/**
+ * @brief Get the current time point information in "YYmmdd_HHMMSS_MS" string format.
+ * 
+ * @return Current time information in std::string.
+ */
+inline ::std::string getCurrentTimeStr() {
+    time_t timep;
+    time(&timep);
+    char tmp[64];
+    strftime(tmp, sizeof(tmp), "%Y%m%d_%H%M%S", localtime(&timep));
+
+    auto now = std::chrono::system_clock::now();
+    uint64_t cms = 
+	std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count() -
+        std::chrono::duration_cast<std::chrono::seconds>(now.time_since_epoch()).count() * 1000;
+    char strms[32];
+    sprintf(strms, "_%d", cms);
+
+    return std::string(tmp) + strms;
+}
+
 } // timer
 } // mmath
 
