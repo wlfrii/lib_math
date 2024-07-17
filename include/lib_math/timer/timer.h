@@ -194,7 +194,7 @@ inline ::std::string getCurrentTimeStr() {
 	std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count() -
         std::chrono::duration_cast<std::chrono::seconds>(now.time_since_epoch()).count() * 1000;
     char strms[32];
-    sprintf(strms, "_%d", cms);
+    sprintf(strms, "_%03d", cms);
 
     return std::string(tmp) + strms;
 }
